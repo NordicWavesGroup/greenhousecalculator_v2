@@ -5,7 +5,7 @@ const MotorbikeHeaderVisualization = () => {
   return <>
        
       <div className='global-header-container' >
-        <p>Motorbike Visualization</p>
+        <p>Visualization</p>
       </div>
       
   </>;

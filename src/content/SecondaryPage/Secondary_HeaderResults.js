@@ -5,7 +5,7 @@ const BusRailHeaderResult = () => {
   return <>
        
       <div className='global-header-container' >
-        <p>Household Consumption Results</p>
+        <p>Results</p>
       </div>
       
   </>;

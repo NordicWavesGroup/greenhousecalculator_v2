@@ -1,10 +1,7 @@
-
-  
   .waves-container{
-    //position: fixed;
-    //bottom: -1.5rem;
     width: 100%;
-    //height: 150px;
+    position: fixed;
+    bottom: 0;
   }
   .flex { /*Flexbox for containers*/
     display: flex;
@@ -20,7 +17,6 @@
     min-height:100px;
     max-height:150px;
   }
-  
 
   /* Animation */
 .parallax > use {

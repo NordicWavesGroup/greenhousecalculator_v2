@@ -13,7 +13,7 @@ const HouseTotalResult = () => {
       <Button 
           kind='secondary'
           className='car-calculate-footprint-button'
-          > OFFSET NOW!
+          > 
       </Button>
   
   </>;

@@ -1,200 +1,104 @@
-////////////////////////////MAIN CONTAINER//////////////////////////////
-.car-main-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    //background-color: rgb(221, 221, 221);
-    min-height: 490px;
-    width: 100%;
-
-}
-////////////////////////////BLOCK 1 INPUTS /////////////////////////////
-
-.car-inputs-block{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 33%;
-    //background-color: rgb(216, 42, 132);
-}
-.car-button-container{
-    width: 100%;
-    //background-color: darkblue;
-}
-/////////////////////////BLOCK 1 INPUTS COMPONENTS//////////////////////
-.car-mileage-container  {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: center;
-    width: 100%;
-    margin-bottom: 0.7rem;
-    //background-color: #b397d7;
-}
-.car-inputs-containers1{
-    display: flex;
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    width: 100%;
-    height: 2.5rem;
-    margin-bottom: 0.7rem;
-    //background-color: rgb(34, 93, 171);
-}
-.car-block-middle-form{ 
-    margin-bottom: 0.2rem;
-}
-.car-block-middle-form-efficiency{
-    font-size: 16px;
-    margin-left: 0.2rem;
-    margin-bottom: 0.2rem;
-}
-.car-calculate-footprint-button{
-    padding:0;
-    min-width:100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center ;
-}
-.car-calculator-icon{
-    margin-left: 0.7rem;
-}
-///////////////////////////////BLOCK 2 RESULTS/////////////////////////
-.car-results-block{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 33%;
-    //background-color: lawngreen;
-}
-.car-result-section{
-    width: 100%;
-    max-height: 3rem;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
+.household_form_cont.car_form .input-group {
     align-items: center;
-    margin-bottom: 0.2rem;
-    padding-left: 1rem;
-    ////background-color: rgba(31, 56, 56, 0.747);
-}
-.car-result-trashcan-icon-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    margin-left: 0.5rem;
-    padding: 1;
-    max-height: 2.5rem;
-    max-width: 2.5rem;
-    ////background-color: crimson;
-}
-.car-results-container{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.448);
-    width: 100%;
-    ////background-color: rgb(48, 82, 82);
-}
-.car-results{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 48px;
-    border: 2px solid rgb(169, 169, 169);
-    font-size: 20px;
-    //background-color: rgb(77, 52, 77);
-}
-///////////////////////////BLOCK 3 VISUALIZATION///////////////////////
-.car-visualization-block{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 33%;
-    //background-color: rgb(52, 190, 202);
-}
-.car-datavisual-container{
-    width: 100%;
-    //background-color: rgba(227, 209, 6, 0.891);
-}
-
-///////////////////////////RESPONSIVE///////////////////////
-@media (max-width: 1100px) {
-    .car-main-container{
-        display: flex;
-        flex-direction: column;
-    
-    }
-    .car-inputs-block{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 100%;
-        ////background-color: rgb(216, 42, 132);
-    }
-    .car-results-block{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 100%;
-        ////background-color: lawngreen;
-    }
-    .car-visualization-block{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        width: 100%;
-        ////background-color: rgb(52, 190, 202);
-    }
-    .car-results{
-        font-size: 16px;
-    }
+  }
+  .household_form_cont.car_form .input-group label {
+    padding: 0 15px;
+  }
+  .household_form_cont.car_form label + .cds--form-item.house-block-middle-form.cds--text-input-wrapper {
+    flex: 0 0 50%;
+    max-width: 50%;
   }
 
+.car_label span {
+    border: solid 1px #7fe0a4;
+    border-radius: 20px;
+    padding: 10px 15px;
+    display: inline-flex;
+    background: #7fe0a4;
+    font-size: 12px;
+    font-weight: bold;
+    color: #161616;
+    margin-bottom: 20px;
+  }
+  .status_main_cls {
+    margin-top: 20px;
+  }
+  .car_inner_form {
+    border: solid 1px #707070;
+    padding: 20px;
+    border-radius: 0;
+    margin-top: 15px;
+  }
+.household_form_cont.car_form {
+    max-width: 380px;
+}
+.input-group.car_inner_cls {
+    max-width: 280px;
+}
+.slick-current {transform: scale(1) !important;}
 
+.slick-slide:not(.slick-current) {
+    opacity: 0.5;
+    transform: scale(0.9) !important;
+}
+.slick-slide.slick-active.slick-current {
+    padding-right: 15px;
+}
+button.slick-arrow.slick-next {
+    position: absolute;
+    right: 63.2%;
+    font-size: 0 !important;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+button.slick-arrow.slick-prev {
+    position: absolute;
+    font-size: 0 !important;
+    left: -50px;
+}
+.car_page_sec.household_form_cont.car_form {
+    max-width: 100%;
+}
+.slick-slider button.slick-arrow {
+    opacity: 1 !important;
+}
+@media (max-width:1399px) {
+    .slick-slide.slick-active.slick-current {
+        padding-right: 15px;
+        padding-left: 35px;
+    }
+    button.slick-arrow.slick-prev {
+        left: -20px;
+    }
+    button.slick-arrow.slick-next {
+        right: 45%;
+     }
+}
+@media (max-width:1199px) {
+  .cds--content {
+      height: 100vh;
+  }
+  .household-right-sidebar h3 {
+      font-size: 28px;
+  }
+  
+}
+@media (max-width:991.98px) {
+  button.slick-arrow.slick-next {
+    right: 46%;
+  }
+}
+@media (max-width:767.98px){
+  .slick-slide.slick-active.slick-current {
+      padding-right: 15px;
+      padding-left: 15px;
+  }
+  .car_inner_form {
+    padding: 15px;
+  }
+  button.slick-arrow.slick-next {
+      right: -15px;
+  }
+  button.slick-arrow.slick-prev {
+      left: -15px;
+  }
+}

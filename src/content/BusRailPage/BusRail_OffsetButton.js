@@ -23,7 +23,7 @@ const HouseTotalResult = () => {
       <Button 
           kind='secondary'
           className='bus-rail-calculate-footprint-button'
-          > OFFSET NOW!
+          > 
       </Button>
   
   </>;

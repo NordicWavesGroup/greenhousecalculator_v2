@@ -37,7 +37,9 @@ const SecondaryResults = () => {
     <>  
       {showFoodDietResult && foodDietFootprint > 0 && (
         <section className='secondary-result-section'>
-          <h5 className='secondary-results-container'>
+          <h5 
+          style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
+          className='secondary-results-container'>
             {foodDietFootprint} Kg of CO2 
           </h5>
           <Button
@@ -53,7 +55,9 @@ const SecondaryResults = () => {
 
       {showWaterResult && water > 0 && (
         <section className='secondary-result-section'>
-          <h5 className='secondary-results-container'>
+          <h5
+          style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
+           className='secondary-results-container'>
             {waterFootprint} Kg of CO2 
           </h5>
           <Button

@@ -8,7 +8,7 @@ const FlightResults = () => {
   return <>
        
         <div className='global-header-container' >
-        <p>Flight Results</p>
+        <p>Results</p>
       
         </div>
       

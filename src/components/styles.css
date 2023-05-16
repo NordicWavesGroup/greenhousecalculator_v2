@@ -1,0 +1,70 @@
+.tabs-slider {
+  position: relative;
+  overflow: hidden;
+}
+
+.tabs-slider-arrows {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0;
+  align-items: center;
+  display: flex;
+  background: #161616;
+  z-index: 1111;
+}
+
+.tabs-slider-arrows button {
+  height: 40px;
+  width: 40px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 111111;
+}
+
+.tabs-slider-tabs {
+  display: flex; /* Display tabs in a row */
+}
+.ant-tabs-nav {
+  overflow-x: auto; /* Enable horizontal scrolling */
+  white-space: nowrap;
+}
+.ant-tabs-nav .ant-tabs-tab-btn {
+  border: 0 !important;
+  padding: 10px 22px !important;
+  font-size: 14px !important;
+  width: auto !important;
+  max-width: unset !important;
+  color: #fff !important;
+  opacity: 0.3;
+  font-weight: 700 !important;
+}
+
+.tabs-slider-arrows button {
+  padding: 0 !important;
+  background: transparent;
+  opacity: 1;
+}
+.ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  opacity: 1 !important;
+  font-size: 16px !important;
+  padding: 0 22px !important;
+  line-height: 1;
+}
+
+.ant-tabs .ant-tabs-tab + .ant-tabs-tab {
+  padding: 0 !important;
+  line-height: 1;
+  margin: 0 !important;
+  height: unset !important;
+  min-height: inherit;
+}
+.ant-tabs .ant-tabs-tab {
+  padding: 0 !important;
+}
+
+html body,
+html {
+  overflow-x: hidden !important;
+}

@@ -5,7 +5,7 @@ const SecondaryNumberOfPeople = () => {
   return <>
   
         <div className='global-header-container' >
-        <p>Household Consumption Inputs </p>
+        <p>Inputs </p>
         </div>
       
   </>;

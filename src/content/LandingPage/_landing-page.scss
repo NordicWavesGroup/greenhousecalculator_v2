@@ -31,7 +31,7 @@
     width: 128px;
 }
 .landing-tiles-questions{
-    margin-top: 40px;
+    margin-top: 30px;
 }
 //////////////////////////// TABS ///////////////////////////////////
 .landing-container{
@@ -44,31 +44,59 @@
 .landing-tabpanel-left{
     width: 50%;
     //background-color: blue;
+    margin-top: 64px;
+    padding-left: 2rem;
+}
+.global-buttons-link-back-and-forth {
+    height: 50px;
+    width: 160px;
+    margin-top: 40px;
+}
+.landing-tabpanel-right .cds--skeleton__placeholder{
+    width: 100%;
+    height: 100%;
+}
+.landing-tabpanel-left .cds--skeleton__text {
+    margin-bottom: 12px;
+}
+.landing-tabpanel-left .cds--skeleton__text:nth-child(1){
+    margin-bottom: 24px !important;
 }
 .landing-title-question{
-    margin-top: 64px;
     margin-bottom: 24px;
-    padding-left: 2rem;
     //color: fuchsia;
 }
 .landing-paragraph-question{
-    padding-left: 2rem;
+    // padding-left: 2rem;
     margin-bottom: 40px;
     margin-right: 40px;
 }
 .landing-tabpanel-right{
+    height: 100%;
+    width: 50%;
+    position: relative;
+    background-color: rgba(0, 0, 255, 0.714);
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 50%;
-    background-color: rgba(0, 0, 255, 0.714);
 }
+.newdiv{
+    width: 100%;
+    height: 100%;
+}
+// .landing-tabpanel-right div{
+//     position: absolute;
+//     inset: 0px;
+//     text-align: center;
+//     align-items: center;
+//     display: flex;
+//     justify-content: center;
+//  }
 .landing-footer-tiles{
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin-top: 2rem;
+    justify-content: space-between;
 }
 .landing-tite-title{
     margin-top: 40px;
@@ -86,17 +114,67 @@
 }
 .landing-tile1{
     width: 25%;
-    min-height: 500px;
-    border-right: 1px solid grey;
-    padding-left: 2rem;
-    padding-right: 40px;
+
     //  background-color: aquamarine;
+    padding: 0;
+}
+.landing-tile1 .tileOuter{
+    min-height: 500px;
+    padding-left: 2rem !important;
+    padding: 1rem;
+    padding-right: 40px;
+    border-right: 1px solid grey;
 }
 .landing-button{
     width: 10rem;
     margin: 0;
     padding: 15px;
-    margin-left: 2rem;
+    // margin-left: 2rem;
+}
+.placeholderMobile {
+    display: none;
+}
+.headerPlac {
+    padding-left: 1.5rem;
+    width: 100%;
+    height: 242.34px;
+}
+.footerPlac {
+    width: 100%;
+    height: 500px;
+    border-right: 1px solid grey;
+}
+.landing-tile1:last-child .footerPlac {
+    border: none !important;
+}
+.mainSection {
+    width: 100%;
+    height: 580px;
+}
+.cds--modal-content {
+    padding: 30px;
+    margin: 0;
+}
+.cds--modal-content.customBody {
+    padding: 0;
+    padding-top: 30px;
+    margin: 0;
+}
+.personalDetailModal .cds--modal-header{
+    padding: 0;
+    margin: 0;
+}
+.personalDetailModal .cds--form-item.cds--text-input-wrapper:first-child {
+    margin: 0;
+}
+.personalDetailModal .cds--form-item.cds--text-input-wrapper {
+    margin-top: 24px;
+}
+.personalDetailModal button.customBtn{
+    padding: 10px 24px !important;
+}
+.personalDetailModal .landing-tiles-questions{
+    text-align: end;
 }
 ///////////////////////////RESPONSIVE///////////////////////
 @media (max-width: 1100px) {
@@ -105,7 +183,6 @@
         display: flex;
         flex-direction: column;
         width: 100%;
-        margin-top: 2rem;
     }
     .landing-tile{
         width: 100%;
@@ -117,18 +194,26 @@
     }
     .landing-tile1{
         width: 100%;
+        //background-color: aquamarine;
+    }
+    .landing-tile1 .tileOuter{
         height: 15rem;
-        border-right: 1px solid grey;
         padding-left: 2rem;
         padding-right: 40px;
-        //background-color: aquamarine;
+        border-right: none !important;
+        border-bottom: 1px solid grey;
+    }
+    .landing-tile1:last-child .tileOuter {
+        border: none !important;
     }
     .landing-container{
         display: flex;
         flex-direction: column;
         //background-color: aquamarine;
         border: 2px solid white;
-        height: 580px;
+        height: unset;
+        // height: 536px;
+
     }
     .landing-tabpanel-right{
         display: flex;
@@ -138,12 +223,46 @@
         width: 100%;
         background-color: rgba(0, 0, 255, 0.714);
         margin-top: 40px;
+        height: 26px;
     }
     .landing-tabpanel-left{
-        width: 80%;
+        width: 100%;
         //background-color: blue;
+    }
+    
+    .headerPlac {
+        width: 100%;
+        height: 234px;
+    }
+    .placeholderMobile {
+        display: block;
+    }
+    .placeholderDesktop {
+        display: none;
+    }
+    .footerPlac {
+        border-right: none !important;
+        border-bottom: 1px solid grey;
+    }
+    // .footerPlac {
+    //     height: 1600px;
+    // }
+    .mainSection {
+        width: 100%;
+        height: 236px;
     }
   }
 
+  .ml-2{ margin-left: 8px;}
+  .ml-3{ margin-left: 16px;}
+  .cds--modal-footer{display: none;}
+  .text-success{color: #066e18;}
+  .text-danger{color: #eb1313;}
 
 
+  .custom-toast-notification {
+    position: fixed;
+    top: 16px;
+    right: 16px;    
+    z-index: 9999999999;
+  }

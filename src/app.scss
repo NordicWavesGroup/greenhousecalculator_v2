@@ -16,6 +16,7 @@
 .cds--content{
     padding-top: 0;
     padding: 0;
+    height: 100vh;
     }
 .cds--text-input--lg {
     font-size: 16px;
@@ -27,9 +28,11 @@
     margin: 0;
     margin-left: 0.5rem;
     padding: 15px;
+    z-index: 9999;
 }
 .global-buttons-link-back-and-forth{
     color: transparent  ;
+    z-index: 9999;
 }
 .global-frame-calculator{
     display: flex;
@@ -37,7 +40,7 @@
     padding-left: 2rem;
     padding-right: 2rem;
     margin: 0;
-    overflow-x:hidden;
+    //overflow-x:hidden;
 
 
     //background-color: rgba(129, 196, 230, 0.463);
@@ -106,6 +109,15 @@
         margin: 0;
         //background-color: rgba(129, 196, 230, 0.463);
     }
+    .global-re-styled-button-back-and-forth {
+        width: 8rem;
+    }
+    .cds--content{
+        padding-top: 0;
+        padding: 0;
+        height: 100%;
+        }
+
    
 
   }

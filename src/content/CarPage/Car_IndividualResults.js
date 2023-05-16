@@ -26,7 +26,7 @@ const CarResults = () => {
 
   return showCarResult && carMileage > 0 && (
     <section className='car-result-section'>
-      <h5 className='car-results-container'>
+      <h5 className='car-results-container' style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}>
         {carFootprint} Kg of CO2: in  {carMileage} {carUnit} 
       </h5>
       <Button

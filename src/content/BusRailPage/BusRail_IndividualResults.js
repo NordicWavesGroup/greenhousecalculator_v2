@@ -105,7 +105,8 @@ const BusRailResults = () => {
 
   {showBusResult && bus > 0 &&  (
         <section className='bus-rail-result-section'>
-          <h5 
+          <h5
+            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
             className='bus-rail-results-container'>
             {busFootprint} Kg:	{bus}   {unitBus} of Bus
           </h5>
@@ -121,7 +122,8 @@ const BusRailResults = () => {
     } 
     {showCoachResult && coach > 0 &&  (
         <section className='bus-rail-result-section'>
-          <h5 
+          <h5
+            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
             className='bus-rail-results-container'>
             {coachFootprint} Kg:	{coach}   {unitCoach} of Coach
           </h5>
@@ -138,6 +140,7 @@ const BusRailResults = () => {
     {showLocalTrainResult && localTrain > 0 &&  (
         <section className='bus-rail-result-section'>
           <h5 
+            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
             className='bus-rail-results-container'>
             {localTrainFootprint} Kg:	{localTrain}   {unitLocalTrain} of Local Train
           </h5>
@@ -154,6 +157,7 @@ const BusRailResults = () => {
     {showLongTrainResult && longTrain > 0 &&  (
         <section className='bus-rail-result-section'>
           <h5 
+            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
             className='bus-rail-results-container'>
             {longTrainFootprint} Kg:	{longTrain}   {unitLongTrain} of Long Train
           </h5>
@@ -170,6 +174,7 @@ const BusRailResults = () => {
     {showTramResult && tram > 0 &&  (
         <section className='bus-rail-result-section'>
           <h5 
+            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
             className='bus-rail-results-container'>
             {tramFootprint} Kg:	{tram}   {unitTram} of Tram
           </h5>
@@ -185,7 +190,8 @@ const BusRailResults = () => {
     }
     {showSubwayResult && subway > 0 &&  (
         <section className='bus-rail-result-section'>
-          <h5 
+          <h5
+            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
             className='bus-rail-results-container'>
             {subwayFootprint} Kg:	{subway}   {unitSubway} of Subway
           </h5>
@@ -201,7 +207,8 @@ const BusRailResults = () => {
     }
     {showTaxiResult && taxi > 0 &&  (
         <section className='bus-rail-result-section'>
-          <h5 
+          <h5
+            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
             className='bus-rail-results-container'>
             {taxiFootprint} Kg:	{taxi}   {unitTaxi} of Taxi
           </h5>

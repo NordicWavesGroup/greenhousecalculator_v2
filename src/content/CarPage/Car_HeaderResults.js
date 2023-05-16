@@ -5,7 +5,7 @@ const CarHeaderResult = () => {
   return <>
        
       <div className='global-header-container' >
-        <p>Car Results</p>
+        <p>Results</p>
       </div>
       
   </>;
