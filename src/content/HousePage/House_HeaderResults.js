@@ -4,7 +4,7 @@ const HouseHeaderResults = () => {
 
   return <>
       <div className='global-header-container' >
-        <p>Household Energy Results</p>
+        <p>Results</p>
       </div>
   </>;
 };

@@ -5,7 +5,7 @@ const HouseHeaderVisualization = () => {
   return <>
        
       <div className='global-header-container' >
-        <p>Household Energy Visualization</p>
+        <p>Visualization</p>
       </div>
       
   </>;

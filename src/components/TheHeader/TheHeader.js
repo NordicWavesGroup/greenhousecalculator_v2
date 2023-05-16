@@ -16,7 +16,6 @@ import {
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import countryFactors from '../../countryFactors';
-import { Login, Close } from '@carbon/react/icons';
 import LoginPanel from './Login';
 
 const TheHeader = () => {
@@ -57,27 +56,7 @@ const TheHeader = () => {
 
             <HeaderGlobalBar>
               
-          {isHeaderPanelOpen ? (
-            <HeaderGlobalAction
-              aria-label="Close"
-              onClick={toggleHeaderPanel}
-              tooltipAlignment="end"
-              className="close-icon"
-            >
-              <Close size="24" />
-            </HeaderGlobalAction>
-          ) : (
-            <HeaderGlobalAction
-              aria-label="Login"
-              onClick={toggleHeaderPanel}
-              tooltipAlignment="end"
-              className="login-icon"
-            >
-              <Login
-              size="24"
-              />
-            </HeaderGlobalAction>
-          )}
+       
             </HeaderGlobalBar>
 
           {isHeaderPanelOpen && (

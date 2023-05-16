@@ -44,6 +44,7 @@ const countryFactors = {
       },
       waterRange: {
         year: {water_factor: 38},
+       
       },
       wasteRange: {
         year: {waste_factor: 1},
@@ -600,7 +601,7 @@ const countryFactors = {
         large: {car_size_factor: 0.20953},
       },
     },
-    World: {
+    World_Average: {
       flag_icon:'🌐',
       electricity_factor: 0.155,
       naturalGasUnits: {

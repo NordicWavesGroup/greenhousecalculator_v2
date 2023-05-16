@@ -21,7 +21,7 @@ const MotorbikeTotalResult = () => {
       <Button 
           kind='secondary'
           className='motorbike-calculate-footprint-button'
-          > OFFSET NOW!
+          > 
       </Button>
   
   </>;

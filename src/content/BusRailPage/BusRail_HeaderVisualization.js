@@ -5,7 +5,7 @@ const BusRailHeaderVisualization = () => {
   return <>
        
       <div className='global-header-container' >
-        <p>Bus & Rail Visualization</p>
+        <p>Visualization</p>
       </div>
       
   </>;

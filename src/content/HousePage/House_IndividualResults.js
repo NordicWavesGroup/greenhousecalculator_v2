@@ -93,6 +93,7 @@ const HouseElectricity = () => {
     {showElectricityResult && electricity > 0 &&  (
         <section className='house-result-section'>
           <h5 
+            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
             className='house-results-container'>
             {electricityFootprint} Kg:	{electricity} kWh of Electricity 
           </h5>
@@ -109,6 +110,7 @@ const HouseElectricity = () => {
     {showNaturalGasResult && naturalGas > 0 &&  (
         <section className='house-result-section'>
           <h5 
+            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
             className='house-results-container'>
             {naturalGasFootprint} Kg:	{naturalGas}   {unitNaturalGas} of Natural Gas
           </h5>
@@ -126,6 +128,7 @@ const HouseElectricity = () => {
     {showCoalResult && coal > 0 &&  (
         <section className='house-result-section'>
           <h5 
+            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
             className='house-results-container'>
             {coalFootprint} Kg:	{coal}   {unitCoal} of Coal
           </h5>
@@ -142,6 +145,7 @@ const HouseElectricity = () => {
     {showLPGResult && LPG > 0 &&  (
         <section className='house-result-section'>
           <h5 
+            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
             className='house-results-container'>
             {LPGFootprint} Kg:	{LPG}   {unitLPG} of Liquefied Petroleum Gas
           </h5>
@@ -157,7 +161,8 @@ const HouseElectricity = () => {
     }
     {showPropaneResult && propane > 0 &&  (
         <section className='house-result-section'>
-          <h5 
+          <h5
+            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }} 
             className='house-results-container'>
             {propaneFootprint} Kg:	{propane}   {unitPropane} of Propane
           </h5>
@@ -174,6 +179,7 @@ const HouseElectricity = () => {
     {showWoodenPelletsResult && woodenPellets > 0 &&  (
         <section className='house-result-section'>
           <h5 
+            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
             className='house-results-container'>
             {woodenPelletsFootprint} Kg:	{woodenPellets}   {unitWoodenPellets} of Wooden Pellets
           </h5>

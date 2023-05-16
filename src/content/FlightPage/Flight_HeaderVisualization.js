@@ -5,7 +5,7 @@ const FlightHeaderVisualization = () => {
   return <>
        
       <div className='global-header-container' >
-        <p>Flight Visualization</p>
+        <p>Visualization</p>
       </div>
       
   </>;
