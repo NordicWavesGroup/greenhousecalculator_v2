@@ -146,6 +146,10 @@
     width: 100%;
     //background-color: rgba(1, 168, 115, 0.88);
 }
+.car_label.d-flex {
+    display: flex;
+    justify-content: space-between;
+}
 ///////////////////////////RESPONSIVE///////////////////////
 @media (max-width: 1100px) {
     .flight-main-container{
@@ -181,12 +185,12 @@
         margin-bottom: 3rem;
     }
   }
-  .flight-result-trashcan-icon-container.removeBtn{
-    width: 48px !important;
-    height: 48px !important;
-    max-width: 48px !important;
-    margin: 0;
-    padding: 0;
+.flight-result-trashcan-icon-container.removeBtn {
+    width: 34px !important;
+    height: 34px !important;
+    max-width: 34px !important;
+    margin: 0 !important;
+    padding: 0 !important;
     border-radius: 10px;
     background-color: #9e0000;
     border-color: #9e0000 !important;
@@ -194,9 +198,11 @@
     border: none;
     outline: none;
     text-align: center;
-    transition: ease-in-out .3s;
-    margin-top: -12px;
-  }
+    transition: ease-in-out 0.3s;
+    opacity: 1;
+    min-height: unset;
+    max-height: 34px;
+}
   .flight-result-trashcan-icon-container.removeBtn:focus {
     outline: none !important;
     border: none !important;
@@ -245,3 +251,24 @@
   .sectionOuter .sectionInner .flight-inputs-containers1 .global-input-description, .sectionOuter .sectionInner .flight-inputs-containers1 .flight-block-middle-form-combobox{
     margin: 0  !important;
   }
+  .slick-track {
+    margin: 0;
+}
+section.flight-inputs {
+    margin-bottom: 15px;
+}
+
+h5.global-description {
+    margin-bottom: 5px;
+}
+section.flight-inputs input {
+    padding-right: 15px !important;
+}
+
+section.flight-inputs button.cds--list-box__menu-icon {
+    padding: 0 !important;
+}
+.slick-list {
+    overflow-y: unset !important;
+    overflow-x: hidden !important;
+}

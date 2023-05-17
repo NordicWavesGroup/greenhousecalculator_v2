@@ -54,7 +54,6 @@ const LanguageChanger = () => {
 };
 
 const LandingPage = () => {
-
   const [delay, setDelay] = useState(true);
 
   useEffect(() => {
@@ -68,7 +67,6 @@ const LandingPage = () => {
       <section className="landing-main-container">
         <Tabs>
           <header className="landing-header">
-
             {delay ? (
               <div className="headerPlac">
                 <SkeletonText line width={"10%"} />
@@ -98,7 +96,7 @@ const LandingPage = () => {
           )}
 
           <TabPanels>
-            <TabPanel style={{ background: "#161616" }}  >
+            <TabPanel style={{ background: "#161616" }}>
               <section className="landing-container">
                 <div className="landing-tabpanel-left">
                   {delay ? (
@@ -134,7 +132,7 @@ const LandingPage = () => {
                     <>
                       <Link
                         className="global-buttons-link-back-and-forth"
-                        to="/welcome"
+                        to="/house"
                       >
                         <Button
                           className="landing-button"
@@ -245,6 +243,5 @@ const LandingPage = () => {
     </>
   );
 };
-
 
 export default LandingPage;

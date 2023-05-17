@@ -16,8 +16,11 @@ import {
   TextInput,
 } from "@carbon/react";
 import { Link } from "react-router-dom";
-import { NextOutline, PreviousOutline } from "@carbon/react/icons";
-
+import {
+  NextOutline,
+  PreviousOutline,
+  Information32,
+} from "@carbon/react/icons";
 import IconsNavigation from "../IconsNavigation/IconsNavigation";
 import HouseHeader from "./House_Header";
 import HouseHeaderResults from "./House_HeaderResults";
@@ -35,6 +38,7 @@ import HouseDataVisualization from "./House_DataVisualization";
 import HouseOffsetButton from "./House_OffsetButton";
 
 import HouseTotalResults from "./House_TotalResults";
+import { Information } from "@carbon/icons-react";
 
 import Waves from "../Waves";
 import { useState } from "react";
@@ -43,7 +47,23 @@ const HousePage = () => {
   const addClass = () => {
     document.getElementsByTagName("body")[0].setAttribute("class", "open_menu");
   };
+  const [houseMenu, setHousemenu] = useState({
+    HouseElectricUsage: "",
+    HouseElectricCustom: "",
+    HouseElectricFactor: "",
 
+    HouseHeatingUsage: "",
+    //HouseElectricCustom: "",
+    // HouseElectricFactor: "",
+  });
+  const setUsage = (value, name) => {
+    let updatedObject = { ...houseMenu, [name]: value };
+    setHousemenu(updatedObject);
+  };
+  const handleChange = (e) => {
+    let updatedObject = { ...houseMenu, [e.target.name]: e.target.value };
+    setHousemenu(updatedObject);
+  };
   return (
     <>
       <IconsNavigation />
@@ -59,10 +79,10 @@ const HousePage = () => {
                     tabContentStyle={{ padding: "20px" }}
                   >
                     <TabList>
-                      <Tab id="tab1" label="Tab 1">
+                      <Tab id="tab1" label="ELECTRICITY">
                         ELECTRICITY
                       </Tab>
-                      <Tab id="tab2" label="Tab 2">
+                      <Tab id="tab2" label="HEATING">
                         HEATING
                       </Tab>
                     </TabList>
@@ -74,33 +94,47 @@ const HousePage = () => {
                             a custom usage.
                           </p>
                           <div className="status_cls">
-                            <Link to="">Below</Link>
-                            <Link to="" className="active">
-                              Average
+                            <Link
+                              onClick={() =>
+                                setUsage("Below", "HouseElectricUsage")
+                              }
+                              className={
+                                houseMenu.HouseElectricUsage == "Below"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
+                              Below <Information />
                             </Link>
-                            <Link to="">Above</Link>
+                            <Link
+                              onClick={() =>
+                                setUsage("Average", "HouseElectricUsage")
+                              }
+                              className={
+                                houseMenu.HouseElectricUsage == "Average"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
+                              Average <Information />
+                            </Link>
+                            <Link
+                              onClick={() =>
+                                setUsage("Above", "HouseElectricUsage")
+                              }
+                              className={
+                                houseMenu.HouseElectricUsage == "Above"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
+                              Above <Information />
+                            </Link>
                           </div>
 
                           <div className="separator_cls"></div>
-                          <div className="household-form">
-                            <FormGroup>
-                              <div className="input-group">
-                                <TextInput
-                                  id="electricity-input"
-                                  labelText="Custom"
-                                  className="house-block-middle-form"
-                                  size="lg"
-                                />
-                                <TextInput
-                                  id="electricity-factor"
-                                  labelText="at a factor of:"
-                                  type="number"
-                                  className="house-block-middle-form"
-                                  size="lg"
-                                />
-                              </div>
-                            </FormGroup>
-                          </div>
+
+                          <HouseElectricity />
                         </div>
                       </TabPanel>
                       <TabPanel>
@@ -110,84 +144,52 @@ const HousePage = () => {
                             amount of heating fuel you used in xx.
                           </p>
                           <div className="status_cls">
-                            <Link to="">Below</Link>
-                            <Link to="" className="active">
-                              Average
+                            <Link
+                              onClick={() =>
+                                setUsage("Below", "HouseHeatingUsage")
+                              }
+                              className={
+                                houseMenu.HouseHeatingUsage == "Below"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
+                              Below <Information />
                             </Link>
-                            <Link to="">Above</Link>
+                            <Link
+                              onClick={() =>
+                                setUsage("Average", "HouseHeatingUsage")
+                              }
+                              className={
+                                houseMenu.HouseHeatingUsage == "Average"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
+                              Average <Information />
+                            </Link>
+                            <Link
+                              onClick={() =>
+                                setUsage("Above", "HouseHeatingUsage")
+                              }
+                              className={
+                                houseMenu.HouseHeatingUsage == "Above"
+                                  ? "active"
+                                  : ""
+                              }
+                            >
+                              Above <Information />
+                            </Link>
                           </div>
 
                           <div className="separator_cls"></div>
                           <div className="household-form">
-                            <FormGroup>
-                              <FormLabel>Natural Gas</FormLabel>
-                              <div className="input-group">
-                                <TextInput
-                                  id="electricity-input"
-                                  className="house-block-middle-form"
-                                  size="lg"
-                                />
-                                <TextInput
-                                  id="electricity-factor"
-                                  placeholder="KG"
-                                  type="number"
-                                  className="house-block-middle-form"
-                                  size="lg"
-                                />
-                              </div>
-                            </FormGroup>
-                            <FormGroup>
-                              <FormLabel>Coal</FormLabel>
-                              <div className="input-group">
-                                <TextInput
-                                  id="electricity-input"
-                                  className="house-block-middle-form"
-                                  size="lg"
-                                />
-                                <TextInput
-                                  id="electricity-factor"
-                                  placeholder="KG"
-                                  type="number"
-                                  className="house-block-middle-form"
-                                  size="lg"
-                                />
-                              </div>
-                            </FormGroup>
-                            <FormGroup>
-                              <FormLabel>LPG</FormLabel>
-                              <div className="input-group">
-                                <TextInput
-                                  id="electricity-input"
-                                  className="house-block-middle-form"
-                                  size="lg"
-                                />
-                                <TextInput
-                                  id="electricity-factor"
-                                  placeholder="KG"
-                                  type="number"
-                                  className="house-block-middle-form"
-                                  size="lg"
-                                />
-                              </div>
-                            </FormGroup>
-                            <FormGroup>
-                              <FormLabel>Propane</FormLabel>
-                              <div className="input-group">
-                                <TextInput
-                                  id="electricity-input"
-                                  className="house-block-middle-form"
-                                  size="lg"
-                                />
-                                <TextInput
-                                  id="electricity-factor"
-                                  placeholder="KG"
-                                  type="number"
-                                  className="house-block-middle-form"
-                                  size="lg"
-                                />
-                              </div>
-                            </FormGroup>
+                            <HouseNaturalGas />
+                            <HouseCoal />
+                            <HouseLPG />
+                            <HousePropane />
                           </div>
+                          <HouseFootprintsButton />
                         </div>
                       </TabPanel>
                     </TabPanels>
@@ -211,15 +213,10 @@ const HousePage = () => {
                           <div className="step-main-tit active">
                             <h5>Household</h5>
                             <div className="after_sbt_cont">
-                              <p>x.xx t</p>
+                              <HouseTotalResults />
                             </div>
                           </div>
-                          <div className="inner_tit active">
-                            <h5>Electricity</h5>
-                          </div>
-                          <div className="inner_tit active">
-                            <h5>Heating</h5>
-                          </div>
+                          <HouseIndividualResults />
                         </div>
                         <div className="step-inner">
                           <div className="step-main-tit">

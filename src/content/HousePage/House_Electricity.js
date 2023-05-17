@@ -1,10 +1,10 @@
-import React from 'react';
-import './_house-page.scss'
+import React from "react";
+import "./_house-page.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { setElectricity, setUserElectricityFactor } from "../../redux/house";
 
-import { TextInput } from '@carbon/react';
-import countryFactors from '../../countryFactors'
+import { FormGroup, FormLabel, TextInput } from "@carbon/react";
+import countryFactors from "../../countryFactors";
 
 const HouseElectricity = () => {
   const { selectedCountry, electricity, userElectricityFactor } = useSelector(
@@ -22,31 +22,69 @@ const HouseElectricity = () => {
   const handleElectricityChange = (e) => {
     dispatch(setElectricity(parseFloat(e.target.value)));
   };
- 
-  return <>  
-        <section className='house-electricity-container'>
-          <h5 className='global-input-description'>Electricity:</h5>
-          <TextInput
+
+  return (
+    <>
+      {" "}
+      <div className="household-form">
+        <FormGroup>
+          <div className="input-group">
+            <TextInput
               id="electricity-input"
+              labelText="Custom"
+              className="house-block-middle-form"
+              size="lg"
+              name="HouseElectricCustom"
               value={electricity || ""}
-              onChange={handleElectricityChange}    
-              labelText="Electricity in kWh"
-              className='house-block-middle-form'
-              size='lg'
-          />
-          <TextInput
-            id="electricity-factor"
-            labelText="at a factor of:"
-            type="number"
-            value={userElectricityFactor !== null 
-            ? userElectricityFactor 
-            : countryFactors[selectedCountry].electricity_factor || ""}
-            onChange={handleUserElectricityChange}
-            className='house-block-middle-form'
-            size='lg'
-          />
-        </section>
-  </>
+              onChange={handleElectricityChange}
+              autoComplete="off"
+            />
+            <TextInput
+              id="electricity-factor"
+              labelText="at a factor of:"
+              type="number"
+              className="house-block-middle-form"
+              size="lg"
+              name="HouseElectricFactor"
+              value={
+                userElectricityFactor !== null
+                  ? userElectricityFactor
+                  : countryFactors[selectedCountry].electricity_factor || ""
+              }
+              onChange={handleUserElectricityChange}
+              min={0}
+              autoComplete="off"
+            />
+          </div>
+        </FormGroup>
+      </div>
+      {/*}
+      <section className="house-electricity-container">
+        <h5 className="global-input-description">Electricity:</h5>
+        <TextInput
+          id="electricity-input"
+          value={electricity || ""}
+          onChange={handleElectricityChange}
+          labelText="Electricity in kWh"
+          className="house-block-middle-form"
+          size="lg"
+        />
+        <TextInput
+          id="electricity-factor"
+          labelText="at a factor of:"
+          type="number"
+          value={
+            userElectricityFactor !== null
+              ? userElectricityFactor
+              : countryFactors[selectedCountry].electricity_factor || ""
+          }
+          onChange={handleUserElectricityChange}
+          className="house-block-middle-form"
+          size="lg"
+        />
+        </section>{*/}
+    </>
+  );
 };
 
 export default HouseElectricity;

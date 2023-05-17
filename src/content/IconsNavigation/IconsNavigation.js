@@ -1,16 +1,16 @@
 import React from "react";
 import "./_icons-navigation.scss";
-import { Link } from "react-router-dom";
-import { withRouter } from "react-router-dom";
-
-import { Home } from "@carbon/react/icons";
-import { PlanePrivate } from "@carbon/react/icons";
-import { Car } from "@carbon/react/icons";
-import { Scooter } from "@carbon/react/icons";
-import { Bus } from "@carbon/react/icons";
-import { Add } from "@carbon/react/icons";
-import { ChartLineData } from "@carbon/react/icons";
-import { Earth } from "@carbon/react/icons";
+import { Link, withRouter } from "react-router-dom";
+import {
+  Home,
+  PlanePrivate,
+  Car,
+  Scooter,
+  Bus,
+  Add,
+  ChartLineData,
+  Earth,
+} from "@carbon/react/icons";
 import { Restaurant } from "@carbon/icons-react";
 
 /* -------------------------------
@@ -33,8 +33,10 @@ const IconsNavigation = ({ location }) => {
       <div className="top-header-sec">
         <div className="container">
           <div className="logo_inner">
-            <img src="/logo.png" />
-            <h5>GREENHOUSECALCULATOR.COM</h5>
+            <Link to="/">
+              <img src="/logo.png" />
+              <h5>GREENHOUSECALCULATOR.COM</h5>
+            </Link>
           </div>
           <div className="progress-bar-container fixed-navigation">
             {/* <Link to="/welcome" className={location.pathname === '/welcome' ? 'active' : ''}>

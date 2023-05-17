@@ -1,37 +1,30 @@
-import React from 'react';
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { 
-    setShowElectricityResult, 
-    resetElectricityFootprint,
-    
-    setShowNaturalGasResult,
-    resetNaturalGasFootprint,
-
-    setShowCoalResult,
-    resetCoalFootprint,
-
-    setShowLPGResult,
-    resetLPGFootprint,
-
-    setShowPropaneResult,
-    resetPropaneFootprint,
-
-    setShowWoodenPelletsResult,
-    resetWoodenPelletsFootprint
-
+import {
+  setShowElectricityResult,
+  resetElectricityFootprint,
+  setShowNaturalGasResult,
+  resetNaturalGasFootprint,
+  setShowCoalResult,
+  resetCoalFootprint,
+  setShowLPGResult,
+  resetLPGFootprint,
+  setShowPropaneResult,
+  resetPropaneFootprint,
+  setShowWoodenPelletsResult,
+  resetWoodenPelletsFootprint,
 } from "../../redux/house";
 
-import { Button } from '@carbon/react';
-import { TrashCan } from '@carbon/react/icons';
+import { Button } from "@carbon/react";
+import { TrashCan } from "@carbon/react/icons";
 
 const HouseElectricity = () => {
   const {
-
     electricity,
     electricityFootprint,
     showElectricityResult,
-    
+
     naturalGas,
     unitNaturalGas,
     naturalGasFootprint,
@@ -55,145 +48,186 @@ const HouseElectricity = () => {
     woodenPellets,
     unitWoodenPellets,
     woodenPelletsFootprint,
-    showWoodenPelletsResult
-
-    } = useSelector(
-    (state) => state.house
-  );
+    showWoodenPelletsResult,
+  } = useSelector((state) => state.house);
   const dispatch = useDispatch();
 
   const resetFootprintElectricity = () => {
     dispatch(resetElectricityFootprint());
-    dispatch(setShowElectricityResult(false))
+    dispatch(setShowElectricityResult(false));
   };
   const resetFootprintNaturalGas = () => {
     dispatch(resetNaturalGasFootprint());
-    dispatch(setShowNaturalGasResult(false))
+    dispatch(setShowNaturalGasResult(false));
   };
 
   const resetFootprintCoal = () => {
     dispatch(resetCoalFootprint());
-    dispatch(setShowCoalResult(false))
+    dispatch(setShowCoalResult(false));
   };
   const resetFootprintLPG = () => {
     dispatch(resetLPGFootprint());
-    dispatch(setShowLPGResult(false))
+    dispatch(setShowLPGResult(false));
   };
   const resetFootprintPropane = () => {
     dispatch(resetPropaneFootprint());
-    dispatch(setShowPropaneResult(false))
+    dispatch(setShowPropaneResult(false));
   };
   const resetFootprintWoodenPellets = () => {
     dispatch(resetWoodenPelletsFootprint());
-    dispatch(setShowWoodenPelletsResult(false))
+    dispatch(setShowWoodenPelletsResult(false));
   };
-
-  return <>  
-
-    {showElectricityResult && electricity > 0 &&  (
-        <section className='house-result-section'>
-          <h5 
-            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
-            className='house-results-container'>
-            {electricityFootprint} Kg:	{electricity} kWh of Electricity 
-          </h5>
-          <Button
-            kind='ghost'
-            size='lg'
-            className='house-result-trashcan-icon-container'
-            onClick={resetFootprintElectricity} >
-            <TrashCan />
-          </Button>
-        </section>
-      )
-    }
-    {showNaturalGasResult && naturalGas > 0 &&  (
-        <section className='house-result-section'>
-          <h5 
-            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
-            className='house-results-container'>
-            {naturalGasFootprint} Kg:	{naturalGas}   {unitNaturalGas} of Natural Gas
-          </h5>
-          <Button
-            kind='ghost'
-            size='md'
-            className='house-result-trashcan-icon-container'
-            onClick={resetFootprintNaturalGas} >
-            <TrashCan />
-          </Button>
-        </section>
-      )
-    }
- 
-    {showCoalResult && coal > 0 &&  (
-        <section className='house-result-section'>
-          <h5 
-            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
-            className='house-results-container'>
-            {coalFootprint} Kg:	{coal}   {unitCoal} of Coal
-          </h5>
-          <Button
-            kind='ghost'
-            size='md'
-            className='house-result-trashcan-icon-container'
-            onClick={resetFootprintCoal} >
-            <TrashCan />
-          </Button>
-        </section>
-      )
-    }
-    {showLPGResult && LPG > 0 &&  (
-        <section className='house-result-section'>
-          <h5 
-            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
-            className='house-results-container'>
-            {LPGFootprint} Kg:	{LPG}   {unitLPG} of Liquefied Petroleum Gas
-          </h5>
-          <Button
-            kind='ghost'
-            size='md'
-            className='house-result-trashcan-icon-container'
-            onClick={resetFootprintLPG} >
-            <TrashCan />
-          </Button>
-        </section>
-      )
-    }
-    {showPropaneResult && propane > 0 &&  (
-        <section className='house-result-section'>
+  return (
+    <>
+      <div className="inner_tit active">
+        <h5>
+          Electricity
+          {showElectricityResult && electricity > 0 && (
+            <div className="after_sbt_cont">
+              <p>
+                {electricityFootprint} Kg of CO2e
+                {/* : {electricity} kWh of Electricity {*/}
+              </p>
+            </div>
+          )}
+        </h5>
+      </div>
+      <div className="inner_tit active">
+        <h5>Heating</h5>
+        <div className="after_sbt_cont">
+          {parseFloat(naturalGasFootprint) +
+            parseFloat(coalFootprint) +
+            parseFloat(LPGFootprint) +
+            +parseFloat(propaneFootprint) >
+          0 ? (
+            <>
+              <p>
+                {parseFloat(naturalGasFootprint) +
+                  parseFloat(coalFootprint) +
+                  parseFloat(LPGFootprint) +
+                  +parseFloat(propaneFootprint)}
+                Kg of CO2e{" "}
+              </p>
+            </>
+          ) : null}
+        </div>
+      </div>
+      {/*}
+      {showElectricityResult && electricity > 0 && (
+        <section className="house-result-section">
           <h5
-            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }} 
-            className='house-results-container'>
-            {propaneFootprint} Kg:	{propane}   {unitPropane} of Propane
+            style={{ borderBottom: "1px solid rgba(255, 255, 255, 0.448)" }}
+            className="house-results-container"
+          >
+            {electricityFootprint} Kg: {electricity} kWh of Electricity
           </h5>
           <Button
-            kind='ghost'
-            size='md'
-            className='house-result-trashcan-icon-container'
-            onClick={resetFootprintPropane} >
+            kind="ghost"
+            size="lg"
+            className="house-result-trashcan-icon-container"
+            onClick={resetFootprintElectricity}
+          >
             <TrashCan />
           </Button>
         </section>
-      )
-    }
-    {showWoodenPelletsResult && woodenPellets > 0 &&  (
-        <section className='house-result-section'>
-          <h5 
-            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
-            className='house-results-container'>
-            {woodenPelletsFootprint} Kg:	{woodenPellets}   {unitWoodenPellets} of Wooden Pellets
+      )}
+      
+      {showNaturalGasResult && naturalGas > 0 && (
+        <section className="house-result-section">
+          <h5
+            style={{ borderBottom: "1px solid rgba(255, 255, 255, 0.448)" }}
+            className="house-results-container"
+          >
+            {naturalGasFootprint} Kg: {naturalGas} {unitNaturalGas} of Natural
+            Gas
           </h5>
           <Button
-            kind='ghost'
-            size='md'
-            className='house-result-trashcan-icon-container'
-            onClick={resetFootprintWoodenPellets} >
+            kind="ghost"
+            size="md"
+            className="house-result-trashcan-icon-container"
+            onClick={resetFootprintNaturalGas}
+          >
             <TrashCan />
           </Button>
         </section>
-      )
-    }
-  </>
+      )}
+
+      {showCoalResult && coal > 0 && (
+        <section className="house-result-section">
+          <h5
+            style={{ borderBottom: "1px solid rgba(255, 255, 255, 0.448)" }}
+            className="house-results-container"
+          >
+            {coalFootprint} Kg: {coal} {unitCoal} of Coal
+          </h5>
+          <Button
+            kind="ghost"
+            size="md"
+            className="house-result-trashcan-icon-container"
+            onClick={resetFootprintCoal}
+          >
+            <TrashCan />
+          </Button>
+        </section>
+      )}
+      {showLPGResult && LPG > 0 && (
+        <section className="house-result-section">
+          <h5
+            style={{ borderBottom: "1px solid rgba(255, 255, 255, 0.448)" }}
+            className="house-results-container"
+          >
+            {LPGFootprint} Kg: {LPG} {unitLPG} of Liquefied Petroleum Gas
+          </h5>
+          <Button
+            kind="ghost"
+            size="md"
+            className="house-result-trashcan-icon-container"
+            onClick={resetFootprintLPG}
+          >
+            <TrashCan />
+          </Button>
+        </section>
+      )}
+      {showPropaneResult && propane > 0 && (
+        <section className="house-result-section">
+          <h5
+            style={{ borderBottom: "1px solid rgba(255, 255, 255, 0.448)" }}
+            className="house-results-container"
+          >
+            {propaneFootprint} Kg: {propane} {unitPropane} of Propane
+          </h5>
+          <Button
+            kind="ghost"
+            size="md"
+            className="house-result-trashcan-icon-container"
+            onClick={resetFootprintPropane}
+          >
+            <TrashCan />
+          </Button>
+        </section>
+      )}
+      
+      {showWoodenPelletsResult && woodenPellets > 0 && (
+        <section className="house-result-section">
+          <h5
+            style={{ borderBottom: "1px solid rgba(255, 255, 255, 0.448)" }}
+            className="house-results-container"
+          >
+            {woodenPelletsFootprint} Kg: {woodenPellets} {unitWoodenPellets} of
+            Wooden Pellets
+          </h5>
+          <Button
+            kind="ghost"
+            size="md"
+            className="house-result-trashcan-icon-container"
+            onClick={resetFootprintWoodenPellets}
+          >
+            <TrashCan />
+          </Button>
+        </section>
+      )}{*/}
+    </>
+  );
 };
 
 export default HouseElectricity;
