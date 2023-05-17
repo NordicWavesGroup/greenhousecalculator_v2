@@ -47,6 +47,7 @@ import {
   setShowFlightResult,
   resetFlightFootprint,
 } from "../../redux/flights";
+import Slider from "react-slick";
 
 const FlightsPage = () => {
   const addClass = () => {
@@ -59,19 +60,23 @@ const FlightsPage = () => {
   const [formIndex, setFormIndex] = useState(flights.length);
   const [apiMessage, setApiMessage] = useState("");
   const [notification, setNotification] = useState(false);
+  const [alertClass, setalertClass] = useState("error");
+  const [isLoading, setIsLoading] = useState(false);
+  const [flightsCount, setflightsCount] = useState(1);
 
-  const handleAddFields = () => {
+  const handleAddFields = async () => {
+    alert(formIndex);
     let oldIndex = formIndex - 1 > 0 ? formIndex - 1 : 0;
-    if (!flights[oldIndex] || !flights[oldIndex].selectedAirportFrom.name) {
-      setApiMessage(" Please first select any Airport..");
-      setNotification(true);
-      setTimeout(() => {
-        handleCloseNotify();
-      }, 5000);
-    } else {
-      setFormFields([...formFields, { from: "", to: "" }]);
-      setFormIndex(formIndex + 1);
-    }
+    // if (!flights[oldIndex] || !flights[oldIndex].selectedAirportFrom.name) {
+    //   setApiMessage(" Please first select any Airport..");
+    //   setNotification(true);
+    //   setTimeout(() => {
+    //     handleCloseNotify();
+    //   }, 5000);
+    // } else {
+    await setFormFields([...formFields, { from: "", to: "" }]);
+    await setFormIndex(formIndex + 1);
+    //}
   };
   const resetFootprintFlight = (index) => {
     let showFlight = false;
@@ -92,6 +97,52 @@ const FlightsPage = () => {
   const handleCloseNotify = () => {
     setNotification(false);
   };
+  const makeFlightForm = (e) => {
+    if (e.target.value > 5) {
+      setApiMessage("5 max flights are allowed");
+      setalertClass("error");
+      setNotification(true);
+      setflightsCount(1);
+    } else {
+      console.log("flights.length", flights.length);
+      console.log("Shree Ram flightsCount", e.target.value);
+      setflightsCount(e.target.value);
+      console.log("Shree Ram setflightsCount", flightsCount);
+      if (e.target.value > flightsCount) {
+        for (let i = flightsCount; i < e.target.value; i++) {
+          console.log("i", i);
+          handleAddFields();
+        }
+      } else {
+        for (let i = flightsCount; i < e.target.value; i--) {
+          removeFormFields(i);
+        }
+      }
+    }
+  };
+
+  const settings = {
+    dots: false,
+    infinite: false,
+    centerPadding: "60px",
+    speed: 100,
+    slidesToShow: 3,
+    responsive: [
+      {
+        breakpoint: 1399,
+        settings: {
+          slidesToShow: 2,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 1,
+        },
+      },
+    ],
+  };
+  console.log("formFields", formFields);
   return (
     <>
       {notification && (
@@ -128,14 +179,14 @@ const FlightsPage = () => {
                     </TabList>
                     <TabPanels>
                       <TabPanel>
-                        <div className="household_form_cont car_form">
+                        <div className="car_page_sec household_form_cont car_form">
                           <p>
                             Please fill in number of flights you had and details
                             for them.
                           </p>
                           <div className="household-form">
                             <FormGroup>
-                              <div className="input-group">
+                              <div className="input-group car_inner_cls">
                                 <label>You had</label>
                                 <TextInput
                                   id="electricity-factor"
@@ -143,48 +194,30 @@ const FlightsPage = () => {
                                   type="number"
                                   className="house-block-middle-form"
                                   size="lg"
+                                  min={1}
+                                  max={5}
+                                  onChange={(e) => makeFlightForm(e)}
+                                  value={flightsCount > 5 ? 0 : flightsCount}
                                 />
                               </div>
                             </FormGroup>
-                            <div className="car_inner_form">
-                              <div className="car_label">
-                                <span>Flight</span>
-                              </div>
-                              <FormGroup>
-                                <Select
-                                  labelText="From"
-                                  defaultValue="chooseOption"
-                                  size="lg"
-                                >
-                                  <option value="chooseOption">
-                                    Pick an airport
-                                  </option>
-                                  <option value="usa">
-                                    Electric average battery
-                                  </option>
-                                  <option value="qatar">
-                                    Hybrid_ ( full ) average battery
-                                  </option>
-                                </Select>
-                              </FormGroup>
-                              <FormGroup>
-                                <Select
-                                  labelText="To"
-                                  defaultValue="chooseOption"
-                                  size="lg"
-                                >
-                                  <option value="chooseOption">
-                                    Pick an airport
-                                  </option>
-                                  <option value="usa">
-                                    Electric average battery
-                                  </option>
-                                  <option value="qatar">
-                                    Hybrid_ ( full ) average battery
-                                  </option>
-                                </Select>
-                              </FormGroup>
-                            </div>
+                            <Slider {...settings}>
+                              {formFields.map((field, index) => (
+                                <div className="car_inner_form">
+                                  <div className="car_label d-flex">
+                                    <span>Flight {index + 1}</span>
+                                    <Button
+                                      className="flight-result-trashcan-icon-container removeBtn "
+                                      onClick={() => removeFormFields(index)}
+                                    >
+                                      <TrashCan />
+                                    </Button>
+                                  </div>
+                                  <FlightFrom index={index} />
+                                  <FlightTo index={index} />
+                                </div>
+                              ))}
+                            </Slider>
                           </div>
                         </div>
                       </TabPanel>
@@ -192,6 +225,7 @@ const FlightsPage = () => {
                   </Tabs>
                 </div>
               </div>
+              <FlightFootprintsButton />
             </div>
             <div className="housHold_col">
               <div className="mobile_sidebar">
@@ -295,5 +329,4 @@ const FlightsPage = () => {
     </>
   );
 };
-
 export default FlightsPage;

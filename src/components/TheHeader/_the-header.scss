@@ -145,9 +145,11 @@
     left: calc(50% - 31px);
     bottom: -12px;
 }
-.logo_inner {
+.logo_inner a {
     display: flex;
     align-items: center;
+    color: #fff;
+    text-decoration: none;
 }  
 .logo_inner h5 {
     font-size: 14px;

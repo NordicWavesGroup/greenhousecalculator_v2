@@ -38,8 +38,8 @@ const FlightFrom = ({ index }) => {
   };
 
   return (
-    <section className="flight-inputs-containers1">
-      <h5 className="global-input-description">From:</h5>
+    <section className="flight-inputs">
+      <h5 className="global-description">From:</h5>
       <ComboBox
         id="flight-from-select"
         data-index={index}

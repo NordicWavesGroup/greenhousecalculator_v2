@@ -34,8 +34,8 @@ const FlightTo = ({ index, setFormFields, formFields }) => {
   };
   return (
     <>
-      <section className="flight-inputs-containers1">
-        <h5 className="global-input-description">To:</h5>
+      <section className="flight-inputs">
+        <h5 className="global-description">To:</h5>
         <ComboBox
           id="flight-to-select"
           data-index={index}
