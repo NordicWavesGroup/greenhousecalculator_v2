@@ -14,6 +14,7 @@ const FlightFrom = ({ index }) => {
     useState(airportsIATA);
   const dispatch = useDispatch();
   const handleAirportSelectionFrom = (selectedItem) => {
+    console.log("selectedItem", selectedItem);
     if (selectedItem && selectedItem.selectedItem) {
       const { lat, lon } = selectedItem.selectedItem;
       selectedItem.selectedItem.index = index;
@@ -36,7 +37,6 @@ const FlightFrom = ({ index }) => {
     });
     setFilteredAirportsFrom(filtered);
   };
-
   return (
     <section className="flight-inputs">
       <h5 className="global-description">From:</h5>
@@ -44,6 +44,7 @@ const FlightFrom = ({ index }) => {
         id="flight-from-select"
         data-index={index}
         items={filteredAirportsFrom}
+        ///value={flights[index] ? flights[index].selectedAirportFrom.name : null}
         itemToString={(airport) =>
           airport
             ? `${airport.name ?? ""} ${airport.city ?? ""} ${
