@@ -9,10 +9,7 @@ import {
 } from "../../redux/secondary";
 import countryFactors from "../../countryFactors";
 
-import { Button } from "@carbon/react";
-import { Calculator } from "@carbon/react/icons";
-
-const SecondaryFootprint = () => {
+const useConsumptionCalculation = () => {
   const { selectedCountrySecondary, foodDiet, waterFootprint } = useSelector(
     (state) => state.secondary
   );
@@ -23,10 +20,19 @@ const SecondaryFootprint = () => {
       dispatch(setFoodDietFootprint("Error, check your input"));
     } else {
       let total =
-        parseFloat(waterFootprint) +
-        countryFactors[selectedCountrySecondary].foodDietRange[foodDiet]
-          .foodDiet_factor;
-
+        parseFloat(waterFootprint) + countryFactors[selectedCountrySecondary]
+          ? countryFactors[selectedCountrySecondary].foodDietRange
+            ? countryFactors[selectedCountrySecondary].foodDietRange[foodDiet]
+              ? countryFactors[selectedCountrySecondary].foodDietRange[foodDiet]
+                  .foodDiet_factor
+                ? countryFactors[selectedCountrySecondary].foodDietRange[
+                    foodDiet
+                  ].foodDiet_factor
+                : 0
+              : 0
+            : 0
+          : 0;
+      console.log("=========total==================", total);
       dispatch(setWaterFootprint(waterFootprint));
       dispatch(setFoodDietFootprint(total.toFixed(2)));
       dispatch(setShowWaterResult(true));
@@ -34,18 +40,7 @@ const SecondaryFootprint = () => {
     }
   };
 
-  return (
-    <>
-      <Button
-        onClick={showFootprintResultsFoodDiet}
-        className="secondary-calculate-footprint-button"
-      >
-        {" "}
-        Calculate Household Consumption Footprint
-        <Calculator className="secondary-calculator-icon" />
-      </Button>
-    </>
-  );
+  return { showFootprintResultsFoodDiet };
 };
 
-export default SecondaryFootprint;
+export default useConsumptionCalculation;

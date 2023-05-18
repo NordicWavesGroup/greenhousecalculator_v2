@@ -36,7 +36,7 @@ import HouseFootprintsButton from "./House_FootprintsButton";
 import HouseIndividualResults from "./House_IndividualResults";
 import HouseDataVisualization from "./House_DataVisualization";
 import HouseOffsetButton from "./House_OffsetButton";
-
+import ResultsPage from "./../ResultsPage/ResultsPage";
 import HouseTotalResults from "./House_TotalResults";
 import { Information } from "@carbon/icons-react";
 
@@ -189,7 +189,6 @@ const HousePage = () => {
                             <HouseLPG />
                             <HousePropane />
                           </div>
-                          <HouseFootprintsButton />
                         </div>
                       </TabPanel>
                     </TabPanels>
@@ -197,96 +196,7 @@ const HousePage = () => {
                 </div>
               </div>
             </div>
-            <div className="housHold_col">
-              <div className="mobile_sidebar">
-                <div className="result_mobile">
-                  <span onClick={addClass} className="result_menu">
-                    Results
-                  </span>
-                </div>
-                <div className="household-right-sidebar">
-                  <h3>Summary</h3>
-                  <div className="step-cont">
-                    <div className="inner-step-list">
-                      <div className="inner_step_cont">
-                        <div className="step-inner enter_page">
-                          <div className="step-main-tit active">
-                            <h5>Household</h5>
-                            <div className="after_sbt_cont">
-                              <HouseTotalResults />
-                            </div>
-                          </div>
-                          <HouseIndividualResults />
-                        </div>
-                        <div className="step-inner">
-                          <div className="step-main-tit">
-                            <h5>Private Vehicles</h5>
-                            <div className="after_sbt_cont">
-                              <p></p>
-                            </div>
-                          </div>
-                          <div className="inner_tit">
-                            <h5>Car</h5>
-                          </div>
-                          <div className="inner_tit">
-                            <h5>Motorbike</h5>
-                          </div>
-                        </div>
-                        <div className="step-inner">
-                          <div className="step-main-tit">
-                            <h5>Public Transport</h5>
-                            <div className="after_sbt_cont">
-                              <p></p>
-                            </div>
-                          </div>
-                          <div className="inner_tit">
-                            <h5>Bus</h5>
-                          </div>
-                          <div className="inner_tit">
-                            <h5>Train</h5>
-                          </div>
-                          <div className="inner_tit">
-                            <h5>Taxi</h5>
-                          </div>
-                        </div>
-                        <div className="step-inner">
-                          <div className="step-main-tit">
-                            <h5>Flight</h5>
-                            <div className="after_sbt_cont">
-                              <p></p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="step-inner">
-                          <div className="step-main-tit">
-                            <h5>Consumption</h5>
-                            <div className="after_sbt_cont">
-                              <p></p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="step-inner">
-                          <div className="step-main-tit">
-                            <h5>Results</h5>
-                            <div className="after_sbt_cont">
-                              <p>x.xxx t</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="call_to_action">
-                      <Button className="wht-btn">
-                        Send results to your email
-                      </Button>
-                      <Button className="primary_btn">
-                        Offset your Carbon
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ResultsPage />
           </div>
         </div>
       </div>

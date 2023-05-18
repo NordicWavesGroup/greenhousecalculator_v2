@@ -5,14 +5,14 @@ const initialState = {
 
   foodDiet: "Vegetarian",
   foodDietFootprint: 0,
-  resetFoodDietFootprint:0,
-  showFoodDietResult:false,
+  resetFoodDietFootprint: 0,
+  showFoodDietResult: false,
 
-  water:0,
-  waterFootprint:0,
-  showWaterResult:false,
+  water: 0,
+  waterFootprint: 0,
+  showWaterResult: false,
 
-  secondaryFootprint:0,
+  secondaryFootprint: 0,
 };
 
 export const secondarySlice = createSlice({
@@ -29,7 +29,7 @@ export const secondarySlice = createSlice({
     setFoodDietFootprint: (state, action) => {
       state.foodDietFootprint = action.payload;
     },
-    resetFoodDietFootprint: state => {
+    resetFoodDietFootprint: (state) => {
       state.foodDietFootprint = initialState.foodDietFootprint;
     },
     setShowFoodDietResult: (state, action) => {
@@ -42,7 +42,7 @@ export const secondarySlice = createSlice({
     setWaterFootprint: (state, action) => {
       state.waterFootprint = action.payload;
     },
-    resetWaterFootprint: state => {
+    resetWaterFootprint: (state) => {
       state.waterFootprint = initialState.waterFootprint;
     },
     setShowWaterResult: (state, action) => {
@@ -50,27 +50,25 @@ export const secondarySlice = createSlice({
     },
     //Secondary Total Footprint
     setSecondaryFootprint: (state, action) => {
-    state.secondaryFootprint = action.payload;
+      state.secondaryFootprint = action.payload;
+    },
   },
-  }
 });
 
-export const { 
+export const {
+  selectCountrySecondary,
+  setFoodDiet,
+  setRangeFoodDietFactor,
+  setFoodDietFootprint,
+  resetFoodDietFootprint,
+  setShowFoodDietResult,
 
-               selectCountrySecondary,
-               setFoodDiet, 
-               setRangeFoodDietFactor, 
-               setFoodDietFootprint,
-               resetFoodDietFootprint, 
-               setShowFoodDietResult,
+  setWater,
+  setWaterFootprint,
+  resetWaterFootprint,
+  setShowWaterResult,
 
-               setWater,
-               setWaterFootprint,
-               resetWaterFootprint, 
-               setShowWaterResult,
-
-               setSecondaryFootprint,
-
-              } = secondarySlice.actions;
+  setSecondaryFootprint,
+} = secondarySlice.actions;
 
 export default secondarySlice.reducer;

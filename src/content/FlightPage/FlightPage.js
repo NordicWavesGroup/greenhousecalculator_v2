@@ -27,6 +27,7 @@ import {
 import FlightHeader from "./Flight_Header";
 import FlightHeaderResults from "./Flight_HeaderResults";
 import FlightHeaderVisualization from "./Flight_HeaderVisualization";
+import ResultsPage from "./../ResultsPage/ResultsPage";
 import FlightOptions from "./Flight_Options";
 import FlightFrom from "./Flight_From";
 import FlightTo from "./Flight_To";
@@ -62,22 +63,7 @@ const FlightsPage = () => {
   const [notification, setNotification] = useState(false);
   const [alertClass, setalertClass] = useState("error");
   const [isLoading, setIsLoading] = useState(false);
-  const [flightsCount, setflightsCount] = useState(1);
 
-  const handleAddFields = async () => {
-    alert(formIndex);
-    let oldIndex = formIndex - 1 > 0 ? formIndex - 1 : 0;
-    // if (!flights[oldIndex] || !flights[oldIndex].selectedAirportFrom.name) {
-    //   setApiMessage(" Please first select any Airport..");
-    //   setNotification(true);
-    //   setTimeout(() => {
-    //     handleCloseNotify();
-    //   }, 5000);
-    // } else {
-    await setFormFields([...formFields, { from: "", to: "" }]);
-    await setFormIndex(formIndex + 1);
-    //}
-  };
   const resetFootprintFlight = (index) => {
     let showFlight = false;
     let footerPrint = 0;
@@ -94,30 +80,24 @@ const FlightsPage = () => {
     }
     resetFootprintFlight(index);
   };
+
   const handleCloseNotify = () => {
     setNotification(false);
   };
+
   const makeFlightForm = (e) => {
     if (e.target.value > 5) {
       setApiMessage("5 max flights are allowed");
       setalertClass("error");
       setNotification(true);
-      setflightsCount(1);
+      setFormIndex(0);
     } else {
-      console.log("flights.length", flights.length);
-      console.log("Shree Ram flightsCount", e.target.value);
-      setflightsCount(e.target.value);
-      console.log("Shree Ram setflightsCount", flightsCount);
-      if (e.target.value > flightsCount) {
-        for (let i = flightsCount; i < e.target.value; i++) {
-          console.log("i", i);
-          handleAddFields();
-        }
-      } else {
-        for (let i = flightsCount; i < e.target.value; i--) {
-          removeFormFields(i);
-        }
+      const newArray = [];
+      for (let i = 1; i <= e.target.value; i++) {
+        newArray.push({ from: "", to: "" });
       }
+      setFormFields(newArray);
+      setFormIndex(e.target.value);
     }
   };
 
@@ -127,6 +107,7 @@ const FlightsPage = () => {
     centerPadding: "60px",
     speed: 100,
     slidesToShow: 3,
+    slidesToScroll: 1,
     responsive: [
       {
         breakpoint: 1399,
@@ -142,7 +123,7 @@ const FlightsPage = () => {
       },
     ],
   };
-  console.log("formFields", formFields);
+
   return (
     <>
       {notification && (
@@ -172,7 +153,7 @@ const FlightsPage = () => {
                     tabContentClassName="custom-tab-content"
                     tabContentStyle={{ padding: "20px" }}
                   >
-                    <TabList>
+                    <TabList aria-label={""}>
                       <Tab id="tab1" label="Tab 1">
                         Flight
                       </Tab>
@@ -185,10 +166,11 @@ const FlightsPage = () => {
                             for them.
                           </p>
                           <div className="household-form">
-                            <FormGroup>
+                            <FormGroup legendText={""}>
                               <div className="input-group car_inner_cls">
                                 <label>You had</label>
                                 <TextInput
+                                  labelText={""}
                                   id="electricity-factor"
                                   placeholder="1 Flight"
                                   type="number"
@@ -196,28 +178,36 @@ const FlightsPage = () => {
                                   size="lg"
                                   min={1}
                                   max={5}
+                                  ///onClick={(e) => makeFlightForm(e)}
                                   onChange={(e) => makeFlightForm(e)}
-                                  value={flightsCount > 5 ? 0 : flightsCount}
+                                  //onBlur={(e) => makeFlightForm(e)}
+                                  value={
+                                    formIndex < 0 || formIndex > 5
+                                      ? 0
+                                      : formIndex
+                                  }
                                 />
                               </div>
                             </FormGroup>
-                            <Slider {...settings}>
-                              {formFields.map((field, index) => (
-                                <div className="car_inner_form">
-                                  <div className="car_label d-flex">
-                                    <span>Flight {index + 1}</span>
-                                    <Button
-                                      className="flight-result-trashcan-icon-container removeBtn "
-                                      onClick={() => removeFormFields(index)}
-                                    >
-                                      <TrashCan />
-                                    </Button>
+                            {formFields.length != 0 && (
+                              <Slider {...settings}>
+                                {formFields.map((field, index) => (
+                                  <div className="car_inner_form">
+                                    <div className="car_label d-flex">
+                                      <span>Flight {index + 1}</span>
+                                      <Button
+                                        className="flight-result-trashcan-icon-container removeBtn "
+                                        onClick={() => removeFormFields(index)}
+                                      >
+                                        <TrashCan />
+                                      </Button>
+                                    </div>
+                                    <FlightFrom index={index} />
+                                    <FlightTo index={index} />
                                   </div>
-                                  <FlightFrom index={index} />
-                                  <FlightTo index={index} />
-                                </div>
-                              ))}
-                            </Slider>
+                                ))}
+                              </Slider>
+                            )}
                           </div>
                         </div>
                       </TabPanel>
@@ -225,103 +215,8 @@ const FlightsPage = () => {
                   </Tabs>
                 </div>
               </div>
-              <FlightFootprintsButton />
             </div>
-            <div className="housHold_col">
-              <div className="mobile_sidebar">
-                <div className="result_mobile">
-                  <span onClick={addClass} className="result_menu">
-                    Results
-                  </span>
-                </div>
-                <div className="household-right-sidebar">
-                  <h3>Summary</h3>
-                  <div className="step-cont">
-                    <div className="inner-step-list">
-                      <div className="inner_step_cont">
-                        <div className="step-inner enter_page">
-                          <div className="step-main-tit active fill">
-                            <h5>Household</h5>
-                            <div className="after_sbt_cont">
-                              <p>x.xx t</p>
-                            </div>
-                          </div>
-                          <div className="inner_tit active fill">
-                            <h5>Electricity</h5>
-                          </div>
-                          <div className="inner_tit active fill">
-                            <h5>Heating</h5>
-                          </div>
-                        </div>
-                        <div className="step-inner enter_page">
-                          <div className="step-main-tit active fill">
-                            <h5>Private Vehicles</h5>
-                            <div className="after_sbt_cont">
-                              <p>x.xx t</p>
-                            </div>
-                          </div>
-                          <div className="inner_tit active fill">
-                            <h5>Car</h5>
-                          </div>
-                          <div className="inner_tit active fill">
-                            <h5>Motorbike</h5>
-                          </div>
-                        </div>
-                        <div className="step-inner enter_page">
-                          <div className="step-main-tit active fill">
-                            <h5>Public Transport</h5>
-                            <div className="after_sbt_cont">
-                              <p>x.xx t</p>
-                            </div>
-                          </div>
-                          <div className="inner_tit active fill">
-                            <h5>Bus</h5>
-                          </div>
-                          <div className="inner_tit active fill">
-                            <h5>Train</h5>
-                          </div>
-                          <div className="inner_tit active fill">
-                            <h5>Taxi</h5>
-                          </div>
-                        </div>
-                        <div className="step-inner enter_page">
-                          <div className="step-main-tit">
-                            <h5>Flight</h5>
-                            <div className="after_sbt_cont">
-                              <p>x.xx t</p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="step-inner">
-                          <div className="step-main-tit">
-                            <h5>Consumption</h5>
-                            <div className="after_sbt_cont">
-                              <p></p>
-                            </div>
-                          </div>
-                        </div>
-                        <div className="step-inner">
-                          <div className="step-main-tit">
-                            <h5>Results</h5>
-                            <div className="after_sbt_cont">
-                              <p>x.xxx t</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="call_to_action">
-                      <Button className="wht-btn">
-                        Send results to your email
-                      </Button>
-                      <Button className="primary_btn">
-                        Offset your Carbon
-                      </Button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <ResultsPage />
           </div>
         </div>
       </div>

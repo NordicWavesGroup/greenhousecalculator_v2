@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ReactGA from 'react-ga';
+import ReactGA from "react-ga";
 
 import { Button } from "@carbon/react";
 import html2canvas from "html2canvas";
@@ -25,7 +25,6 @@ const SecondaryFootprint = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [notification, setNotification] = useState(false);
 
-
   const handleOpen = (e) => {
     const but = e.target;
     //but.style.display = "none";
@@ -46,9 +45,9 @@ const SecondaryFootprint = () => {
     setOpen(true);
 
     ReactGA.event({
-      category: 'Button',
-      action: 'Click',
-      label: 'Example button clicked'
+      category: "Button",
+      action: "Click",
+      label: "Example button clicked",
     });
   };
 

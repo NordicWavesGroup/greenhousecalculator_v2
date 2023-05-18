@@ -1,6 +1,6 @@
-import React from "react";
+import { React, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Button } from "@carbon/react";
+import { Button, ToastNotification } from "@carbon/react";
 import { Calculator } from "@carbon/react/icons";
 import {
   setDistanceBetweenAirports,
@@ -8,9 +8,14 @@ import {
   setFlightFootprint,
 } from "../../redux/flights";
 
-const FlightFootprint = () => {
+const FlightFootprint = (formIndex) => {
   const dispatch = useDispatch();
-
+  const [apiMessage, setApiMessage] = useState("");
+  const [notification, setNotification] = useState(false);
+  const [alertClass, setalertClass] = useState("error");
+  const handleCloseNotify = () => {
+    setNotification(false);
+  };
   function distance(lat1, lon1, lat2, lon2) {
     const R = 6371; // km
     const dLat = (lat2 - lat1) * (Math.PI / 180);
@@ -28,6 +33,11 @@ const FlightFootprint = () => {
   const { flights } = useSelector((state) => state.flights);
   const calculateFlightsFootprint = () => {
     let showFlight = true;
+    if (formIndex.formIndex > flights.length) {
+      setApiMessage("Please fill all flight From && To ");
+      setalertClass("error");
+      setNotification(true);
+    }
     if (flights.length > 0) {
       for (let index = 0; index < flights.length; index++) {
         let flight = flights[index];
@@ -57,19 +67,38 @@ const FlightFootprint = () => {
           );
           dispatch(setFlightFootprint({ carbonFootprint, index }));
           dispatch(setShowFlightResult({ showFlight, index }));
+        } else {
+          alert("please");
         }
       }
     }
   };
 
   return (
-    <Button
-      onClick={calculateFlightsFootprint}
-      className="flight-calculate-footprint-button"
-    >
-      Calculate Flights Footprint
-      <Calculator className="secondary-calculator-icon" />
-    </Button>
+    <>
+      {notification && (
+        <>
+          <ToastNotification
+            kind={"error"}
+            title="Alert"
+            subtitle={apiMessage}
+            caption=""
+            onCloseButtonClick={handleCloseNotify}
+            hideCloseButton={false}
+            lowContrast={false}
+            open={notification}
+            className="custom-toast-notification" // Add custom CSS class name
+          />
+        </>
+      )}
+      <Button
+        onClick={calculateFlightsFootprint}
+        className="flight-calculate-footprint-button"
+      >
+        Calculate Flights Footprint
+        <Calculator className="secondary-calculator-icon" />
+      </Button>
+    </>
   );
 };
 

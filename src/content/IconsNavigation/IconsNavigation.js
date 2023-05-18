@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./_icons-navigation.scss";
 import { Link, withRouter } from "react-router-dom";
 import {
@@ -12,6 +12,8 @@ import {
   Earth,
 } from "@carbon/react/icons";
 import { Restaurant } from "@carbon/icons-react";
+import useHouseCalculation from "../HousePage/House_FootprintsButton";
+import useConsumptionCalculation from "../ConsumptionPage/Consumption_FootprintsButton";
 
 /* -------------------------------
   Imported the withRouter Higher-Order Component (HOC) from the react-router-dom library to get access to the current location object.
@@ -27,6 +29,21 @@ import { Restaurant } from "@carbon/icons-react";
   ------------------------------------ */
 
 const IconsNavigation = ({ location }) => {
+  const { calculateAllHouseFootprint } = useHouseCalculation();
+  const { showFootprintResultsFoodDiet } = useConsumptionCalculation();
+
+  useEffect(() => {
+    // This code will run after the component mounts
+    calculateAllHouseFootprint();
+    showFootprintResultsFoodDiet();
+
+    // Clean-up function
+    return () => {
+      // This code will run before the component unmounts
+      console.log("Component unmounted");
+    };
+  }, [location.pathname]);
+
   return (
     <>
       {/* ------------------------------------------------------------------- */}

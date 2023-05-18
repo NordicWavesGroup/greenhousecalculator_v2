@@ -1,6 +1,5 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-
 import {
   setElectricityFootprint,
   setShowElectricityResult,
@@ -20,10 +19,7 @@ import {
 
 import countryFactors from "../../countryFactors";
 
-import { Button } from "@carbon/react";
-import { Calculator } from "@carbon/react/icons";
-
-const HouseElectricity = () => {
+const useHouseCalculation = () => {
   const {
     numPeople,
     selectedCountry,
@@ -186,13 +182,7 @@ const HouseElectricity = () => {
     calculatePropaneFootprint();
     calculateWoodenPelletsFootprint();
   };
-  return (
-    <>
-      <Button onClick={calculateAllHouseFootprint} className="primary_btn">
-        Calculate Household Energy Footprint <Calculator />
-      </Button>
-    </>
-  );
+  return { calculateAllHouseFootprint };
 };
 
-export default HouseElectricity;
+export default useHouseCalculation;
