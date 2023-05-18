@@ -43,11 +43,21 @@ const ConsumptionTotalResult = ({ location }) => {
           }
         >
           <h5>Consumption</h5>
-          <div className="after_sbt_cont active fill">
-            <p>
-              {totalSecondaryFootprint.toFixed(2)}
-              Kg of CO2e
-            </p>
+          <div
+            className={
+              totalSecondaryFootprint > 0
+                ? "after_sbt_cont active fill"
+                : "after_sbt_cont active"
+            }
+          >
+            {totalSecondaryFootprint > 0 ? (
+              <>
+                <p>
+                  {totalSecondaryFootprint.toFixed(2)}
+                  Kg of CO2e
+                </p>
+              </>
+            ) : null}
           </div>
         </div>
       </div>
