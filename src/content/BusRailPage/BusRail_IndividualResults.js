@@ -1,42 +1,34 @@
-import React from 'react';
+import React from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { withRouter } from "react-router-dom";
 
-import { 
-    setShowBusResult, 
-    resetBusFootprint,
-    
-    setShowCoachResult,
-    resetCoachFootprint,
-
-    setShowLocalTrainResult,
-    resetLocalTrainFootprint,
-
-    setShowLongTrainResult,
-    resetLongTrainFootprint,
-
-    setShowTramResult,
-    resetTramFootprint,
-
-    setShowSubwayResult,
-    resetSubwayFootprint,
-
-    setShowTaxiResult,
-    resetTaxiFootprint
-
+import {
+  setShowBusResult,
+  resetBusFootprint,
+  setShowCoachResult,
+  resetCoachFootprint,
+  setShowLocalTrainResult,
+  resetLocalTrainFootprint,
+  setShowLongTrainResult,
+  resetLongTrainFootprint,
+  setShowTramResult,
+  resetTramFootprint,
+  setShowSubwayResult,
+  resetSubwayFootprint,
+  setShowTaxiResult,
+  resetTaxiFootprint,
 } from "../../redux/busrail";
 
+import { Button } from "@carbon/react";
+import { TrashCan } from "@carbon/react/icons";
 
-import { Button } from '@carbon/react';
-import { TrashCan } from '@carbon/react/icons';
-
-const BusRailResults = () => {
+const BusRailResults = ({ location }) => {
   const {
-
     bus,
     unitBus,
     busFootprint,
     showBusResult,
-    
+
     coach,
     unitCoach,
     coachFootprint,
@@ -65,164 +57,99 @@ const BusRailResults = () => {
     taxi,
     unitTaxi,
     taxiFootprint,
-    showTaxiResult
-
-    } = useSelector(
-    (state) => state.busrail
-  );
+    showTaxiResult,
+  } = useSelector((state) => state.busrail);
   const dispatch = useDispatch();
 
   const resetFootprintBus = () => {
     dispatch(resetBusFootprint());
-    dispatch(setShowBusResult(false))
+    dispatch(setShowBusResult(false));
   };
   const resetFootprintCoach = () => {
     dispatch(resetCoachFootprint());
-    dispatch(setShowCoachResult(false))
+    dispatch(setShowCoachResult(false));
   };
   const resetFootprintLocalTrain = () => {
     dispatch(resetLocalTrainFootprint());
-    dispatch(setShowLocalTrainResult(false))
+    dispatch(setShowLocalTrainResult(false));
   };
   const resetFootprintLongTrain = () => {
     dispatch(resetLongTrainFootprint());
-    dispatch(setShowLongTrainResult(false))
+    dispatch(setShowLongTrainResult(false));
   };
   const resetFootprintTram = () => {
     dispatch(resetTramFootprint());
-    dispatch(setShowTramResult(false))
+    dispatch(setShowTramResult(false));
   };
   const resetFootprintSubway = () => {
     dispatch(resetSubwayFootprint());
-    dispatch(setShowSubwayResult(false))
+    dispatch(setShowSubwayResult(false));
   };
   const resetFootprintTaxi = () => {
     dispatch(resetTaxiFootprint());
-    dispatch(setShowTaxiResult(false))
+    dispatch(setShowTaxiResult(false));
   };
 
-  return <>  
+  return (
+    <>
+      <div
+        className={
+          location.pathname === "/bus-rail" ||
+          location.pathname === "/flight" ||
+          location.pathname === "/consumption"
+            ? "inner_tit active"
+            : "inner_tit"
+        }
+      >
+        <h5>Bus</h5>
+        <div className="after_sbt_cont active fill">
+          <p>
+            {parseFloat(busFootprint) + parseFloat(coachFootprint)} Kg for{" "}
+            {bus + coach} {unitBus}
+          </p>
+        </div>
+      </div>
 
-  {showBusResult && bus > 0 &&  (
-        <section className='bus-rail-result-section'>
-          <h5
-            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
-            className='bus-rail-results-container'>
-            {busFootprint} Kg:	{bus}   {unitBus} of Bus
-          </h5>
-          <Button
-            kind='ghost'
-            size='md'
-            className='bus-railresult-trashcan-icon-container'
-            onClick={resetFootprintBus} >
-            <TrashCan />
-          </Button>
-        </section>
-      )
-    } 
-    {showCoachResult && coach > 0 &&  (
-        <section className='bus-rail-result-section'>
-          <h5
-            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
-            className='bus-rail-results-container'>
-            {coachFootprint} Kg:	{coach}   {unitCoach} of Coach
-          </h5>
-          <Button
-            kind='ghost'
-            size='md'
-            className='bus-rail-result-trashcan-icon-container'
-            onClick={resetFootprintCoach} >
-            <TrashCan />
-          </Button>
-        </section>
-      )
-    }
-    {showLocalTrainResult && localTrain > 0 &&  (
-        <section className='bus-rail-result-section'>
-          <h5 
-            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
-            className='bus-rail-results-container'>
-            {localTrainFootprint} Kg:	{localTrain}   {unitLocalTrain} of Local Train
-          </h5>
-          <Button
-            kind='ghost'
-            size='md'
-            className='bus-rail-result-trashcan-icon-container'
-            onClick={resetFootprintLocalTrain} >
-            <TrashCan />
-          </Button>
-        </section>
-      )
-    }
-    {showLongTrainResult && longTrain > 0 &&  (
-        <section className='bus-rail-result-section'>
-          <h5 
-            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
-            className='bus-rail-results-container'>
-            {longTrainFootprint} Kg:	{longTrain}   {unitLongTrain} of Long Train
-          </h5>
-          <Button
-            kind='ghost'
-            size='md'
-            className='bus-rail-result-trashcan-icon-container'
-            onClick={resetFootprintLongTrain} >
-            <TrashCan />
-          </Button>
-        </section>
-      )
-    }
-    {showTramResult && tram > 0 &&  (
-        <section className='bus-rail-result-section'>
-          <h5 
-            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
-            className='bus-rail-results-container'>
-            {tramFootprint} Kg:	{tram}   {unitTram} of Tram
-          </h5>
-          <Button
-            kind='ghost'
-            size='md'
-            className='bus-rail-result-trashcan-icon-container'
-            onClick={resetFootprintTram} >
-            <TrashCan />
-          </Button>
-        </section>
-      )
-    }
-    {showSubwayResult && subway > 0 &&  (
-        <section className='bus-rail-result-section'>
-          <h5
-            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
-            className='bus-rail-results-container'>
-            {subwayFootprint} Kg:	{subway}   {unitSubway} of Subway
-          </h5>
-          <Button
-            kind='ghost'
-            size='md'
-            className='bus-rail-result-trashcan-icon-container'
-            onClick={resetFootprintSubway} >
-            <TrashCan />
-          </Button>
-        </section>
-      )
-    }
-    {showTaxiResult && taxi > 0 &&  (
-        <section className='bus-rail-result-section'>
-          <h5
-            style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.448)' }}
-            className='bus-rail-results-container'>
-            {taxiFootprint} Kg:	{taxi}   {unitTaxi} of Taxi
-          </h5>
-          <Button
-            kind='ghost'
-            size='md'
-            className='bus-rail-result-trashcan-icon-container'
-            onClick={resetFootprintTaxi} >
-            <TrashCan />
-          </Button>
-        </section>
-      )
-    }
-  </>
+      <div
+        className={
+          location.pathname === "/bus-rail" ||
+          location.pathname === "/flight" ||
+          location.pathname === "/consumption"
+            ? "inner_tit active"
+            : "inner_tit"
+        }
+      >
+        <h5>Train</h5>
+        <div className="after_sbt_cont">
+          <p>
+            {parseFloat(localTrainFootprint) + parseFloat(longTrainFootprint)}{" "}
+            Kg for {localTrain + longTrain} {unitLocalTrain}
+          </p>
+        </div>
+      </div>
+
+      <div
+        className={
+          location.pathname === "/bus-rail" ||
+          location.pathname === "/flight" ||
+          location.pathname === "/consumption"
+            ? "inner_tit active"
+            : "inner_tit"
+        }
+      >
+        <h5>Taxi</h5>
+        <div className="after_sbt_cont">
+          <p>
+            {" "}
+            {parseFloat(tramFootprint) +
+              parseFloat(subwayFootprint) +
+              parseFloat(taxiFootprint)}{" "}
+            Kg for {tram + subway + taxi} {unitTram}{" "}
+          </p>
+        </div>
+      </div>
+    </>
+  );
 };
 
-export default BusRailResults;
+export default withRouter(BusRailResults);

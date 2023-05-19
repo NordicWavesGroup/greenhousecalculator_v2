@@ -35,10 +35,10 @@ const ConsumptionTotalResult = ({ location }) => {
       >
         <div
           className={
-            location.pathname === "/consumption"
-              ? totalSecondaryFootprint > 0
+            totalSecondaryFootprint > 0
+              ? location.pathname === "/consumption"
                 ? "step-main-tit active fill"
-                : "step-main-tit active"
+                : "step-main-tit active fill"
               : "step-main-tit"
           }
         >
@@ -46,8 +46,10 @@ const ConsumptionTotalResult = ({ location }) => {
           <div
             className={
               totalSecondaryFootprint > 0
-                ? "after_sbt_cont active fill"
-                : "after_sbt_cont active"
+                ? location.pathname === "/consumption"
+                  ? "after_sbt_cont active fill"
+                  : "after_sbt_cont active"
+                : "after_sbt_cont"
             }
           >
             {totalSecondaryFootprint > 0 ? (

@@ -14,8 +14,10 @@ import { setTotalSelectedFootprint } from "../../redux/totalfootprint";
 import ResultsCheckboxes from "./Results_Checkboxes";
 import Waves from "../Waves";
 import HouseIndividualResults from "./../HousePage/House_IndividualResults";
+import BusIndividualResults from "./../BusRailPage/BusRail_IndividualResults";
 import FlightTotalResult from "./../FlightPage/Flight_TotalResults";
 import ConsumptionTotalResult from "./../ConsumptionPage/Consumption_TotalResults";
+import BusTotalResult from "./../BusRailPage/BusRail_TotalResult";
 
 const ResultsPage = ({ location }) => {
   const dispatch = useDispatch();
@@ -116,6 +118,9 @@ const ResultsPage = ({ location }) => {
   const addClass = () => {
     document.getElementsByTagName("body")[0].setAttribute("class", "open_menu");
   };
+  const handleButtonClick = () => {
+    window.location.href = "/login";
+  };
   return (
     <>
       <div className="housHold_col">
@@ -201,42 +206,10 @@ const ResultsPage = ({ location }) => {
                             : "after_sbt_cont"
                         }
                       >
-                        <p></p>
+                        <BusTotalResult />
                       </div>
                     </div>
-                    <div
-                      className={
-                        location.pathname === "/bus-rail" ||
-                        location.pathname === "/flight" ||
-                        location.pathname === "/consumption"
-                          ? "inner_tit active"
-                          : "inner_tit"
-                      }
-                    >
-                      <h5>Bus</h5>
-                    </div>
-                    <div
-                      className={
-                        location.pathname === "/bus-rail" ||
-                        location.pathname === "/flight" ||
-                        location.pathname === "/consumption"
-                          ? "inner_tit active"
-                          : "inner_tit"
-                      }
-                    >
-                      <h5>Train</h5>
-                    </div>
-                    <div
-                      className={
-                        location.pathname === "/bus-rail" ||
-                        location.pathname === "/flight" ||
-                        location.pathname === "/consumption"
-                          ? "inner_tit active"
-                          : "inner_tit"
-                      }
-                    >
-                      <h5>Taxi</h5>
-                    </div>
+                    <BusIndividualResults />
                   </div>
                   <div
                     className={
@@ -259,7 +232,7 @@ const ResultsPage = ({ location }) => {
                         <FlightTotalResult />
                       </div>
                     </div>
-                  </div>{" "}
+                  </div>
                   <ConsumptionTotalResult />
                   <div className="step-inner">
                     <div className="step-main-tit">
@@ -272,69 +245,15 @@ const ResultsPage = ({ location }) => {
                 </div>
               </div>
               <div className="call_to_action">
-                <Button className="wht-btn">Send results to your email</Button>
+                <Button onClick={handleButtonClick} className="wht-btn">
+                  Send results to your email
+                </Button>
                 <Button className="primary_btn">Offset your Carbon</Button>
               </div>
             </div>
           </div>
         </div>
       </div>
-      {/*}
-      <section className="global-frame-calculator">
-        <div className="global-block-top">
-          <h4>Per capita annual footprint</h4>
-        </div>
-        <div className="results-main-container">
-          <div className="results-checkmark-block">
-            <ResultsHeader />
-            <fieldset className="results-checkmark-container">
-              <ResultsCheckboxes
-                checkboxState={checkboxState}
-                setCheckboxState={setCheckboxState}
-              />
-            </fieldset>
-            <div className="results-button-container">
-              <ResultTotalResults />
-            </div>
-          </div>
-          <div className="results-visualization-block">
-            <div
-              className="div2PDF"
-              style={{ backgroundColor: "white", padding: "0.6rem" }}
-            >
-              <SimpleBarChart
-                data={data}
-                options={options}
-                className="simplebar-chart"
-              />
-            </div>
-            <div>
-              <ResultsFootprintsButton />
-            </div>
-          </div>
-        </div>
-      </section>
-      <div className="global-block-bottom">
-        <Link className="global-buttons-link-back-and-forth" to="/secondary">
-          <Button
-            className="global-re-styled-button-back-and-forth"
-            renderIcon={PreviousOutline}
-            kind="tertiary"
-          >
-            Household
-          </Button>
-        </Link>
-        <Link className="global-buttons-link-back-and-forth" to="/welcome">
-          <Button
-            renderIcon={NextOutline}
-            className="global-re-styled-button-back-and-forth"
-            kind="tertiary"
-          >
-            Start Again
-          </Button>
-        </Link>
-      </div>
-  <Waves />{*/}
     </>
   );
 };

@@ -14,6 +14,7 @@ import {
 import { Restaurant } from "@carbon/icons-react";
 import useHouseCalculation from "../HousePage/House_FootprintsButton";
 import useConsumptionCalculation from "../ConsumptionPage/Consumption_FootprintsButton";
+import useBusCalculation from "../BusRailPage/BusRail_FootprintsButton";
 
 /* -------------------------------
   Imported the withRouter Higher-Order Component (HOC) from the react-router-dom library to get access to the current location object.
@@ -31,11 +32,13 @@ import useConsumptionCalculation from "../ConsumptionPage/Consumption_Footprints
 const IconsNavigation = ({ location }) => {
   const { calculateAllHouseFootprint } = useHouseCalculation();
   const { showFootprintResultsFoodDiet } = useConsumptionCalculation();
+  const { calculateAllBusRailFootprint } = useBusCalculation();
 
   useEffect(() => {
     // This code will run after the component mounts
     calculateAllHouseFootprint();
     showFootprintResultsFoodDiet();
+    calculateAllBusRailFootprint();
 
     // Clean-up function
     return () => {
