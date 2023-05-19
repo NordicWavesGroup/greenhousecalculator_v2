@@ -20,7 +20,13 @@ const MyTabsSlider = () => {
     direction === "next" ? goToTab(1) : goToTab(-1);
     tabsRef.current.scrollBy({ left: scrollDistance, behavior: "smooth" });
   };
-
+  const setOnclickActiveTab = (key1) => {
+    if (key1 == totalTabs) {
+      setnextDisabled(true);
+      setprevDisabled(false);
+    }
+    setActiveTab(key1);
+  };
   const goToTab = (num) => {
     const activeTabKey = tabsRef.current
       ?.querySelector(".ant-tabs-tab-active")
@@ -39,10 +45,8 @@ const MyTabsSlider = () => {
       setnextDisabled(false);
     }
     if (tab > 0 && tab <= totalTabs) {
-      console.log("Greate 0");
       setprevDisabled(false);
     } else {
-      console.log("Else");
       setprevDisabled(true);
     }
     //console.log(num,"num","tab", tab,    "totalTabs",    totalTabs,     "setnextDisabled",     nextDisabled,     "prevDisabled",     prevDisabled   );
@@ -96,7 +100,7 @@ const MyTabsSlider = () => {
           defaultActiveKey="1"
           tabPosition="top"
           animated={false}
-          //onChange={(key) => setActiveTab(key)}
+          onChange={(key) => setOnclickActiveTab(key)}
         >
           {new Array(7).fill(null).map((_, i) => {
             const id = String(i);
