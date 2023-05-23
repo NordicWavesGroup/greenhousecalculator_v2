@@ -16,6 +16,10 @@
     padding-top: 30px;
     padding-bottom: 30px;
   }
+  .welcome-logo{
+    width: 4.3rem;
+    height: auto;
+  }
   .login_page_sec .container {
     position: relative;
   }
@@ -149,6 +153,7 @@
       margin-bottom: 0;
       padding-bottom: 20px;
     }
+        
   }
   @media (max-width:767.98px){
     .left_svg_ic {
@@ -205,5 +210,6 @@
     }
     .logo_wrap {
       padding-bottom: 25px;
+
     }
   }

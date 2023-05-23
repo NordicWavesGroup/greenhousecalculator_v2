@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./_welcome-page.scss";
 import { Link } from "react-router-dom";
+import { ReactComponent as YourSvg } from './GHC-logo.svg';
+
 
 import axios from "axios";
 import {
@@ -118,15 +120,13 @@ const WelcomePage = () => {
               <img src="/left_ic.svg" />
             </div>
             <div className="logo_wrap">
-              <img src="/main-logo.png" alt="" />
+              <YourSvg className="welcome-logo" />
             </div>
             <div className="login_cont">
-              <h2>CARBON CALCULATOR</h2>
+              <h2>GREENHOUSE CALCULATOR</h2>
               <p>
                 Discover your carbon footprint and take action towards a more
-                sustainable future. Our carbon calculator provides personalized
-                insights and recommendations for reducing your environmental
-                impact. Join the movement towards a greener world by taking the
+                sustainable future. Join the movement towards a greener world by taking the
                 first step today.
               </p>
             </div>
