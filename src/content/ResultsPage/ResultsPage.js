@@ -2,17 +2,13 @@ import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "./_results-page.scss";
 import "@carbon/charts/styles.css";
-import ResultsHeader from "./Results_Header";
-import ResultsFootprintsButton from "./Results_FootprintsButton";
+
 import ResultTotalResults from "./Results_TotalResults";
-import IconsNavigation from "../IconsNavigation/IconsNavigation";
 import { Button } from "@carbon/react";
 import { withRouter } from "react-router-dom";
-import { NextOutline, PreviousOutline } from "@carbon/react/icons";
-import { SimpleBarChart } from "@carbon/charts-react";
+
 import { setTotalSelectedFootprint } from "../../redux/totalfootprint";
-import ResultsCheckboxes from "./Results_Checkboxes";
-import Waves from "../Waves";
+
 import HouseIndividualResults from "./../HousePage/House_IndividualResults";
 import BusIndividualResults from "./../BusRailPage/BusRail_IndividualResults";
 import FlightTotalResult from "./../FlightPage/Flight_TotalResults";
@@ -64,72 +60,42 @@ const ResultsPage = ({ location }) => {
     dispatch(setTotalSelectedFootprint(totalSelectedFootprint));
   }, [totalSelectedFootprint, dispatch]);
 
-  const data = [
-    {
-      group: "World Average",
-      value: 4690,
-    },
-    {
-      group: "Household",
-      value: checkboxState.house ? totalHouseFootprint : 0,
-    },
-    {
-      group: "Flights",
-      value: checkboxState.flights ? totalFlightFootprint : 0,
-    },
-    {
-      group: "Car",
-      value: checkboxState.car ? totalCarFootprint : 0,
-    },
-    {
-      group: "Motorbike",
-      value: checkboxState.motorbike ? totalMotorbikeFootprint : 0,
-    },
-    {
-      group: "Bus & Rail",
-      value: checkboxState.busrail ? totalBusRailFootprint : 0,
-    },
-    {
-      group: "Consumption",
-      value: checkboxState.secondary ? totalSecondaryFootprint : 0,
-    },
-  ];
-  const options = {
-    title: "Total Footprint per Category",
-    axes: {
-      left: {
-        mapsTo: "value",
-        title: "Kg of CO2e",
-        scaleType: "linear",
-      },
-      bottom: {
-        mapsTo: "group",
-        title: "Category",
-        scaleType: "labels",
-        visible: false,
-      },
-      legend: {
-        alignment: "center",
-      },
-    },
-    height: "400px",
-  };
-  console.log("totalSelectedFootprint", totalSelectedFootprint);
+  useEffect(() => {
+    const handleOutsideClick = (event) => {
+      const resultMenu = document.querySelector(".result_menu");
+      if (resultMenu && !resultMenu.contains(event.target)) {
+        removeClass();
+      }
+    };
+  
+    document.addEventListener("click", handleOutsideClick);
+  
+    return () => {
+      document.removeEventListener("click", handleOutsideClick);
+    };
+  }, []);
+
   const addClass = () => {
     document.getElementsByTagName("body")[0].setAttribute("class", "open_menu");
   };
+  const removeClass = () => {
+    document.getElementsByTagName("body")[0].classList.remove("open_menu");
+  };
   const handleButtonClick = () => {
-    window.location.href = "/login";
+    window.location.href = "/welcome";
   };
   return (
     <>
       <div className="housHold_col">
         <div className="mobile_sidebar">
+          
           <div className="result_mobile">
             <span onClick={addClass} className="result_menu">
               Results
             </span>
           </div>
+
+
           <div className="household-right-sidebar">
             <h3>Summary</h3>
             <div className="step-cont">
@@ -158,7 +124,6 @@ const ResultsPage = ({ location }) => {
                             : "after_sbt_cont"
                         }
                       >
-                        <p></p>
                       </div>
                     </div>
                     <div
