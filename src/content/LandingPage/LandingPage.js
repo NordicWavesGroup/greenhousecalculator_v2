@@ -132,7 +132,7 @@ const LandingPage = () => {
                     <>
                       <Link
                         className="global-buttons-link-back-and-forth"
-                        to="/house"
+                        to="/welcome"
                       >
                         <Button
                           className="landing-button"

@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./_welcome-page.scss";
+import { Link } from "react-router-dom";
+
 import axios from "axios";
 import {
   Button,
@@ -247,9 +249,12 @@ const WelcomePage = () => {
                   </DatePicker>
                 </FormGroup>
                 <div className="custom_link">
+                <Link to="/house" className="welcome-button">
                   <Button type="submit" className="primary_btn">
                     Continue to Calculator
                   </Button>
+                </Link>
+             
                   <p>*All fields are required </p>
                 </div>
               </Form>
