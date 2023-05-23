@@ -17,7 +17,6 @@ import BusRailPage from "./content/BusRailPage";
 import SecondaryPage from "./content/SecondaryPage";
 import ResultsPage from "./content/ResultsPage";
 import FlightPage from "./content/FlightPage";
-import LoginPage from "./content/LoginPage";
 import ConsumptionPage from "./content/ConsumptionPage";
 
 ReactGA.initialize("G-CB09DB5YGC");
@@ -37,7 +36,6 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={LandingPage} />
                 <Route path="/welcome" component={WelcomePage} />
-                <Route path="/login" component={LoginPage} />
                 <Route path="/consumption" component={ConsumptionPage} />
                 <Route path="/house" component={HousePage} />
                 <Route path="/flight" component={FlightPage} />
