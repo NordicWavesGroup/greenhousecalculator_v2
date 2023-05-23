@@ -462,7 +462,7 @@
   max-width: 100%;
   }
   .cds--header ~ .cds--content {
-    height: calc(100vh - 40px);
+    //height: calc(100vh - 40px);
     overflow: auto;
   }
   body.open_menu .mobile_sidebar {
