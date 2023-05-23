@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./_welcome-page.scss";
 import { Link } from "react-router-dom";
-import { ReactComponent as YourSvg } from './GHC-logo.svg';
+import { ReactComponent as GHCLOGO } from './GHC-logo.svg';
 
 
 import axios from "axios";
@@ -120,7 +120,7 @@ const WelcomePage = () => {
               <img src="/left_ic.svg" />
             </div>
             <div className="logo_wrap">
-              <YourSvg className="welcome-logo" />
+              <GHCLOGO className="welcome-logo" />
             </div>
             <div className="login_cont">
               <h2>GREENHOUSE CALCULATOR</h2>

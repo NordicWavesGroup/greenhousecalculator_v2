@@ -15,6 +15,8 @@ import { Restaurant } from "@carbon/icons-react";
 import useHouseCalculation from "../HousePage/House_FootprintsButton";
 import useConsumptionCalculation from "../ConsumptionPage/Consumption_FootprintsButton";
 import useBusCalculation from "../BusRailPage/BusRail_FootprintsButton";
+import { ReactComponent as GHCLOGO } from '../../content/WelcomePage/GHC-logo.svg';
+
 
 /* -------------------------------
   Imported the withRouter Higher-Order Component (HOC) from the react-router-dom library to get access to the current location object.
@@ -54,7 +56,7 @@ const IconsNavigation = ({ location }) => {
         <div className="container">
           <div className="logo_inner">
             <Link to="/">
-              <img src="/logo.png" />
+              < GHCLOGO className="icons-logo"/>
               <h5>GREENHOUSECALCULATOR.COM</h5>
             </Link>
           </div>

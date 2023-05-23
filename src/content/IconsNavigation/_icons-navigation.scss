@@ -27,3 +27,13 @@
 .icons-Class{
     color: #C9C9C9;
 }
+.icons-logo{
+    width: 2rem;
+    height: auto;
+}
+
+@media (max-width:480px) {
+    .icons-logo{
+        display: none;
+    }
+  }
