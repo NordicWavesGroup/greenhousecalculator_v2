@@ -138,7 +138,7 @@ const WelcomePage = () => {
                 <FormGroup>
                   <TextInput
                     labelText="Full Name"
-                    placeholder="Placeholder text"
+                    placeholder="Not mandatory"
                     className="login_form_control"
                     name="name"
                     size="lg"
@@ -173,7 +173,7 @@ const WelcomePage = () => {
                     name="email"
                     className="login_form_control"
                     size="lg"
-                    placeholder="Placeholder text"
+                    placeholder="Not mandatory"
                     value={formFields.email}
                     autoComplete="off"
                     onChange={handleChange}
