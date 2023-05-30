@@ -126,15 +126,16 @@ const WelcomePage = () => {
               <h2>GREENHOUSE CALCULATOR</h2>
               <p>
                 Discover your carbon footprint and take action towards a more
-                sustainable future. Join the movement towards a greener world by taking the
-                first step today.
+                sustainable future. 
               </p>
+              <p>Select your country or region and a date range to start your calculations.</p>
             </div>
             <div className="login_page_form">
               <Form
                 onSubmit={handleSubmit}
                 defaultErrorMessage={{ required: "Please enter something." }}
               >
+             {/*
                 <FormGroup>
                   <TextInput
                     labelText="Full Name"
@@ -192,7 +193,9 @@ const WelcomePage = () => {
                     ) : null
                   ) : null}
                 </FormGroup>
-                <FormGroup>
+                
+              */}
+              <FormGroup>
                   <Select
                     labelText="Country"
                     value={formFields.country}
