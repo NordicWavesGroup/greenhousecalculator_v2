@@ -15,6 +15,8 @@ import {
   TabsSkeleton,
 } from "@carbon/react";
 import CustomTabsSkeleton from "../../components/CustomTabsSkelton";
+import { ReactComponent as GHCLOGO } from '../../content/WelcomePage/GHC-logo.svg';
+
 
 import Waves from "../Waves";
 
@@ -47,7 +49,7 @@ const LanguageChanger = () => {
     const interval = setInterval(() => {
       changeHelloText(` ${languages[currentLanguageIndex]}!`);
       setCurrentLanguageIndex((currentLanguageIndex + 1) % languages.length);
-    }, 1000);
+    }, 3000);
     return () => clearInterval(interval);
   }, [currentLanguageIndex]);
   return <div ref={helloHeadingRef} style={{ fontSize: "26px" }}></div>;
@@ -67,6 +69,7 @@ const LandingPage = () => {
       <section className="landing-main-container">
         <Tabs>
           <header className="landing-header">
+          
             {delay ? (
               <div className="headerPlac">
                 <SkeletonText line width={"10%"} />
@@ -74,10 +77,16 @@ const LandingPage = () => {
               </div>
             ) : (
               <>
+              <div className="landing-header-container">
+
+              < GHCLOGO className="landing-logo"/>
+              <div>
                 <a href="/" className="landing-little-title">
                   Getting Started
                 </a>
                 <h1 className="landing-title">B2C Greenhouse Calculator</h1>
+              </div>
+              </div>
               </>
             )}
           </header>
