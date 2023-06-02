@@ -127,8 +127,9 @@ const WelcomePage = () => {
               <p>
                 Discover your carbon footprint and take action towards a more
                 sustainable future. 
+                Select your country or region and a date range to start your calculations.
               </p>
-              <p>Select your country or region and a date range to start your calculations.</p>
+              <br />
             </div>
             <div className="login_page_form">
               <Form

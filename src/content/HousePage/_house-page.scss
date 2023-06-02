@@ -336,14 +336,17 @@
   max-width: 100%;
 }
 .wht-btn {
-  background: #fff;
-  color: #000;
+  border: 2px solid #fff;
+  color: #ffffff;
+  background-color: transparent;
 }
 .wht-btn:hover {
-  background: #82e0a6;
+  border: 2px solid var(--verde);
+  background-color: transparent;
 }
 .primary_btn:hover {
-  background: #2a2a2a;
+  border: 2px solid white;
+  background-color: transparent;
 }
 .active.fill h5:after {
   content: '';
