@@ -427,6 +427,10 @@
 @media (max-width:991px) { 
   .top-header-sec .container {
       padding: 0 15px;
+      position: fixed;
+      bottom: 60px;
+      width: 100%;
+
   }
   .result_mobile {
       position: fixed;
@@ -502,6 +506,7 @@
       display: flex;
       max-width: calc(100% - 20px);
       justify-content: space-between !important;
+
   }
   .step-inner:last-child .step-main-tit {
       margin-bottom: 0;

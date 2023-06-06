@@ -2,29 +2,17 @@ import React from "react";
 import "./_house-page.scss";
 
 import {
-  Button,
-  Column,
-  FormGroup,
-  FormLabel,
-  Grid,
-  Row,
   Tab,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
-  TextInput,
 } from "@carbon/react";
 import { Link } from "react-router-dom";
-import {
-  NextOutline,
-  PreviousOutline,
-  Information32,
-} from "@carbon/react/icons";
+
 import IconsNavigation from "../IconsNavigation/IconsNavigation";
-import HouseHeader from "./House_Header";
-import HouseHeaderResults from "./House_HeaderResults";
-import HouseHeaderVisualization from "./House_HeaderVisualization";
+import IconsNavigationBottom from "../IconsNavigation/IconsNavigationBottom";
+
 
 import HouseElectricity from "./House_Electricity";
 import HouseNaturalGas from "./House_NaturalGas";
@@ -32,12 +20,8 @@ import HouseNaturalGas from "./House_NaturalGas";
 import HouseCoal from "./House_Coal";
 import HouseLPG from "./House_LPG";
 import HousePropane from "./House_Propane";
-import HouseFootprintsButton from "./House_FootprintsButton";
-import HouseIndividualResults from "./House_IndividualResults";
-import HouseDataVisualization from "./House_DataVisualization";
-import HouseOffsetButton from "./House_OffsetButton";
+
 import ResultsPage from "./../ResultsPage/ResultsPage";
-import HouseTotalResults from "./House_TotalResults";
 import { Information } from "@carbon/icons-react";
 
 import Waves from "../Waves";
@@ -66,6 +50,7 @@ const HousePage = () => {
   };
   return (
     <>
+
       <IconsNavigation />
       <div className="household_sec">
         <div className="container">
@@ -196,6 +181,7 @@ const HousePage = () => {
                 </div>
               </div>
             </div>
+
             <ResultsPage />
           </div>
         </div>

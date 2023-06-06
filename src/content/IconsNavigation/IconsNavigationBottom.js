@@ -5,16 +5,15 @@ import {
   Home,
   PlanePrivate,
   Car,
-  Bus
+  Bus,
 } from "@carbon/react/icons";
 import { Restaurant } from "@carbon/icons-react";
 import useHouseCalculation from "../HousePage/House_FootprintsButton";
 import useConsumptionCalculation from "../ConsumptionPage/Consumption_FootprintsButton";
 import useBusCalculation from "../BusRailPage/BusRail_FootprintsButton";
-import { ReactComponent as GHCLOGO } from '../../content/WelcomePage/GHC-logo.svg';
 
 
-const IconsNavigation = ({ location }) => {
+const IconsNavigationBottom = ({ location }) => {
   const { calculateAllHouseFootprint } = useHouseCalculation();
   const { showFootprintResultsFoodDiet } = useConsumptionCalculation();
   const { calculateAllBusRailFootprint } = useBusCalculation();
@@ -37,14 +36,9 @@ const IconsNavigation = ({ location }) => {
       {/* ------------------------------------------------------------------- */}
       <div className="top-header-sec">
         <div className="container">
-          <div className="logo_inner">
-            <Link to="/">
-              < GHCLOGO className="icons-logo"/>
-              <h5>GREENHOUSECALCULATOR.COM</h5>
-            </Link>
-          </div>
+        
           <div className="progress-bar-container fixed-navigation">
-         
+        
             <Link
               to="/house"
               className={location.pathname === "/house" ? "active" : ""}
@@ -117,4 +111,4 @@ const IconsNavigation = ({ location }) => {
   );
 };
 
-export default withRouter(IconsNavigation);
+export default withRouter(IconsNavigationBottom);
