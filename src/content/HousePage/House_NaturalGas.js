@@ -57,31 +57,6 @@ const HouseNaturalGas = () => {
           </Select>
         </div>
       </FormGroup>
-      {/*}
-      <section className="global-inputs-containers">
-        <h5 className="global-input-description">Natural Gas:</h5>
-        <TextInput
-          id="naturalgas-amount"
-          value={naturalGas || ""}
-          onChange={handleNaturalGasChange}
-          labelText=""
-          className="house-block-middle-form"
-          size="lg"
-        />
-
-        <Select
-          id="unit-gas-select"
-          defaultValue={unitNaturalGas}
-          onChange={handleUnitChange}
-          labelText=""
-          className="house-block-middle-form"
-          size="lg"
-        >
-          {unitOptions.map((unit) => (
-            <SelectItem key={unit} value={unit} text={unit} />
-          ))}
-        </Select>
-          </section>{*/}
     </>
   );
 };

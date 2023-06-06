@@ -8,13 +8,9 @@ const HouseElectricity = ({ location }) => {
     electricity,
     electricityFootprint,
     showElectricityResult,
-
     naturalGasFootprint,
-
     coalFootprint,
-
     LPGFootprint,
-
     propaneFootprint,
   } = useSelector((state) => state.house);
 

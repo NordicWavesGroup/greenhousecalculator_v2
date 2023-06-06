@@ -11,12 +11,9 @@ import {
 import { Link } from "react-router-dom";
 
 import IconsNavigation from "../IconsNavigation/IconsNavigation";
-import IconsNavigationBottom from "../IconsNavigation/IconsNavigationBottom";
-
 
 import HouseElectricity from "./House_Electricity";
 import HouseNaturalGas from "./House_NaturalGas";
-// import HouseHeatingOil from './House_HeatingOil'
 import HouseCoal from "./House_Coal";
 import HouseLPG from "./House_LPG";
 import HousePropane from "./House_Propane";
@@ -28,9 +25,7 @@ import Waves from "../Waves";
 import { useState } from "react";
 
 const HousePage = () => {
-  const addClass = () => {
-    document.getElementsByTagName("body")[0].setAttribute("class", "open_menu");
-  };
+
   const [houseMenu, setHousemenu] = useState({
     HouseElectricUsage: "",
     HouseElectricCustom: "",

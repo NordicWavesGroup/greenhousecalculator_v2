@@ -3,7 +3,7 @@ import "./_house-page.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { setElectricity, setUserElectricityFactor } from "../../redux/house";
 
-import { FormGroup, FormLabel, TextInput } from "@carbon/react";
+import { FormGroup, TextInput } from "@carbon/react";
 import countryFactors from "../../countryFactors";
 
 const HouseElectricity = () => {
@@ -58,31 +58,7 @@ const HouseElectricity = () => {
           </div>
         </FormGroup>
       </div>
-      {/*}
-      <section className="house-electricity-container">
-        <h5 className="global-input-description">Electricity:</h5>
-        <TextInput
-          id="electricity-input"
-          value={electricity || ""}
-          onChange={handleElectricityChange}
-          labelText="Electricity in kWh"
-          className="house-block-middle-form"
-          size="lg"
-        />
-        <TextInput
-          id="electricity-factor"
-          labelText="at a factor of:"
-          type="number"
-          value={
-            userElectricityFactor !== null
-              ? userElectricityFactor
-              : countryFactors[selectedCountry].electricity_factor || ""
-          }
-          onChange={handleUserElectricityChange}
-          className="house-block-middle-form"
-          size="lg"
-        />
-        </section>{*/}
+  
     </>
   );
 };
