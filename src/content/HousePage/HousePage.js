@@ -17,6 +17,8 @@ import HouseNaturalGas from "./House_NaturalGas";
 import HouseCoal from "./House_Coal";
 import HouseLPG from "./House_LPG";
 import HousePropane from "./House_Propane";
+import ResultTotalResults from "../../content/ResultsPage/Results_TotalResults"
+
 
 import ResultsPage from "./../ResultsPage/ResultsPage";
 import { Information } from "@carbon/icons-react";
@@ -45,7 +47,9 @@ const HousePage = () => {
   };
   return (
     <>
-
+<div className="global-total-result-fixed">
+      <ResultTotalResults />
+</div>
       <IconsNavigation />
       <div className="household_sec">
         <div className="container">

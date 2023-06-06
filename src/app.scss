@@ -26,6 +26,15 @@ $base-color: #c6538c;
     font-size: 16px;
     border-radius: 0px;
 }
+
+.global-total-result-fixed{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 2rem;
+    width: 100%;
+}
 /////////////////////// Re-styling the Button Component
 .global-re-styled-button-back-and-forth{
     width: 10rem;

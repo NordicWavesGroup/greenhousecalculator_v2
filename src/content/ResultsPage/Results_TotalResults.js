@@ -13,9 +13,9 @@ const ResultsTotalResult = () => {
       {totalFootprintToOffset > 0 ? (
         <>
           <p>
-            <span style={{ marginLeft: "5px", marginRight: "5px" }}>
-              {totalFootprintToOffset.toFixed(2)}
-            </span>{" "}
+            <span style={{ marginLeft: "5px", marginRight: "5px", color: 'red' }}>
+              {totalFootprintToOffset.toFixed(0)}
+            </span>{""}
             Kg of CO2e
           </p>
         </>

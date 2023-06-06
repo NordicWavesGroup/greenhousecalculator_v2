@@ -4,13 +4,11 @@ import {
   HeaderContainer,
   HeaderName,
   HeaderMenuButton,
-  HeaderGlobalAction,
   HeaderMenuItem,
   SkipToContent,
   SideNav,
   SideNavItems,
   HeaderSideNavItems,
-  HeaderPanel,
   HeaderGlobalBar
 } from '@carbon/react';
 import { Link } from 'react-router-dom';
@@ -21,11 +19,8 @@ import LoginPanel from './Login';
 const TheHeader = () => {
   const { selectedCountry } = useSelector((state) => state.house);
   const flagIcon = countryFactors[selectedCountry].flag_icon;
-  const [isHeaderPanelOpen, setIsHeaderPanelOpen] = useState(false);
 
-  const toggleHeaderPanel = () => {
-    setIsHeaderPanelOpen(!isHeaderPanelOpen);
-  };
+ 
 
   return (
     <HeaderContainer
@@ -59,12 +54,7 @@ const TheHeader = () => {
        
             </HeaderGlobalBar>
 
-          {isHeaderPanelOpen && (
-            <HeaderPanel aria-label="" expanded className="right-panel">
-              {/* Content for the Header Panel */}
-              <LoginPanel />
-            </HeaderPanel>
-          )}
+      
         </Header>
       )}
     />

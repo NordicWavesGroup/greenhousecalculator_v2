@@ -25,6 +25,8 @@ import {
   resetFlightFootprint,
 } from "../../redux/flights";
 import Slider from "react-slick";
+import ResultTotalResults from "../../content/ResultsPage/Results_TotalResults"
+
 
 const FlightsPage = () => {
 
@@ -115,6 +117,9 @@ const FlightsPage = () => {
           />
         </>
       )}
+          <div className="global-total-result-fixed">
+      <ResultTotalResults />
+</div>
       <IconsNavigation />
       <div className="household_sec">
         <div className="container">

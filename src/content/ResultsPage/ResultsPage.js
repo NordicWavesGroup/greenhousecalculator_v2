@@ -18,8 +18,6 @@ import BusTotalResult from "./../BusRailPage/BusRail_TotalResult";
 const ResultsPage = ({ location }) => {
   const dispatch = useDispatch();
   const { houseFootprint } = useSelector((state) => state.house);
-
-  console.log("houseFootprint", houseFootprint);
   const { flights } = useSelector((state) => state.flights);
   const { motorbikeFootprint } = useSelector((state) => state.motorbike);
   const { carFootprint } = useSelector((state) => state.car);

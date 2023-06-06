@@ -17,6 +17,8 @@ import { setFoodDiet, setFoodDietFootprint } from "../../redux/secondary";
 
 import countryFactors from "../../countryFactors";
 import ResultsPage from "./../ResultsPage/ResultsPage";
+import ResultTotalResults from "../../content/ResultsPage/Results_TotalResults"
+
 
 const SecondaryFoodDrinks = () => {
   const { foodDiet, foodDietFootprint, selectedCountrySecondary } = useSelector(
@@ -42,6 +44,9 @@ const SecondaryFoodDrinks = () => {
   };
   return (
     <>
+            <div className="global-total-result-fixed">
+      <ResultTotalResults />
+</div>
       <IconsNavigation />
       <div className="household_sec">
         <div className="container">

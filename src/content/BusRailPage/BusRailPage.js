@@ -4,10 +4,15 @@ import IconsNavigation from "../IconsNavigation/IconsNavigation";
 import MySwipeableTabs from "../BusRailPage/MySwipeableTabs";
 import ResultsPage from "./../ResultsPage/ResultsPage";
 import Waves from "../Waves";
+import ResultTotalResults from "../../content/ResultsPage/Results_TotalResults"
+
 const BusRailPage = () => {
 
   return (
     <>
+        <div className="global-total-result-fixed">
+      <ResultTotalResults />
+</div>
       <IconsNavigation />
       <div className="household_sec">
         <div className="container">
