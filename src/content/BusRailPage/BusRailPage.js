@@ -5,9 +5,7 @@ import MySwipeableTabs from "../BusRailPage/MySwipeableTabs";
 import ResultsPage from "./../ResultsPage/ResultsPage";
 import Waves from "../Waves";
 const BusRailPage = () => {
-  const addClass = () => {
-    document.getElementsByTagName("body")[0].setAttribute("class", "open_menu");
-  };
+
   return (
     <>
       <IconsNavigation />

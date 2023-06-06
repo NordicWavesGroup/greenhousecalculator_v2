@@ -12,7 +12,6 @@ import {
   Tile,
   SkeletonText,
   SkeletonPlaceholder,
-  TabsSkeleton,
 } from "@carbon/react";
 import CustomTabsSkeleton from "../../components/CustomTabsSkelton";
 import { ReactComponent as GHCLOGO } from '../../content/WelcomePage/GHC-logo.svg';
@@ -49,7 +48,7 @@ const LanguageChanger = () => {
     const interval = setInterval(() => {
       changeHelloText(` ${languages[currentLanguageIndex]}!`);
       setCurrentLanguageIndex((currentLanguageIndex + 1) % languages.length);
-    }, 3000);
+    }, 1000);
     return () => clearInterval(interval);
   }, [currentLanguageIndex]);
   return <div ref={helloHeadingRef} style={{ fontSize: "26px" }}></div>;

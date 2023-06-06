@@ -1,12 +1,8 @@
 import React from "react";
 import "./_car-page.scss";
 import {
-  Button,
-  Column,
   FormGroup,
   FormLabel,
-  Grid,
-  Row,
   Tab,
   TabList,
   TabPanel,
@@ -16,22 +12,9 @@ import {
   Select,
 } from "@carbon/react";
 import { Link } from "react-router-dom";
-import { NextOutline, PreviousOutline } from "@carbon/react/icons";
 
 import IconsNavigation from "../IconsNavigation/IconsNavigation";
-import CarHeader from "./Car_Header";
-import CarHeaderResults from "./Car_HeaderResults";
-import CarHeaderVisualization from "./Car_HeaderVisualization";
 
-import CarMileage from "./Car_Mileage";
-import CarType from "./Car_Type";
-import CarSize from "./Car_Size";
-
-import CarTotalResults from "./Car_TotalResults";
-import CarFootprintsButton from "./Car_FootprintsButton";
-import CarIndividualResults from "./Car_IndividualResults";
-import CarDataVisualization from "./Car_DataVisualization";
-import CarOffsetButton from "./Car_OffsetButton";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "carbon-components/css/carbon-components.min.css";
