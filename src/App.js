@@ -12,9 +12,7 @@ import LandingPage from "./content/LandingPage";
 import WelcomePage from "./content/WelcomePage";
 import HousePage from "./content/HousePage";
 import CarPage from "./content/CarPage";
-import MotorbikePage from "./content/MotorbikePage";
 import BusRailPage from "./content/BusRailPage";
-import SecondaryPage from "./content/SecondaryPage";
 import ResultsPage from "./content/ResultsPage";
 import FlightPage from "./content/FlightPage";
 import ConsumptionPage from "./content/ConsumptionPage";
@@ -40,9 +38,7 @@ class App extends Component {
                 <Route path="/house" component={HousePage} />
                 <Route path="/flight" component={FlightPage} />
                 <Route path="/car" component={CarPage} />
-                <Route path="/motorbike" component={MotorbikePage} />
                 <Route path="/bus-rail" component={BusRailPage} />
-                <Route path="/secondary" component={SecondaryPage} />
                 <Route path="/results" component={ResultsPage} />
               </Switch>
             </Content>

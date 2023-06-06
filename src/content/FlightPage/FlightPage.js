@@ -3,57 +3,31 @@ import { useSelector, useDispatch } from "react-redux";
 import "./_flight-page.scss";
 import {
   Button,
-  Column,
   FormGroup,
-  FormLabel,
-  Grid,
-  Row,
   Tab,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
   TextInput,
-  Select,
 } from "@carbon/react";
-import { Link } from "react-router-dom";
 import IconsNavigation from "../IconsNavigation/IconsNavigation";
 import {
-  NextOutline,
-  PreviousOutline,
   TrashCan,
-  Add,
 } from "@carbon/react/icons";
-import FlightHeader from "./Flight_Header";
-import FlightHeaderResults from "./Flight_HeaderResults";
-import FlightHeaderVisualization from "./Flight_HeaderVisualization";
 import ResultsPage from "./../ResultsPage/ResultsPage";
-import FlightOptions from "./Flight_Options";
 import FlightFrom from "./Flight_From";
 import FlightTo from "./Flight_To";
-//import FlightClass from './Flight_Class'
-//import FlightTrips from './Flight_Trips'
-//import FlightRadiative from './Flight_Radiative'
-//import FlightLuggage from './Flight_Luggage';
-import FlightTotalResults from "./Flight_TotalResults";
 import { ToastNotification } from "carbon-components-react";
-import FlightFootprintsButton from "./Flight_FootprintsButton";
-import FlightIndividualResults from "./Flight_IndividualResults";
-import FlightDataVisualization from "./Flight_DataVisualization";
-import FlightOffsetButton from "./Flight_OffsetButton";
 import Waves from "../Waves";
 import {
-  setSelectedAirportFrom,
-  setSelectedAirportTo,
   setShowFlightResult,
   resetFlightFootprint,
 } from "../../redux/flights";
 import Slider from "react-slick";
 
 const FlightsPage = () => {
-  const addClass = () => {
-    document.getElementsByTagName("body")[0].setAttribute("class", "open_menu");
-  };
+
   const dispatch = useDispatch();
 
   const { flights } = useSelector((state) => state.flights);
@@ -178,9 +152,7 @@ const FlightsPage = () => {
                                   size="lg"
                                   min={1}
                                   max={5}
-                                  ///onClick={(e) => makeFlightForm(e)}
                                   onChange={(e) => makeFlightForm(e)}
-                                  //onBlur={(e) => makeFlightForm(e)}
                                   value={
                                     formIndex < 0 || formIndex > 5
                                       ? 0

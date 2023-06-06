@@ -11,7 +11,6 @@ import {
   DatePickerInput,
   FormGroup,
   Select,
-  TextInput,
   ToastNotification,
   Form,
 } from "@carbon/react";
@@ -136,66 +135,7 @@ const WelcomePage = () => {
                 onSubmit={handleSubmit}
                 defaultErrorMessage={{ required: "Please enter something." }}
               >
-             {/*
-                <FormGroup>
-                  <TextInput
-                    labelText="Full Name"
-                    placeholder="Not mandatory"
-                    className="login_form_control"
-                    name="name"
-                    size="lg"
-                    required
-                    maxLength={100}
-                    pattern={"[A-Za-z ]{3,100}"}
-                    errorMessage={{
-                      required: "Please enter name",
-                      pattern:
-                        "Name must be atleast 3 characters long containing alphabets only.",
-                    }}
-                    value={formFields.name}
-                    onChange={handleChange}
-                    autoComplete="off"
-                    invalid={errors.name !== undefined}
-                    invalidText={errors.name}
-                  />
-                  {errors ? (
-                    errors.name ? (
-                      <>
-                        <span className="text-left text-danger">
-                          {errors.name}
-                        </span>
-                      </>
-                    ) : null
-                  ) : null}
-                </FormGroup>
-                <FormGroup>
-                  <TextInput
-                    type="email"
-                    labelText="Email"
-                    name="email"
-                    className="login_form_control"
-                    size="lg"
-                    placeholder="Not mandatory"
-                    value={formFields.email}
-                    autoComplete="off"
-                    onChange={handleChange}
-                    required
-                    errorMessage={{
-                      required: "Please enter email",
-                    }}
-                  />
-                  {errors ? (
-                    errors.email ? (
-                      <>
-                        <span className="text-left text-danger">
-                          {errors.email}
-                        </span>
-                      </>
-                    ) : null
-                  ) : null}
-                </FormGroup>
-                
-              */}
+          
               <FormGroup>
                   <Select
                     labelText="Country"
@@ -230,7 +170,6 @@ const WelcomePage = () => {
                       className="welcome-date-picker-from"
                       size="lg"
                       autoComplete="off"
-                      //value={new Date(formFields.start_date)}
                       required
                       errorMessage={{
                         required: "Please enter start date",
@@ -244,7 +183,6 @@ const WelcomePage = () => {
                       size="lg"
                       name="end_date"
                       autoComplete="off"
-                      //value={new Date(formFields.end_date)}
                       required
                       errorMessage={{
                         required: "Please enter end date",

@@ -22,9 +22,7 @@ const SecondaryFoodDrinks = () => {
   const { foodDiet, foodDietFootprint, selectedCountrySecondary } = useSelector(
     (state) => state.secondary
   );
-  const addClass = () => {
-    document.getElementsByTagName("body")[0].setAttribute("class", "open_menu");
-  };
+
   const rangeOptions = [
     "-Pick a diet-",
     ,
@@ -58,7 +56,7 @@ const SecondaryFoodDrinks = () => {
                   >
                     <TabList>
                       <Tab id="tab1" label="Tab 1">
-                        Food & Diet
+                        Food & Water
                       </Tab>
                     </TabList>
                     <TabPanels>

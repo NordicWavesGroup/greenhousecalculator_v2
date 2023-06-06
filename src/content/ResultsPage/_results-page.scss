@@ -8,17 +8,7 @@
     width: 100%;
 }
 ////////////////////////////BLOCK 1 CHECKMARK //////////////////////////
-.results-header-checkmark {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 48px;
-    //background-color: #2033dec5;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.361);
 
-}
 .results-checkmark-block{
     display: flex;
     flex-direction: column;
@@ -37,10 +27,7 @@
     width: 100%;
     //background-color: firebrick;
 }
-.cbx {
-    transform: scale(1.2);
-    margin-left: 4rem;
-}
+
 ////////////////////////////BLOCK 1 VISUALIZATION //////////////////////
 .results-visualization-block{
     display: flex;
@@ -57,37 +44,6 @@
     flex-direction: row;
     justify-content: center ;
 }
-.results-header-visualization {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    min-height: 48px;
-    //background-color: #12eaa6ef;
-}
-
-///////////////////////////RESPONSIVE///////////////////////
-@media (max-width: 1100px) {
-    .results-main-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-    }
-    .results-checkmark-block{
-        width: 100%;
-    }
-    .results-visualization-block{
-        width: 100%;
-    }
-    .results-checkmark-container{
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        padding-left: 0rem;
-        //background-color: rgba(250, 142, 1, 0.875);
-    }
-  }
 
 
 

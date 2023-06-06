@@ -39,14 +39,7 @@ const ResultsPage = ({ location }) => {
   const totalMotorbikeFootprint = parseFloat(motorbikeFootprint) || 0;
   const totalBusRailFootprint = parseFloat(busrailFootprint) || 0;
   const totalSecondaryFootprint = parseFloat(secondaryFootprint) || 0;
-  const [checkboxState, setCheckboxState] = React.useState({
-    house: true,
-    flights: true,
-    car: true,
-    motorbike: true,
-    busrail: true,
-    secondary: true,
-  });
+
   const totalSelectedFootprint = (
     totalHouseFootprint +
     totalFlightFootprint +
