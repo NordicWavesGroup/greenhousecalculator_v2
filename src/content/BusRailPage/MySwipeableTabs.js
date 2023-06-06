@@ -31,10 +31,7 @@ const MyTabsSlider = () => {
     const activeTabKey = tabsRef.current
       ?.querySelector(".ant-tabs-tab-active")
       ?.getAttribute("aria-controls");
-    // tabsRef.current?.scrollTo({
-    //   left: (parseInt(activeTab) - 1) * 150,
-    //   behavior: "smooth",
-    // });
+
 
     let tab = parseInt(activeTab) + num > 0 ? parseInt(activeTab) + num : 0;
     setActiveTab(tab > 0 ? tab : 0); // Set the active tab to '15'
@@ -49,7 +46,6 @@ const MyTabsSlider = () => {
     } else {
       setprevDisabled(true);
     }
-    //console.log(num,"num","tab", tab,    "totalTabs",    totalTabs,     "setnextDisabled",     nextDisabled,     "prevDisabled",     prevDisabled   );
   };
 
   const tabsArr = [
