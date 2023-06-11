@@ -17,7 +17,7 @@ A fully functioning B2C carbon calculator
 -  User friendly CO2e calculator
 -  Mobile design first = fast usability and perception of results, reactive interface, color maps, key words, numbers, unities
 
-- Botton horizontal navigation for the categories/spaces
+- Bottom horizontal navigation for the categories/spaces
 - Focused on average emission factor by country or region
 - Fast learning curve using visual queues 
 - Our Goal is to allow users to calculate their Carbon Footprint emissions fast and that they can understand and internalised the scale of it.
