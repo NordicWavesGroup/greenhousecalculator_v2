@@ -49,7 +49,16 @@
 
 }
 .landing-tiles-questions{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
     margin-top: 30px;
+    justify-content: center;
+    height: 3rem;
+}
+.tileOuter p {
+    text-align:center;
+    font-size: 16px;
 }
 //////////////////////////// TABS ///////////////////////////////////
 .landing-container{
@@ -57,12 +66,16 @@
     flex-direction: row;
     //background-color: aquamarine;
     border: 2px solid rgba(210, 210, 210, 0.345);
-    height: 580px;
+    height: 380px;
 }
 .landing-tabpanel-left{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    text-align: left;
     width: 50%;
     //background-color: blue;
-    margin-top: 64px;
+    margin-top: 16px;
     padding-left: 2rem;
 }
 .global-buttons-link-back-and-forth {
@@ -81,6 +94,7 @@
     margin-bottom: 24px !important;
 }
 .landing-title-question{
+    font-size: 20px;
     margin-bottom: 24px;
     //color: fuchsia;
 }
@@ -133,13 +147,19 @@
     padding-left: 2rem !important;
     padding: 1rem;
     padding-right: 40px;
-    border-right: 1px solid var(--verde50)
+    border-right: 1px solid var(--verde50);
 }
+
 .landing-button{
     width: 10rem;
     margin: 0;
     padding: 15px;
     // margin-left: 2rem;
+}
+.landing-button:hover{
+    border: 2px solid var(--verde) ;
+    background-color: transparent;
+    color: white;
 }
 .placeholderMobile {
     display: none;

@@ -122,16 +122,18 @@ const LandingPage = () => {
                   ) : (
                     <>
                       <h5 className="landing-title-question">
-                        What is Greenhouse ?
+                        What is Greenhouse Calculator ?
                       </h5>
                       <p className="landing-paragraph-question">
                         Greenhouse the ultimate B2C solution for measuring
                         carbon footprints. Our passionate team of researchers,
                         developers, and designers from around the world have
-                        come together to develop a user-friendly carbon
-                        footprint measurement tool. Join us in our mission to
-                        create a more sustainable future for all.
+                        come together to develop this tool. 
+
                       </p>
+                      <br />
+                      <p>   Join us in our mission to
+                        create a more sustainable future for all.</p>
                     </>
                   )}
                   {delay ? (
@@ -187,17 +189,19 @@ const LandingPage = () => {
             ) : (
               <>
                 <div className="tileOuter">
-                  <h4 className="landing-tiles-questions">
-                    Greenhouse is Awareness:{" "}
-                  </h4>
+                  <h3 className="landing-tiles-questions">
+                     Awareness{" "}
+                  </h3>
                   <br />
                   <p>
                     {" "}
                     Calculating your carbon footprint can increase your
                     awareness of the impact your lifestyle choices have on the
-                    environment. This awareness can motivate you to make more
-                    sustainable choices in your day-to-day life.
+                    environment. 
                   </p>
+                  <br />
+                  <p>This awareness can motivate you to make more
+                    sustainable choices in your day-to-day life.</p>
                 </div>
               </>
             )}
@@ -208,17 +212,19 @@ const LandingPage = () => {
             ) : (
               <>
                 <div className="tileOuter">
-                  <h4 className="landing-tiles-questions">
-                    Greenhouse is Personal Responsibility:{" "}
-                  </h4>
+                  <h3 className="landing-tiles-questions">
+                   Responsibility{" "}
+                  </h3>
                   <br />
                   <p>
                     {" "}
                     Calculating your carbon footprint can help you take personal
-                    responsibility for your carbon emissions. It can be easy to
-                    overlook the impact of our daily actions, but by quantifying
-                    our carbon footprint, we can take action to reduce it.
+                    responsibility for your carbon emissions. 
                   </p>
+                  <br />
+                  <p>It can be easy to
+                    overlook the impact of our daily actions, but by quantifying
+                    our carbon footprint, we can take action to reduce it.</p>
                 </div>
               </>
             )}
@@ -230,16 +236,19 @@ const LandingPage = () => {
             ) : (
               <>
                 <div className="tileOuter">
-                  <h4 className="landing-tiles-questions">
-                    Greenhouse is Environmental Impact:{" "}
-                  </h4>
+                  <h3 className="landing-tiles-questions">
+                   Impact{" "}
+                  </h3>
                   <br />
                   <p>
                     Knowing your carbon footprint can help you understand how
-                    your actions contribute to climate change. By reducing your
-                    carbon footprint, you can make a positive impact on the
-                    environment and help mitigate the effects of climate change.
+                    your actions contribute to climate change. 
+                  
                   </p>
+<br />
+                  <p>   By reducing your
+                    carbon footprint, you can make a positive impact on the
+                    environment and help mitigate the effects of climate change.</p>
                 </div>
               </>
             )}
