@@ -8,7 +8,6 @@ import {
   TabPanels,
   Tabs,
 } from "@carbon/react";
-import { Link } from "react-router-dom";
 
 import IconsNavigation from "../IconsNavigation/IconsNavigation";
 
@@ -21,7 +20,6 @@ import ResultTotalResults from "../../content/ResultsPage/Results_TotalResults"
 
 
 import ResultsPage from "./../ResultsPage/ResultsPage";
-import { Information } from "@carbon/icons-react";
 
 import Waves from "../Waves";
 import { useState } from "react";
