@@ -77,44 +77,7 @@ const HousePage = () => {
                             Choose how much electricity you used in xx Or write
                             a custom usage.
                           </p>
-                          <div className="status_cls">
-                            <Link
-                              onClick={() =>
-                                setUsage("Below", "HouseElectricUsage")
-                              }
-                              className={
-                                houseMenu.HouseElectricUsage == "Below"
-                                  ? "active"
-                                  : ""
-                              }
-                            >
-                              Below <Information />
-                            </Link>
-                            <Link
-                              onClick={() =>
-                                setUsage("Average", "HouseElectricUsage")
-                              }
-                              className={
-                                houseMenu.HouseElectricUsage == "Average"
-                                  ? "active"
-                                  : ""
-                              }
-                            >
-                              Average <Information />
-                            </Link>
-                            <Link
-                              onClick={() =>
-                                setUsage("Above", "HouseElectricUsage")
-                              }
-                              className={
-                                houseMenu.HouseElectricUsage == "Above"
-                                  ? "active"
-                                  : ""
-                              }
-                            >
-                              Above <Information />
-                            </Link>
-                          </div>
+                      
 
                           <div className="separator_cls"></div>
 
@@ -127,44 +90,7 @@ const HousePage = () => {
                             Please fill in type of heating you use and fill the
                             amount of heating fuel you used in xx.
                           </p>
-                          <div className="status_cls">
-                            <Link
-                              onClick={() =>
-                                setUsage("Below", "HouseHeatingUsage")
-                              }
-                              className={
-                                houseMenu.HouseHeatingUsage == "Below"
-                                  ? "active"
-                                  : ""
-                              }
-                            >
-                              Below <Information />
-                            </Link>
-                            <Link
-                              onClick={() =>
-                                setUsage("Average", "HouseHeatingUsage")
-                              }
-                              className={
-                                houseMenu.HouseHeatingUsage == "Average"
-                                  ? "active"
-                                  : ""
-                              }
-                            >
-                              Average <Information />
-                            </Link>
-                            <Link
-                              onClick={() =>
-                                setUsage("Above", "HouseHeatingUsage")
-                              }
-                              className={
-                                houseMenu.HouseHeatingUsage == "Above"
-                                  ? "active"
-                                  : ""
-                              }
-                            >
-                              Above <Information />
-                            </Link>
-                          </div>
+                        
 
                           <div className="separator_cls"></div>
                           <div className="household-form">
