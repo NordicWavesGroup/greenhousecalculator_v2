@@ -15,10 +15,8 @@ import {
 } from "@carbon/react";
 import CustomTabsSkeleton from "../../components/CustomTabsSkelton"
 import { ReactComponent as GHCLOGO } from '../../content/WelcomePage/GHC-logo.svg';
-
-
+import  LandingOffset  from './LandingOffset'
 import Waves from "../Waves";
-import { NumberInput } from "carbon-components-react";
 
 // Define an array of 12 different languages
 const languages = [
@@ -295,36 +293,7 @@ const LandingPage = () => {
             )}
           </Tile>
         </section>
-        <div className="landing-knowfootprint-container">
-
-        <div className="landing-tabpanel-middle">
-                  {delay ? (
-                    <>
-                      <SkeletonText
-                        line
-                        className={"title"}
-                        width={"40%"}
-                        height={"24px"}
-                      />
-                   
-                    </>
-                  ) : (
-                    <>
-                      <h2 className="landing-title-question">
-                        KNOW YOUR FOOTPRINT?
-                      </h2>
-                    
-                    </>
-                  )}
-              
-      <NumberInput
-      step={250}
-      max={10000}
-
-      
-      className="landing-number-input"></NumberInput>
-        </div>
-        </div>
+       <LandingOffset />
       </section>
 
       <Waves />
