@@ -35,7 +35,7 @@ const HouseElectricity = () => {
               className="house-block-middle-form"
               size="lg"
               name="HouseElectricCustom"
-              value={electricity || ""}
+              value={electricity || "average"}
               onChange={handleElectricityChange}
               autoComplete="off"
             />
