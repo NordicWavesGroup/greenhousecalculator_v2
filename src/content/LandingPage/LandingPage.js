@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./_landing-page.scss";
+import './_landing-footer.scss';
 import { Link } from "react-router-dom";
 import Button from "@carbon/react/lib/components/Button/Button";
 import { NextOutline } from "@carbon/react/icons";
@@ -17,6 +18,7 @@ import CustomTabsSkeleton from "../../components/CustomTabsSkelton"
 import { ReactComponent as GHCLOGO } from '../../content/WelcomePage/GHC-logo.svg';
 import  LandingOffset  from './LandingOffset'
 import Waves from "../Waves";
+import LandingFooter from "./LandingFooter";
 
 // Define an array of 12 different languages
 const languages = [
@@ -295,6 +297,7 @@ const LandingPage = () => {
         </section>
        <LandingOffset />
       </section>
+      <LandingFooter />
 
       <Waves />
     </>

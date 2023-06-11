@@ -63,7 +63,6 @@ const LandingOffset = () => {
         </div>
       </div>
 
-      <Waves />
     </>
   );
 };
