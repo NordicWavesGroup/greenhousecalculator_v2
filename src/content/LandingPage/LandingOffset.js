@@ -34,7 +34,7 @@ const LandingOffset = () => {
           ) : (
             <>
               <h2 className="landing-title-question">
-                AVERAGE WORLD FOOTPRINT PER PERSON:
+              Already calculated your carbon footprint and ready to offset?
               </h2>
         
               <br />
@@ -42,19 +42,23 @@ const LandingOffset = () => {
           )}
           <div className="landing-container-input-button ">
           <NumberInput
-  step={250}
-  max={10000}
-  height={50}
-  className="landing-number-input"
-  value={carbonOffset}
-  onChange={handleCarbonOffsetChange}
-  style={{ textAlign: "right" }}
-  labelText="CO2e (kg)"
->
+                step={250}
+                max={999999}
+                height={50}
+                className="landing-number-input"
+                value={carbonOffset}
+                onChange={handleCarbonOffsetChange}
+                style={{ textAlign: "right" }}
+                labelText="CO2e (kg)"
+                >
 
-</NumberInput>
-<h3>Kg of CO2e</h3>
-            <Button className="landing-button">OFFSET NOW</Button>
+            </NumberInput>
+            <div className="landing-unit-container">
+
+                <h1>Kg of CO2</h1>
+            </div>
+            <br />
+            <Button className="landing-button-offset">OFFSET NOW</Button>
           </div>
         </div>
       </div>

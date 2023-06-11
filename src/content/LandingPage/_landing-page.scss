@@ -95,9 +95,7 @@
     padding: 2rem;
     border: 2px solid gray;
 }
-.landing-number-input{
-    z-index: 999999;
-}
+
 .global-buttons-link-back-and-forth {
     height: 50px;
     width: 160px;
@@ -172,6 +170,18 @@
 
 .landing-button{
     width: 10rem;
+    margin: 0;
+    padding: 15px;
+    // margin-left: 2rem;
+}
+.landing-button-offset:hover{
+    border: 2px solid var(--verde) ;
+    background-color: rgba(0, 0, 0, 0.833);
+    color: white;
+}
+
+.landing-button-offset{
+    width: 33%;
     margin: 0;
     padding: 15px;
     // margin-left: 2rem;
@@ -635,14 +645,35 @@
   .landing-container-input-button{
     display: flex;
     flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     z-index: 9999999;
-    width: 50rem;
+    width: 100%;
+
+
+    
+.landing-unit-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid grey;
+    min-height: 5rem !important;
+    max-height: 5rem;
+    font-size: 10px !important;
+    padding: 1rem;
+    width: 33%;
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+
+}
+.landing-unit-container h1{
+    font-size: 24px;
+}
 
   }
-
-  .landing-number-input{
-    width: 50%;
-
+  .cds--number__input-wrapper{
+    max-width: 100%;
   }
 
 .cds--number input{
@@ -650,6 +681,7 @@ min-height: 5rem !important;
 max-height: 5rem;
 
 font-size: 32px !important;
+
 }
 .cds--btn--primary{
     display: flex;
@@ -662,4 +694,20 @@ font-size: 32px !important;
     z-index: 999999;
     min-height: 5rem !important;
     max-height: 5rem;
+    max-width: 33%;
+
+}
+
+  
+  
+  
+  
+.landing-number-input{
+    display: flex;
+    flex-direction: column;
+    align-items: right;
+    justify-content: right;
+   background-color: chocolate;
+   height: 5rem;
+   width:33%;
 }
