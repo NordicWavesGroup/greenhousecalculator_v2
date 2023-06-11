@@ -19,6 +19,7 @@ import { ReactComponent as GHCLOGO } from '../../content/WelcomePage/GHC-logo.sv
 import  LandingOffset  from './LandingOffset'
 import Waves from "../Waves";
 import LandingFooter from "./LandingFooter";
+import LandingProjectCards from "./LandingProjectCards";
 
 // Define an array of 12 different languages
 const languages = [
@@ -296,6 +297,7 @@ const LandingPage = () => {
           </Tile>
         </section>
        <LandingOffset />
+       <LandingProjectCards />
       </section>
       <LandingFooter />
 

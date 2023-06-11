@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./_landing-page.scss";
 import { Button, SkeletonText } from "@carbon/react";
-import Waves from "../Waves";
 import { NumberInput } from "carbon-components-react";
 
 const LandingOffset = () => {
