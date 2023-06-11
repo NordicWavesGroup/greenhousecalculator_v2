@@ -13,11 +13,12 @@ import {
   SkeletonText,
   SkeletonPlaceholder,
 } from "@carbon/react";
-import CustomTabsSkeleton from "../../components/CustomTabsSkelton";
+import CustomTabsSkeleton from "../../components/CustomTabsSkelton"
 import { ReactComponent as GHCLOGO } from '../../content/WelcomePage/GHC-logo.svg';
 
 
 import Waves from "../Waves";
+import { NumberInput } from "carbon-components-react";
 
 // Define an array of 12 different languages
 const languages = [
@@ -202,6 +203,22 @@ const LandingPage = () => {
                   <br />
                   <p>This awareness can motivate you to make more
                     sustainable choices in your day-to-day life.</p>
+                    <div class="spinner-box">
+                      <div class="blue-orbit leo">
+                      </div>
+
+                      <div class="green-orbit leo">
+                      </div>
+                      
+                      <div class="red-orbit leo">
+                      </div>
+                      
+                      <div class="white-orbit w1 leo">
+                      </div><div class="white-orbit w2 leo">
+                      </div><div class="white-orbit w3 leo">
+                      </div>
+                    </div>
+                 
                 </div>
               </>
             )}
@@ -213,7 +230,7 @@ const LandingPage = () => {
               <>
                 <div className="tileOuter">
                   <h3 className="landing-tiles-questions">
-                   Responsibility{" "}
+                   Responsability{" "}
                   </h3>
                   <br />
                   <p>
@@ -225,6 +242,14 @@ const LandingPage = () => {
                   <p>It can be easy to
                     overlook the impact of our daily actions, but by quantifying
                     our carbon footprint, we can take action to reduce it.</p>
+                    <div class="spinner-box">
+                        <div class="leo-border-1">
+                          <div class="leo-core-1"></div>
+                        </div> 
+                        <div class="leo-border-2">
+                          <div class="leo-core-2"></div>
+                        </div> 
+                      </div>
                 </div>
               </>
             )}
@@ -249,11 +274,57 @@ const LandingPage = () => {
                   <p>   By reducing your
                     carbon footprint, you can make a positive impact on the
                     environment and help mitigate the effects of climate change.</p>
+                  <div class="spinner-box">
+                    <div class="solar-system">
+                      <div class="earth-orbit orbit">
+                        <div class="planet earth"></div>
+                        <div class="venus-orbit orbit">
+                          <div class="planet venus"></div>
+                          <div class="mercury-orbit orbit">
+                            <div class="planet mercury"></div>
+                            <div class="sun"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+               
                 </div>
               </>
             )}
           </Tile>
         </section>
+        <div className="landing-knowfootprint-container">
+
+        <div className="landing-tabpanel-middle">
+                  {delay ? (
+                    <>
+                      <SkeletonText
+                        line
+                        className={"title"}
+                        width={"40%"}
+                        height={"24px"}
+                      />
+                   
+                    </>
+                  ) : (
+                    <>
+                      <h2 className="landing-title-question">
+                        KNOW YOUR FOOTPRINT?
+                      </h2>
+                    
+                    </>
+                  )}
+              
+      <NumberInput
+      step={250}
+      max={10000}
+
+      
+      className="landing-number-input"></NumberInput>
+        </div>
+        </div>
       </section>
 
       <Waves />

@@ -124,8 +124,7 @@ const WelcomePage = () => {
             <div className="login_cont">
               <h2>GREENHOUSE CALCULATOR</h2>
               <p>
-                Discover your carbon footprint and take action towards a more
-                sustainable future. 
+               
                 Select your country or region and a date range to start your calculations.
               </p>
               <br />
@@ -149,10 +148,22 @@ const WelcomePage = () => {
                     }}
                   >
                     <option value="">Select Country</option>
-                    <option value="India">India</option>
-                    <option value="USA">USA</option>
-                    <option value="Qatar">Qatar</option>
+                    <option value="United States">United States</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Japan">Japan</option>
+                    <option value="China">China</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="Sweden">Sweden</option>
                     <option value="Denmark">Denmark</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Finland">Finland</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="South Korea">South Korea</option>
+
                   </Select>
                 </FormGroup>
                 <FormGroup>
