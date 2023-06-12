@@ -2,8 +2,13 @@ import React from "react";
 import "./_landing-project-cards.scss";
 import { Button, DataTable, TableContainer, Table, TableHead, TableRow, TableHeader, TableBody, TableCell } from "carbon-components-react";
 import forestImage from "../trees-gbd5cedd06_1280.jpg";
+import renewableEnergyImage from '../solar-power-gc1c1fcc82_1280.jpg'
+import childrenImage from '../children-g430a7114d_1280.jpg'
+import smallCabinImage from '../small-wooden-house-surrounded-by-tall-trees-forest.jpg'
+import happyWomenImage from '../happy-woman-rural-wooden-house.jpg'
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 
 const projects = [
   {
@@ -18,21 +23,21 @@ const projects = [
     description: "Installing solar panels and wind turbines to generate clean energy and reduce CO2 emissions.",
     location: "Green Valley",
     status: "Completed",
-    image: "https://pixabay.com/photos/trees-rearing-nursery-grow-2206090/"
+    image: renewableEnergyImage
   },
   {
     title: "CO2 Offset Program",
     description: "Implementing a program to offset carbon emissions through sustainable projects and practices.",
     location: "Global",
     status: "Ongoing",
-    image: "https://example.com/tree2.jpg"
+    image: childrenImage
   },
   {
     title: "Green Building Construction",
     description: "Constructing eco-friendly buildings with energy-efficient designs and materials.",
     location: "Cityscape",
     status: "Upcoming",
-    image: "https://example.com/sun2.jpg"
+    image: happyWomenImage
   }
 ];
 
@@ -52,7 +57,10 @@ const headerData = [
 ];
 
 const LandingProjectCards = () => {
-  return (
+  return (<>
+
+ 
+    
     <div className="projects-container">
       <h2>Our Partners</h2>
       <Carousel
@@ -103,7 +111,9 @@ const LandingProjectCards = () => {
           </div>
         ))}
       </Carousel>
+      
     </div>
+    </>
   );
 };
 
