@@ -80,7 +80,7 @@ const LandingProjectCards = () => {
               <h3 className="project-title">{project.title}</h3>
               <DataTable rows={[project]} headers={headerData}>
                 {({ rows, headers, getHeaderProps, getTableProps }) => (
-                  <TableContainer title="DataTable">
+                  <TableContainer title="Project">
                     <Table {...getTableProps()} style={{ width: "100%" }}>
                       <TableHead>
                         <TableRow>
