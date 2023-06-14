@@ -63,13 +63,19 @@
 .cds--overflow-menu__icon{
   fill: white;
 }
+.visual-container{
+  height: 440px;
+}
+
+
+
 //////////////////////////// TABS ///////////////////////////////////
 .landing-container{
     display: flex;
     flex-direction: row;
     //background-color: aquamarine;
     border: 2px solid rgba(210, 210, 210, 0.345);
-    height: 380px;
+    height: 440px;
 }
 .landing-tabpanel-left{
     display: flex;
