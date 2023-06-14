@@ -20,6 +20,7 @@ import  LandingOffset  from './LandingOffset'
 import Waves from "../Waves";
 import LandingFooter from "./LandingFooter";
 import LandingProjectCards from "./LandingProjectCards";
+import Welcome_visualization from './Welcome_Visualization'
 
 // Define an array of 12 different languages
 const languages = [
@@ -98,9 +99,8 @@ const LandingPage = () => {
           ) : (
             <>
               <TabList className={"landing-tablist"} aria-label="List of tabs">
-                <Tab className={"landing-tab"}>About</Tab>
-                <Tab className={"landing-tab"}>Design</Tab>
-                <Tab className={"landing-tab"}>Tools</Tab>
+                <Tab className={"landing-tab"}>What</Tab>
+                <Tab className={"landing-tab"}>Emissions</Tab>
               </TabList>
             </>
           )}
@@ -168,8 +168,10 @@ const LandingPage = () => {
                 </div>
               </section>
             </TabPanel>
-            <TabPanel></TabPanel>
-            <TabPanel></TabPanel>
+            <TabPanel>
+              < Welcome_visualization />
+            </TabPanel>
+         
           </TabPanels>
         </Tabs>
 
@@ -192,18 +194,15 @@ const LandingPage = () => {
               <>
                 <div className="tileOuter">
                   <h3 className="landing-tiles-questions">
-                     Awareness{" "}
+                     AWARENESS{" "}
                   </h3>
                   <br />
                   <p>
                     {" "}
-                    Calculating your carbon footprint can increase your
-                    awareness of the impact your lifestyle choices have on the
-                    environment. 
+                   Become aware of how your lifestyle choices affect the environment. This awareness can inspire you to adopt more sustainable habits in your daily life. 
                   </p>
-                  <br />
-                  <p>This awareness can motivate you to make more
-                    sustainable choices in your day-to-day life.</p>
+         
+            
                     <div class="spinner-box">
                       <div class="blue-orbit leo">
                       </div>
@@ -231,18 +230,14 @@ const LandingPage = () => {
               <>
                 <div className="tileOuter">
                   <h3 className="landing-tiles-questions">
-                   Responsability{" "}
+                   RESPONSABILITY{" "}
                   </h3>
                   <br />
                   <p>
                     {" "}
-                    Calculating your carbon footprint can help you take personal
-                    responsibility for your carbon emissions. 
+                    Quantify your carbon footprint to heighten awareness of your lifestyle. lifestyle impact on the environment. Let this knowledge drive sustainable choices for a greener everyday life.
                   </p>
-                  <br />
-                  <p>It can be easy to
-                    overlook the impact of our daily actions, but by quantifying
-                    our carbon footprint, we can take action to reduce it.</p>
+          
                     <div class="spinner-box">
                         <div class="leo-border-1">
                           <div class="leo-core-1"></div>
@@ -263,18 +258,14 @@ const LandingPage = () => {
               <>
                 <div className="tileOuter">
                   <h3 className="landing-tiles-questions">
-                   Impact{" "}
+                   IMPACT{" "}
                   </h3>
                   <br />
                   <p>
-                    Knowing your carbon footprint can help you understand how
-                    your actions contribute to climate change. 
+                  Understanding your carbon footprint reveals your impact on climate change. Reduce it to make a positive environmental difference and combat the effects of global warming.
                   
                   </p>
-<br />
-                  <p>   By reducing your
-                    carbon footprint, you can make a positive impact on the
-                    environment and help mitigate the effects of climate change.</p>
+
                   <div class="spinner-box">
                     <div class="solar-system">
                       <div class="earth-orbit orbit">

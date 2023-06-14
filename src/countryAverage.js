@@ -1,0 +1,33 @@
+const topCarbonEmittersPerCapita = {
+  Qatar: 36.1,
+  Kuwait: 22.6,
+  UnitedArabEmirates: 22.2,
+  Bahrain: 21.7,
+  SaudiArabia: 19.4,
+  Oman: 17.0,
+  TrinidadandTobago: 16.5,
+  Luxembourg: 16.2,
+  UnitedStates: 16.1,
+  Australia: 15.4,
+  Canada: 15.3,
+  Estonia: 15.2,
+  Kazakhstan: 14.9,
+  Netherlands: 14.8,
+  Russia: 12.0,
+  Belgium: 11.7,
+  CzechRepublic: 10.6,
+  Germany: 10.0,
+  Finland: 9.7,
+  Poland: 9.1,
+  UnitedKingdom: 8.9,
+  China: 8.2,
+  France: 5.8,
+  Italy: 5.6,
+  Spain: 5.4,
+  Brazil: 2.3,
+  India: 1.9,
+  Indonesia: 1.8,
+};
+
+  
+  export default topCarbonEmittersPerCapita

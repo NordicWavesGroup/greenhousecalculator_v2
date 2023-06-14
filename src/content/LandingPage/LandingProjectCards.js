@@ -1,14 +1,10 @@
 import React from "react";
 import "./_landing-project-cards.scss";
-import { Button, DataTable, TableContainer, Table, TableHead, TableRow, TableHeader, TableBody, TableCell } from "carbon-components-react";
+import { Button } from "carbon-components-react";
 import forestImage from "../trees-gbd5cedd06_1280.jpg";
-import renewableEnergyImage from '../solar-power-gc1c1fcc82_1280.jpg'
-import childrenImage from '../children-g430a7114d_1280.jpg'
-import smallCabinImage from '../small-wooden-house-surrounded-by-tall-trees-forest.jpg'
-import happyWomenImage from '../happy-woman-rural-wooden-house.jpg'
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
-
+import renewableEnergyImage from '../solar-power-gc1c1fcc82_1280.jpg';
+import childrenImage from '../children-g430a7114d_1280.jpg';
+import happyWomenImage from '../happy-woman-rural-wooden-house.jpg';
 
 const projects = [
   {
@@ -41,79 +37,24 @@ const projects = [
   }
 ];
 
-const headerData = [
-  {
-    key: "description",
-    header: "Description"
-  },
-  {
-    key: "location",
-    header: "Location"
-  },
-  {
-    key: "status",
-    header: "Status"
-  }
-];
-
 const LandingProjectCards = () => {
   return (<>
-
- 
-    
-    <div className="projects-container">
+  
+  
       <h2>Our Partners</h2>
-      <Carousel
-        showThumbs={false}
-        showStatus={false}
-        infiniteLoop={true}
-        autoPlay={true}
-        interval={3000}
-        stopOnHover={true}
-        emulateTouch={true}
-        swipeable={true}
-      >
-        {projects.map((project, index) => (
-          <div key={index} className="project-card">
-            <img src={project.image} alt={project.title} className="project-image" />
-            <div className="project-details">
-              <h3 className="project-title">{project.title}</h3>
-              <DataTable rows={[project]} headers={headerData}>
-                {({ rows, headers, getHeaderProps, getTableProps }) => (
-                  <TableContainer title="Project">
-                    <Table {...getTableProps()} style={{ width: "100%" }}>
-                      <TableHead>
-                        <TableRow>
-                          {headers.map((header) => (
-                            <TableHeader {...getHeaderProps({ header })}>
-                              {header.header}
-                            </TableHeader>
-                          ))}
-                        </TableRow>
-                      </TableHead>
-                      <TableBody>
-                        {rows.map((row) => (
-                          <TableRow key={row.id}>
-                            {row.cells.map((cell) => (
-                              <TableCell key={cell.id}>{cell.value}</TableCell>
-                            ))}
-                          </TableRow>
-                        ))}
-                      </TableBody>
-                    </Table>
-                  </TableContainer>
-                )}
-              </DataTable>
-              <Button  className="project-button">
-                View Project
-              </Button>
-            </div>
+    <div className="projects-container">
+      {projects.map((project, index) => (
+        <div className="card" key={index}>
+          <img src={project.image} alt={project.title} className="card-image" />
+          <div className="card-content">
+            <h3 className="card-title">{project.title}</h3>
+            <p className="card-description">{project.description}</p>
+            <Button className="card-button">Buy Now</Button>
           </div>
-        ))}
-      </Carousel>
-      
+        </div>
+      ))}
     </div>
-    </>
+  </>
   );
 };
 

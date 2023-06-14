@@ -49,6 +49,9 @@ const LandingOffset = () => {
                 onChange={handleCarbonOffsetChange}
                 style={{ textAlign: "right" }}
                 labelText="CO2e (kg)"
+                invalidText="Number is not valid"
+
+                
                 >
 
             </NumberInput>
@@ -57,7 +60,9 @@ const LandingOffset = () => {
                 <h1>Kg of CO2</h1>
             </div>
             <br />
-            <Button className="landing-button-offset">OFFSET NOW</Button>
+              <Button kind="secondary" className="landing-button-offset">OFFSET NOW</Button>
+              <Button kind="primary" className="landing-button-offset2">CALCULATE</Button>
+
           </div>
         </div>
       </div>
