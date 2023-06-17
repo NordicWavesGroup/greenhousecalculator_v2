@@ -2,7 +2,6 @@ import React from "react";
 import "./_bus-rail-page.scss";
 import IconsNavigation from "../IconsNavigation/IconsNavigation";
 import MySwipeableTabs from "../BusRailPage/MySwipeableTabs";
-import ResultsPage from "./../ResultsPage/ResultsPage";
 import Waves from "../Waves";
 import ResultTotalResults from "../../content/ResultsPage/Results_TotalResults"
 
@@ -24,7 +23,6 @@ const BusRailPage = () => {
                 </div>
               </div>
             </div>
-            <ResultsPage />
           </div>
         </div>
       </div>

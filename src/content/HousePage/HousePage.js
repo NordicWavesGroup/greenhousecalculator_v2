@@ -19,7 +19,6 @@ import HousePropane from "./House_Propane";
 import ResultTotalResults from "../../content/ResultsPage/Results_TotalResults"
 
 
-import ResultsPage from "./../ResultsPage/ResultsPage";
 
 import Waves from "../Waves";
 import { useState } from "react";
@@ -105,7 +104,6 @@ const HousePage = () => {
               </div>
             </div>
 
-            <ResultsPage />
           </div>
         </div>
       </div>

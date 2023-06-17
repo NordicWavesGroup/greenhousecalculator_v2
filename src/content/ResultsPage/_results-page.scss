@@ -1,71 +1,7 @@
-////////////////////////////MAIN CONTAINER//////////////////////////////
-.results-main-container{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    //background-color: rgb(221, 221, 221);
-    min-height: 490px;
+.results-container{
     width: 100%;
+    height: calc(100vh - 6rem);
+    background-color: blue;
+    margin-top: 3rem;
+    
 }
-////////////////////////////BLOCK 1 CHECKMARK //////////////////////////
-
-.results-checkmark-block{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50%;
-    //background-color: rgb(216, 42, 132);
-}
-.results-checkmark-container{
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    padding-left: 3rem;
-    //background-color: rgba(250, 142, 1, 0.875);
-}
-.results-button-container{
-    width: 100%;
-    //background-color: firebrick;
-}
-
-////////////////////////////BLOCK 1 VISUALIZATION //////////////////////
-.results-visualization-block{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 50%;
-    //background-color: aqua;
-}
-.results-calculate-footprint-button{
-    padding:0;
-    min-width:100%;
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center ;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

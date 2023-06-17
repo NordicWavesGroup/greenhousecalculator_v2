@@ -12,6 +12,7 @@ import useHouseCalculation from "../HousePage/House_FootprintsButton";
 import useConsumptionCalculation from "../ConsumptionPage/Consumption_FootprintsButton";
 import useBusCalculation from "../BusRailPage/BusRail_FootprintsButton";
 import { ReactComponent as GHCLOGO } from '../../content/WelcomePage/GHC-logo.svg';
+import ResultsPage from "../ResultsPage/ResultsPage";
 
 
 const IconsNavigation = ({ location }) => {
@@ -40,6 +41,7 @@ const IconsNavigation = ({ location }) => {
             
             <Link className="logo-name-container" to="/">
               < GHCLOGO className="icons-logo"/>
+             
               <h5>GREENHOUSECALCULATOR.COM</h5>
             </Link>
 
@@ -60,6 +62,7 @@ const IconsNavigation = ({ location }) => {
                 size="32px"
               />
             </Link>
+
             <Link
               to="/car"
               className={location.pathname === "/car" ? "active" : ""}
@@ -73,6 +76,7 @@ const IconsNavigation = ({ location }) => {
                 size="32px"
               />
             </Link>
+
             <Link
               to="/bus-rail"
               className={location.pathname === "/bus-rail" ? "active" : ""}
@@ -86,6 +90,7 @@ const IconsNavigation = ({ location }) => {
                 size="32px"
               />
             </Link>
+
             <Link
               to="/flight"
               className={location.pathname === "/flight" ? "active" : ""}
@@ -99,6 +104,7 @@ const IconsNavigation = ({ location }) => {
                 size="32px"
               />
             </Link>
+
             <Link
               to="/consumption"
               className={location.pathname === "/consumption" ? "active" : ""}
@@ -112,6 +118,11 @@ const IconsNavigation = ({ location }) => {
                 size="32px"
               />
             </Link>
+
+          </div>
+          <div className="results-visualizations-container">
+          <ResultsPage />
+
           </div>
         </div>
     </>

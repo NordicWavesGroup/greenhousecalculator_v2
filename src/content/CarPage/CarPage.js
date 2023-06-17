@@ -19,7 +19,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "carbon-components/css/carbon-components.min.css";
 import Slider from "react-slick";
-import ResultsPage from "./../ResultsPage/ResultsPage";
 
 
 import Waves from "../Waves";
@@ -349,7 +348,6 @@ const CarPage = () => {
                 </div>
               </div>
             </div>
-            <ResultsPage />
           </div>
         </div>
       </div>

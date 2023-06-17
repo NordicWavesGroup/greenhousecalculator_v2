@@ -8,14 +8,12 @@ const ResultsPage = () => {
 
   return (
     <>
-      <div className="housHold_col">
-        <div className="mobile_sidebar">
-          <div className="result_mobile">
-            <span  className="result_menu">
+      <div className="results-container">
+   
+         
               Results
-            </span>
-          </div>
-        </div>
+       
+       
       </div>
     </>
   );

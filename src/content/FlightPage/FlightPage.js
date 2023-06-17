@@ -193,7 +193,6 @@ const FlightsPage = () => {
                 </div>
               </div>
             </div>
-            <ResultsPage />
           </div>
         </div>
       </div>

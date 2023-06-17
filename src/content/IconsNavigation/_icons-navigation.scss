@@ -2,17 +2,20 @@
 .container-nav{
     display: flex;
     flex-direction: row;
-    justify-content: center ;
-    width: 100vw;
+    justify-content: right ;
     height: 3rem;
-    background-color: aqua;
+    //background-color: aqua;
+    margin-left: 10rem;
+    border-bottom: 1px solid rgb(255, 255, 255);
+  
    
 }
 .logo_inner{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    background-color: antiquewhite;
+    align-items: center;    
+    //background-color: antiquewhite;
     width: 350px;
     height: 3rem;
   
@@ -23,19 +26,25 @@
     align-items: center;
     align-content: center;
     justify-content: space-around;
+    height: 3rem;
  
 }
 .progress-bar-container{
     max-width: 50vw;
-    min-width: 50vw;
+    min-width: 33%;
     min-height: 3rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(228, 119, 119);
+    //background-color: rgb(228, 119, 119);
+}
+.results-visualizations-container{
+    max-width: 50vw;
+    width: 40%;
+    //background-color: rgb(106, 138, 139);
     border-bottom: 1px solid rgba(255, 255, 255, 0.448);
-    margin-bottom: 3rem;
+   
 }
 .progress-bar-container a{
     color: #fff;
@@ -56,6 +65,7 @@
 .icons-logo{
     width: 2rem;
     height: auto;
+    margin-right: 1rem;
 }
 
 @media (max-width:800px) {
@@ -63,3 +73,7 @@
         display: none;
     }
   }
+
+  .tabs-slider-tabs {
+   width: 50vw;
+}
