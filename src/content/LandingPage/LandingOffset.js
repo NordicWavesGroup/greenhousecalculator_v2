@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./_landing-page.scss";
 import { Button, SkeletonText } from "@carbon/react";
+import { Link } from "react-router-dom";
+
 import { NumberInput } from "carbon-components-react";
 
 const LandingOffset = () => {
@@ -61,7 +63,11 @@ const LandingOffset = () => {
             </div>
             <br />
               <Button kind="secondary" className="landing-button-offset">OFFSET NOW</Button>
+
+              <Link to="/welcome">
+
               <Button kind="primary" className="landing-button-offset2">CALCULATE</Button>
+              </Link>
 
           </div>
         </div>
