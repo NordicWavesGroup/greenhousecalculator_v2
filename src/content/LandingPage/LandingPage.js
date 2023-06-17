@@ -150,7 +150,7 @@ const LandingPage = () => {
                           className="landing-button"
                           kind="primary"
                         >
-                          Get Started
+                          GET STARTED
                         </Button>
                       </Link>{" "}
                     </>
