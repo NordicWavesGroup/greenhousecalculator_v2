@@ -119,15 +119,16 @@ const WelcomePage = () => {
               <img src="/left_ic.svg" />
             </div>
             <div className="logo_wrap">
-              <GHCLOGO className="welcome-logo" />
+            <Link to="/">
+              <GHCLOGO  className="welcome-logo" />
+              </Link>
             </div>
             <div className="login_cont">
               <h2>GREENHOUSE CALCULATOR</h2>
               <p>
-               
                 Select your country or region and a date range to start your calculations.
               </p>
-              <br />
+      
             </div>
             <div className="login_page_form">
               <Form
@@ -203,12 +204,12 @@ const WelcomePage = () => {
                 </FormGroup>
                 <div className="custom_link">
                 <Link to="/house" className="welcome-button">
-                  <Button type="submit" className="primary_btn">
-                    Continue to Calculator
+                  <Button  kind="primary" type="submit" className="welcome-button2">
+                    CONTINUE TO CALCULATOR
                   </Button>
                 </Link>
              
-                  <p>*All fields are required </p>
+          
                 </div>
               </Form>
             </div>
