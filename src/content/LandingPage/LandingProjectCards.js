@@ -15,7 +15,7 @@ const projects = [
     image: forestImage
   },
   {
-    title: "Renewable Energy Installation",
+    title: "Renewable Energy",
     description: "Installing solar panels and wind turbines to generate clean energy and reduce CO2 emissions.",
     location: "Green Valley",
     status: "Completed",
@@ -23,14 +23,14 @@ const projects = [
   },
   {
     title: "CO2 Offset Program",
-    description: "Implementing a program to offset carbon emissions through sustainable projects and practices.",
+    description: "Implementing a program to offset carbon emissions through sustainable projects.",
     location: "Global",
     status: "Ongoing",
     image: childrenImage
   },
   {
-    title: "Green Building Construction",
-    description: "Constructing eco-friendly buildings with energy-efficient designs and materials.",
+    title: "Green Construction",
+    description: "Constructing eco-friendly buildings with energy-efficient designs.",
     location: "Cityscape",
     status: "Upcoming",
     image: happyWomenImage
@@ -41,7 +41,6 @@ const LandingProjectCards = () => {
   return (<>
   
   
-      <h2>Our Partners</h2>
     <div className="projects-container">
       {projects.map((project, index) => (
         <div className="card" key={index}>
@@ -49,7 +48,7 @@ const LandingProjectCards = () => {
           <div className="card-content">
             <h3 className="card-title">{project.title}</h3>
             <p className="card-description">{project.description}</p>
-            <Button className="card-button">Buy Now</Button>
+            <Button kind="tertiary" size="sm" className="card-button">SELECT</Button>
           </div>
         </div>
       ))}

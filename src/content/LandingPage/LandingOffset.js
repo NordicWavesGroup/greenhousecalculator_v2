@@ -45,7 +45,7 @@ const LandingOffset = () => {
                 max={999999}
                 height={50}
                 className="landing-number-input"
-                value={carbonOffset}
+                value={3100}
                 onChange={handleCarbonOffsetChange}
                 style={{ textAlign: "right" }}
                 labelText="CO2e (kg)"

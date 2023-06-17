@@ -148,8 +148,7 @@ const LandingPage = () => {
                       >
                         <Button
                           className="landing-button"
-                          renderIcon={NextOutline}
-                          kind="tertiary"
+                          kind="primary"
                         >
                           Get Started
                         </Button>

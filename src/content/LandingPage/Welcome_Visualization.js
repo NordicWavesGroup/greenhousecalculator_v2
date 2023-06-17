@@ -26,7 +26,7 @@ const WorldAverage = () => {
     <div className='visual-container'>
 
 
-      <h2>CO2 Emissions in tonnes per country per capita</h2>
+      <h2>CO2 Emissions in tonnes per country per capita / Top 30 </h2>
       <TreemapChart  className="white-theme" data={treemapChartData} options={treemapOptions}  />
     </div>
     </>
