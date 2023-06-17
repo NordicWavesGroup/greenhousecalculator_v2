@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import "./_icons-navigation.scss";
 import { Link, withRouter } from "react-router-dom";
 import {
-  Home,
+  Plug,
   PlanePrivate,
   Car,
   Bus
@@ -35,21 +35,23 @@ const IconsNavigation = ({ location }) => {
   return (
     <>
       {/* ------------------------------------------------------------------- */}
-      <div className="top-header-sec">
-        <div className="container">
+        <div className="container-nav">
           <div className="logo_inner">
-            <Link to="/">
+            
+            <Link className="logo-name-container" to="/">
               < GHCLOGO className="icons-logo"/>
               <h5>GREENHOUSECALCULATOR.COM</h5>
             </Link>
+
           </div>
+
           <div className="progress-bar-container fixed-navigation">
          
             <Link
               to="/house"
               className={location.pathname === "/house" ? "active" : ""}
             >
-              <Home
+              <Plug
                 className={
                   location.pathname === "/house"
                     ? "iconClass active"
@@ -112,7 +114,6 @@ const IconsNavigation = ({ location }) => {
             </Link>
           </div>
         </div>
-      </div>
     </>
   );
 };

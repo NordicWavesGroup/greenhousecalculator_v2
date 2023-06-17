@@ -1,13 +1,39 @@
 //@import "node_modules/carbon-components/scss/globals/scss/styles";
-
+.container-nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: center ;
+    width: 100vw;
+    height: 3rem;
+    background-color: aqua;
+   
+}
+.logo_inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: antiquewhite;
+    width: 350px;
+    height: 3rem;
+  
+}
+.logo-name-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+ 
+}
 .progress-bar-container{
-    max-width: 100vw;
-    height: 47px;
+    max-width: 50vw;
+    min-width: 50vw;
+    min-height: 3rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(22, 22, 22);
+    background-color: rgb(228, 119, 119);
     border-bottom: 1px solid rgba(255, 255, 255, 0.448);
     margin-bottom: 3rem;
 }
@@ -15,7 +41,7 @@
     color: #fff;
 }
 .fixed-navigation{
-    position: fixed;
+ 
     top: 10;
     left: 0;
     right: 0;
