@@ -48,6 +48,7 @@ const LandingProjectCards = () => {
           <div className="card-content">
             <h3 className="card-title">{project.title}</h3>
             <p className="card-description">{project.description}</p>
+            <h4>123.79 $</h4>
             <Button kind="tertiary" size="sm" className="card-button">SELECT</Button>
           </div>
         </div>

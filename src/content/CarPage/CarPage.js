@@ -20,7 +20,6 @@ import "slick-carousel/slick/slick-theme.css";
 import "carbon-components/css/carbon-components.min.css";
 import Slider from "react-slick";
 import ResultsPage from "./../ResultsPage/ResultsPage";
-import ResultTotalResults from "../../content/ResultsPage/Results_TotalResults"
 
 
 import Waves from "../Waves";
@@ -47,13 +46,11 @@ const settings = {
   ],
 };
 const CarPage = () => {
-  const addClass = () => {
-    document.getElementsByTagName("body")[0].setAttribute("class", "open_menu");
-  };
+
   return (
     <>
     <div className="global-total-result-fixed">
-      <ResultTotalResults />
+
 </div>
       <IconsNavigation />
       <div className="household_sec">
