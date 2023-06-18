@@ -59,7 +59,7 @@ const HousePage = () => {
                     tabContentClassName="custom-tab-content"
                     tabContentStyle={{ padding: "20px" }}
                   >
-                    <TabList>
+                    <TabList aria-label="Your label here">
                       <Tab id="tab1" label="ELECTRICITY">
                         ELECTRICITY
                       </Tab>
