@@ -1,7 +1,10 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import './_results-page.scss';
 
 const DataTable = () => {
+  const co2Result = useSelector((state) => state.house.electricityFootprint);
+
   return (
     <div className="results-container">
       <table>
@@ -12,8 +15,8 @@ const DataTable = () => {
           </tr>
         </thead>
         <tbody>
-          <tr><td>Household</td><td>Data 2</td></tr>
-          <tr><td>Data 3</td><td>Data 4</td></tr>
+          <tr><td>Household</td><td>0</td></tr>
+          <tr><td>Data 3</td><td>{co2Result}</td></tr>
           <tr><td>Data 5</td><td>Data 6</td></tr>
           <tr><td>Data 7</td><td>Data 8</td></tr>
           <tr><td>Data 9</td><td>Data 10</td></tr>
