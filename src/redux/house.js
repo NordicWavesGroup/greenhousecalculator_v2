@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 
-  electricityAverage: 0,
+
+  co2Result: 0,
 
 };
 
@@ -22,6 +23,9 @@ export const houseSlice = createSlice({
  
   }
 });
+export const setCO2Result = (state, action) => {
+  state.co2Result = action.payload;
+};
 
 export const { 
                selectCountry, 
@@ -34,6 +38,8 @@ export const {
                setShowElectricityResult,
 
                setHouseFootprint,
+
+               co2Result
 
               } = houseSlice.actions;
 

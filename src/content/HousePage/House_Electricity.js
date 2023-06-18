@@ -33,7 +33,7 @@ const HouseElectricity = () => {
           labelText="Electricity Consumption"
           className="house-block-middle-form"
           min={0}
-          max={100000}
+          max={10000}
           step={1}
           value={electricityConsumption}
           onChange={handleSliderChange}
