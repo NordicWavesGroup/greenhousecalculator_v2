@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { Button } from '@carbon/react';
 import './_results-page.scss';
 
 const DataTable = () => {
@@ -10,23 +11,46 @@ const DataTable = () => {
       <table>
         <thead>
           <tr>
-            <th>Categories</th>
-            <th>Results in Kg of CO2</th>
+          <th className='table-top'>
+            
+          </th>
+       
+          </tr>
+          <tr>
+            <th className='table-left' style={{ fontWeight: 'bold' }}>SUMMARY</th>
+            <th className='table-top' style={{ color: 'lightgray' }}>{co2Result} Kg of CO2</th>
+
+
           </tr>
         </thead>
         <tbody>
-          <tr><td>Household</td><td>0</td></tr>
-          <tr><td>Data 3</td><td>{co2Result}</td></tr>
-          <tr><td>Data 5</td><td>Data 6</td></tr>
-          <tr><td>Data 7</td><td>Data 8</td></tr>
-          <tr><td>Data 9</td><td>Data 10</td></tr>
-          <tr><td>Data 11</td><td>Data 12</td></tr>
-          <tr><td>Data 13</td><td>Data 14</td></tr>
-          <tr><td>Data 15</td><td>Data 16</td></tr>
-          <tr><td>Data 17</td><td>Data 18</td></tr>
-          <tr><td>Data 19</td><td>Data 20</td></tr>
-          <tr><td>Data 21</td><td>Data 22</td></tr>
-          <tr><td>Data 23</td><td>Data 24</td></tr>
+          
+          <tr><td className='table-left'>◯ Household</td><td className='table-right'>0</td></tr>
+
+          <tr><td className='table-left'><span style={{color: 'var(--verde)',fontWeight: 'bold' }}>○</span> Electricity</td> <td className='table-right'>{co2Result}</td></tr>
+
+          <tr><td className='table-left'>○ Natural Gas</td><td className='table-right'>0</td></tr>
+          <tr><td className='table-left'>○ Coal</td><td className='table-right'>0</td></tr>
+          <tr><td className='table-left'>○ LPG</td><td className='table-right'>0</td></tr>
+          <tr><td className='table-left'>◯ Private Vehicles</td><td className='table-right'>0</td></tr>
+          <tr><td className='table-left'>○ Car</td><td className='table-right'>0</td></tr>
+          <tr><td className='table-left'>○ Motorbike</td><td className='table-right'>0</td></tr>
+          <tr><td className='table-left'>◯ Public Transport</td><td className='table-right'>0</td></tr>
+          <tr><td className='table-left'>○ Bus</td><td className='table-right'>0</td></tr>
+          <tr><td className='table-left'>○ Train</td><td className='table-right'>0</td></tr>
+          <tr><td className='table-left'>○ Taxi</td><td className='table-right'>0</td></tr>
+          <tr><td className='table-left'>◯ Flights</td><td className='table-right'>0</td></tr>
+          <tr><td className='table-left'>◯ Food & Water</td><td className='table-right'>0</td></tr>
+          <tr><td>.</td><td>.</td></tr>
+          <tr>
+            <td className='table-left'>
+            <Button kind="tertiary" className='button-results1'>Send results to your email</Button>
+            </td>
+            <td> <Button kind="tertiary" className='button-results2'>Offset your Carbon</Button></td>
+          </tr>
+       
+          <tr><td>.</td><td>.</td></tr>
+
         </tbody>
       </table>
     </div>
