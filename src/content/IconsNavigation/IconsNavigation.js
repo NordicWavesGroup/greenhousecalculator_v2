@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./_icons-navigation.scss";
 import { Link, withRouter } from "react-router-dom";
 import {
@@ -8,26 +8,17 @@ import {
   Bus
 } from "@carbon/react/icons";
 import { Restaurant } from "@carbon/icons-react";
-
 import { ReactComponent as GHCLOGO } from '../../content/WelcomePage/GHC-logo.svg';
 import ResultsPage from "../ResultsPage/ResultsPage";
 
-
 const IconsNavigation = ({ location }) => {
-
- 
-
-   
-
   return (
     <>
-      {/* ------------------------------------------------------------------- */}
         <div className="container-nav">
           <div className="logo_inner">
             
             <Link className="logo-name-container" to="/">
               < GHCLOGO className="icons-logo"/>
-             
               <h5>GREENHOUSECALCULATOR.COM</h5>
             </Link>
 
