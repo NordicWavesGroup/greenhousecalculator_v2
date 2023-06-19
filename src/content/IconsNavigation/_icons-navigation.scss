@@ -1,21 +1,21 @@
 //@import "node_modules/carbon-components/scss/globals/scss/styles";
 .container-nav{
+    
     display: flex;
     flex-direction: row;
     justify-content: right ;
     height: 3rem;
-    //background-color: aqua;
+    background-color: aqua;
     border-bottom: 1px solid rgb(255, 255, 255);
 }
 .logo_inner{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;    
-    //background-color: antiquewhite;
-    width: 350px;
+    align-items: flex-start;  
+    background-color: antiquewhite;
+    min-width: 30%;
     height: 3rem;
-    margin-left: 10%;
   
 }
 .logo-name-container{
@@ -28,18 +28,18 @@
  
 }
 .progress-bar-container{
-    max-width: 50vw;
-    min-width: 33%;
+   
+    min-width: 30%;
     min-height: 3rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    //background-color: rgb(228, 119, 119);
+    background-color: rgb(228, 119, 119);
 }
 .results-visualizations-container{
     max-width: 50vw;
-    width: 40%;
+    min-width: 40%;
     //background-color: rgb(106, 138, 139);
     border-bottom: 1px solid rgba(255, 255, 255, 0.448);
    

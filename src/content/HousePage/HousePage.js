@@ -48,7 +48,6 @@ const HousePage = () => {
       <ResultTotalResults />
 </div>
       <IconsNavigation />
-      <div className="household_sec">
         <div className="container">
           <div className="household_row">
             <div className="housHold_col">
@@ -106,7 +105,6 @@ const HousePage = () => {
 
           </div>
         </div>
-      </div>
 
       <Waves />
     </>

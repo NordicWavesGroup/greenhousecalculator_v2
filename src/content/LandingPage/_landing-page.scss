@@ -255,13 +255,20 @@
 }
 
 .cds--tabs__nav-item--selected {
-    border-bottom: 2px solid var(--verde) !important;
-    transition: color 70ms cubic-bezier(0.2, 0, 0.38, 0.9);
+    border-bottom: none !important;
+    border: none !important;
+    color: none !important;
+}
+
+.cds--tabs .cds--tabs__nav-link:focus{
+
+  outline: none;
 }
 .cds--tabs{
   min-height: 3rem;
   border-bottom: 1px solid white;
-  padding-left: 10%
+ 
+
   
 }
 ///////////////////////////RESPONSIVE///////////////////////
