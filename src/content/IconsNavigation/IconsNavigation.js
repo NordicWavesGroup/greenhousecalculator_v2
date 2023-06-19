@@ -8,30 +8,16 @@ import {
   Bus
 } from "@carbon/react/icons";
 import { Restaurant } from "@carbon/icons-react";
-import useHouseCalculation from "../HousePage/House_FootprintsButton";
-import useConsumptionCalculation from "../ConsumptionPage/Consumption_FootprintsButton";
-import useBusCalculation from "../BusRailPage/BusRail_FootprintsButton";
+
 import { ReactComponent as GHCLOGO } from '../../content/WelcomePage/GHC-logo.svg';
 import ResultsPage from "../ResultsPage/ResultsPage";
 
 
 const IconsNavigation = ({ location }) => {
-  const { calculateAllHouseFootprint } = useHouseCalculation();
-  const { showFootprintResultsFoodDiet } = useConsumptionCalculation();
-  const { calculateAllBusRailFootprint } = useBusCalculation();
 
-  useEffect(() => {
-    // This code will run after the component mounts
-    calculateAllHouseFootprint();
-    showFootprintResultsFoodDiet();
-    calculateAllBusRailFootprint();
+ 
 
-    // Clean-up function
-    return () => {
-      // This code will run before the component unmounts
-      console.log("Component unmounted");
-    };
-  }, [location.pathname]);
+   
 
   return (
     <>
