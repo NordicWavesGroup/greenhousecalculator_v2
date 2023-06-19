@@ -5,7 +5,7 @@
     flex-direction: row;
     justify-content: right ;
     height: 3rem;
-    background-color: aqua;
+    //background-color: aqua;
     border-bottom: 1px solid rgb(255, 255, 255);
 }
 .logo_inner{
@@ -13,9 +13,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;  
-    background-color: antiquewhite;
+    //background-color: antiquewhite;
     min-width: 30%;
     height: 3rem;
+    padding-left: 6rem;
   
 }
 .logo-name-container{
@@ -25,21 +26,22 @@
     align-content: center;
     justify-content: space-around;
     height: 3rem;
+    color: white;
  
 }
 .progress-bar-container{
    
-    min-width: 30%;
+    min-width: 35%;
     min-height: 3rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: rgb(228, 119, 119);
+    //background-color: rgb(228, 119, 119);
 }
 .results-visualizations-container{
     max-width: 50vw;
-    min-width: 40%;
+    min-width: 35%;
     //background-color: rgb(106, 138, 139);
     border-bottom: 1px solid rgba(255, 255, 255, 0.448);
    

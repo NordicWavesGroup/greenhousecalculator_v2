@@ -267,9 +267,11 @@
 .cds--tabs{
   min-height: 3rem;
   border-bottom: 1px solid white;
- 
-
-  
+  padding-left: 6rem;
+}
+.cds--tabs__nav-item{
+  padding-left: 0 !important;
+  border-bottom: none;
 }
 ///////////////////////////RESPONSIVE///////////////////////
 @media (max-width: 1100px) {
