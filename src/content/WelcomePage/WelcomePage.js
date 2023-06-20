@@ -111,7 +111,7 @@ const WelcomePage = () => {
       )}
       <main>
         <section className="login_page_sec">
-          <div className="container">
+          <div className="container-welcome">
             <div className="right_svg_ic">
               <img src="/right_ic.svg" />
             </div>

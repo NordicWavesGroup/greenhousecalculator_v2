@@ -1,15 +1,19 @@
 .results-container{
     width: 100%;
     height: calc(100vh - 3rem);
-    background-color: rgba(0, 0, 0, 0.469);
+    background-color: #63625f4b;
     margin-top: 3rem;
-    border-left: 1px solid rgba(255, 255, 255, 0.521);
+
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     z-index: 99999999;
+    padding: 5rem;
+    padding-left: 3rem;
+    padding-top: 0;
+    padding-right: 12rem;
 }
 
 table {
@@ -17,8 +21,9 @@ table {
     max-width: 800px;
     height: 100vh;
     border-collapse: collapse;
-    border: 1px solid rgba(0, 0, 0, 0.217);  /* changed the border color to black */
+    border: transparent !important; /* changed the border color to black */
     z-index: 99999999;
+
 
 
 }
@@ -26,23 +31,25 @@ table {
 
 
 th, td {
-    border: 1px solid rgba(29, 29, 29, 0.403) !important;  /* changed the border color to black */
-    padding: 8px;
+    border: transparent !important;  /* changed the border color to black */
+    padding: 4px;
 
-    text-align: center;  /* Center text horizontally */
+    text-align: left;  /* Center text horizontally */
     vertical-align: middle !important; /* Center text vertically */
     width: 50%;
 }
 
 
-.table-right{
+.table-right {
 text-align: right;
-padding-right: 5rem;
-font-size: 22px;
+max-width: 100px !important;
+font-size: 14px;
+
+//background-color: red;
 }
 .table-left{
     text-align: left;
-    padding-left: 2.5rem;
+    
     
     }
 
@@ -57,41 +64,49 @@ width: 50%;
     font-size: 22px;
 
 }
+.table-button1{
+height: 3rem;
+padding-top: 2rem;
 
 
-  td{
-    min-height: 3rem;
+}
+.table-button2{
+  height: 3rem;
+  
+  
+  
   }
+.table-button:first-child{
+  margin-top: 2rem !important;
+}
+
   .button-results2{
     font-size: 12px;
     padding: 0;
     margin: 0;
-    border: 2px solid var(--verde) !important;
-    height: 3rem ;
-    margin-left: 1rem;
-
-
-  }
-  .button-results2:hover{
-    background-color: var(--verde10) ;
-    color: white;
+    border: none !important;
+    height: 2.5rem ;
+    min-width:100% !important;
+    background-color: #7FE0A4 !important;
+    color: white !important;
+    font-weight: bold;
     font-size: 14px;
-    font-weight: 700;
+    margin-top: 0.6rem;
 
+  
   }
   .button-results1{
     font-size: 12px;
     padding: 0;
     margin: 0;
-    height: 3rem ;
-    margin-right: 1rem;
-   
-  }
-  .button-results1:hover{
-    background-color: var(--purple10) ;
-    color: white;
+    height: 2.5rem ;
+    min-width:100% !important;
+    background-color: #ffff !important;
+    border: none !important;
+    color: black;
+    font-weight: bold;
     font-size: 14px;
-    font-weight: 700;
-
-
+  
+   
+   
   }
