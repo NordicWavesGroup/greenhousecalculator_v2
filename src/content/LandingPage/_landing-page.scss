@@ -44,7 +44,7 @@
 }   
 
 .landing-tab{
-    width: 128px;
+    min-width: 300px;
 
 
 }
@@ -711,13 +711,7 @@
     max-width: 400px;
   }
 
-.cds--number input{
-min-height: 5rem !important;
-max-height: 5rem;
 
-font-size: 32px !important;
-
-}
 .cds--btn--primary{
     display: flex;
     flex-direction: column;
@@ -769,12 +763,3 @@ font-size: 32px !important;
   
   
   
-.landing-number-input{
-    display: flex;
-    flex-direction: column;
-    align-items: right;
-    justify-content: right;
-   
-   height: 5rem;
-   max-width: 400px;
-}

@@ -20,7 +20,6 @@ import  LandingOffset  from './LandingOffset'
 import Waves from "../Waves";
 import LandingFooter from "./LandingFooter";
 import LandingProjectCards from "./LandingProjectCards";
-import Welcome_visualization from './Welcome_Visualization'
 
 // Define an array of 12 different languages
 const languages = [
@@ -99,8 +98,7 @@ const LandingPage = () => {
           ) : (
             <>
               <TabList className={"landing-tablist"} aria-label="List of tabs">
-                <Tab className={"landing-tab"}>What</Tab>
-                <Tab className={"landing-tab"}>Emissions</Tab>
+                <Tab className={"landing-tab"}>Calculate your emissions today</Tab>
               </TabList>
             </>
           )}
@@ -167,9 +165,7 @@ const LandingPage = () => {
                 </div>
               </section>
             </TabPanel>
-            <TabPanel>
-              < Welcome_visualization />
-            </TabPanel>
+         
          
           </TabPanels>
         </Tabs>
