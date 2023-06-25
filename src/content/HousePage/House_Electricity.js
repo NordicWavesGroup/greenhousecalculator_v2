@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setkWh, setElectricityFootprint, setCO2Result} from '../../redux/house';
+import {  setkWh_CO2Result} from '../../redux/house';
 
 import { NumberInput } from 'carbon-components-react';
 
 import { Slider } from '@carbon/react';
 
 const HouseElectricity = () => {
-  const { kWh, kWh_factor} = useSelector((state) => state.house);
-  const CO2Result = useSelector((state) => state.house.electricityFootprint);
+  const { kWh, kWh_factor, kWh_CO2Result} = useSelector((state) => state.house);
 
   const dispatch = useDispatch();
 
@@ -17,15 +16,13 @@ const HouseElectricity = () => {
     const newValue = event.value;
   
     // Calculate the CO2 result based on the slider value
-    const CO2Result = newValue * kWh_factor; // Replace 4 with the actual factor value
+    const kWh_CO2Result = newValue * kWh_factor; // Replace 4 with the actual factor value
   
     // Dispatch the CO2 result to the Redux store
-    dispatch(setElectricityFootprint(CO2Result));
+    dispatch(setkWh_CO2Result (kWh_CO2Result));
 
-   
-  
     // Update the CO2 result state
-    setCO2Result(CO2Result);
+    setkWh_CO2Result(kWh_CO2Result);
   };
   
 
@@ -60,7 +57,7 @@ const HouseElectricity = () => {
 
         />
   
-      <p>Results in CO2: {CO2Result}</p>
+      <p>kWh Results in CO2: {kWh_CO2Result} Kg</p>
     </>
   );
 };

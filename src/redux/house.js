@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
 
-  CO2Result: 4380,
+  kWh_CO2Result: 0,
   kWh_factor:0.50,
   kWh: 1500,
   
@@ -14,8 +14,8 @@ export const houseSlice = createSlice({
   initialState,
   reducers: {
  
-    setCO2Result: (state, action) => {
-      state.CO2Result = action.payload;
+    setkWh_CO2Result: (state, action) => {
+      state.kWh_CO2Result = action.payload;
     },
 
     setkWh: (state, action) => {
@@ -27,20 +27,17 @@ export const houseSlice = createSlice({
       state.kWh_factor = action.payload;
     },
     
-    setElectricityFootprint: (state, action) => {
-      state.electricityFootprint = action.payload;
-    },
+  
   }
 });
 
 export const { 
               
-              CO2Result,
+              kWh_CO2Result,
          
               kWh,
               kWh_factor,
-              setElectricityFootprint,
-              setCO2Result
+              setkWh_CO2Result
 
               } = houseSlice.actions;
 
