@@ -8,3 +8,11 @@
     width: fit-content;
     //background-color: rgba(0, 0, 0, 0.455);
 }
+.no-buttons .cds--number__controls {
+    display: none;
+  }
+.input-group{
+    display: flex;
+    flex-direction: column;
+}
+  
