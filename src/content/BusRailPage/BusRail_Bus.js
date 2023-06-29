@@ -32,7 +32,7 @@ const BusFootprint = () => {
       <div className="household_form_cont car_form">
         <p> How many kilometers have you passed with a bus ? </p>
         <div className="household-form">
-          <FormGroup className='busbus-container'>
+          <FormGroup className='formGroup-container'>
               <TextInput
                 value={bus || ""}
                 onChange={handleBusChange}
