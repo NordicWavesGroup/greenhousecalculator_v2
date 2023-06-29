@@ -169,7 +169,7 @@ const FlightsPage = () => {
                             {formFields.length != 0 && (
                               <Slider {...settings}>
                                 {formFields.map((field, index) => (
-                                  <div className="car_inner_form">
+                                  <div className="flight_inner_form">
                                     <div className="car_label d-flex">
                                       <span>Flight {index + 1}</span>
                                       <Button
