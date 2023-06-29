@@ -74,5 +74,44 @@
   }
 
   .tabs-slider-tabs {
-   width: 50vw;
+
+   width: 65vw;
+}
+.tabs-slide{
+    background-color: blue;
+}
+.tabs-slider-arrows {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    
+    height: 3rem;
+
+    background-color: #161616;
+    border-bottom: 0.2px solid grey;
+}
+.prev_btn {
+    width: 3rem;
+    background-color: #161616;
+    border: 0.1px solid #6f6f6f;
+    cursor: pointer;
+    color: white;
+    font-size: 8px;
+}
+.prev_btn:hover{
+    background-color:greenyellow;
+}
+.next_btn{
+    width: 3rem;
+    background-color: #161616;
+    border: 0.1px solid #6f6f6f;
+    border-right: none;
+    cursor: pointer;
+    color: white;
+    font-size: 8px;
+
+
+}
+.next_btn:hover{
+    background-color:rgb(47, 255, 241);
 }

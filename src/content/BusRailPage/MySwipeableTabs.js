@@ -80,14 +80,14 @@ const MyTabsSlider = () => {
           className="prev_btn"
           onClick={() => handleTabsScroll("prev")}
         >
-          <span></span>
+          <span>◄</span>
         </button>
         <button
           className="next_btn"
           disabled={nextDisabled}
           onClick={() => handleTabsScroll("next")}
         >
-          <span></span>
+          <span>►</span>
         </button>
       </div>
       <div className="tabs-slider-tabs" ref={tabsRef}>
