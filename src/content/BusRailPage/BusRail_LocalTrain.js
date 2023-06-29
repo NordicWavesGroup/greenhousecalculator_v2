@@ -16,9 +16,6 @@ const BusRailLocalTrain = () => {
   );
   const dispatch = useDispatch();
 
-  const unitOptions = Object.keys(
-    countryFactors[selectedCountryBusRail].localTrainUnits
-  );
 
   const handleLocalTrainChange = (e) => {
     dispatch(setLocalTrain(parseFloat(e.target.value)));
@@ -33,14 +30,12 @@ const BusRailLocalTrain = () => {
       <div className="household_form_cont car_form">
         <p> How many kilometers have you passed with a local train ? </p>
         <div className="household-form">
-          <FormGroup>
-            <FormLabel>Local Train Mileage </FormLabel>
-            <div className="input-group">
+          <FormGroup className='formGroup-container'>
               <TextInput
                 id="local-train-amount"
                 value={localTrain || ""}
                 onChange={handleLocalTrainChange}
-                labelText=""
+                labelText="Local Train Mileage"
                 className="house-block-middle-form"
                 size="lg"
                 autoComplete="off"
@@ -53,11 +48,7 @@ const BusRailLocalTrain = () => {
                 className="bus-rail-block-middle-form"
                 size="lg"
               >
-                {unitOptions.map((unit) => (
-                  <SelectItem key={unit} value={unit} text={unit} />
-                ))}
               </Select>
-            </div>
           </FormGroup>
         </div>
       </div>

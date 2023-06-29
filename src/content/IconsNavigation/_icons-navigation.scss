@@ -84,6 +84,7 @@
     margin-left: 6rem;
     display: flex;
     flex-direction: row-reverse;
+    //background-color: aqua;
 }
 .tabs-slider-arrows {
     display: flex;
@@ -120,4 +121,7 @@
 }
 .next_btn:hover{
     background-color:rgb(47, 255, 241);
+}
+.ant-tabs-nav-list{
+    margin-left: 11rem;
 }
