@@ -1,6 +1,8 @@
 
 .ant-tabs.ant-tabs-top.css-dev-only-do-not-override-15rg2km {
     width: 100%;
+    margin-left:0rem;
+    max-height: 3rem;
   
 }
   .ant-tabs-nav .ant-tabs-tab-btn {
@@ -12,7 +14,12 @@
     color: #fff !important;
     opacity: 0.3;
     font-weight: 700 !important;
+  
   }
   
+.ant-tabs-nav{
+  max-height: 3rem;
+  margin-left: 6rem;
+}
 
  

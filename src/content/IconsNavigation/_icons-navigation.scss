@@ -29,6 +29,7 @@
     color: white;
  
 }
+
 .progress-bar-container{
    
     min-width: 35%;
@@ -67,8 +68,9 @@
     margin-right: 1rem;
 }
 
-@media (max-width:800px) {
-    .icons-logo{
+@media (max-width:1240px) {
+  
+    .logo-name-container h5{
         display: none;
     }
   }
@@ -77,8 +79,11 @@
 
    width: 65vw;
 }
-.tabs-slide{
-    background-color: blue;
+.tabs-slider{
+    height: 3rem;
+    margin-left: 6rem;
+    display: flex;
+    flex-direction: row-reverse;
 }
 .tabs-slider-arrows {
     display: flex;
@@ -86,6 +91,7 @@
     justify-content: right;
     
     height: 3rem;
+    width: 6rem;
 
     background-color: #161616;
     border-bottom: 0.2px solid grey;
