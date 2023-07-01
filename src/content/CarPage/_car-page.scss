@@ -24,6 +24,7 @@
     margin-top: 20px;
   }
   .car_inner_form {
+    min-width: 300px;
     border: solid 1px #707070;
     padding: 20px;
     border-radius: 0;
@@ -38,7 +39,6 @@
 .slick-current {transform: scale(1) !important;}
 
 .slick-slide{
-  width: 400px;
 }
 .slick-slide:not(.slick-current) {
     opacity: 0.5;

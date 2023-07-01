@@ -16,7 +16,7 @@ const HouseElectricity = () => {
   };
 
   return (
-    <div className="input-group">
+    <div className="input-group-house">
       <Slider
         id="electricity-slider"
         labelText="Electricity Consumption"

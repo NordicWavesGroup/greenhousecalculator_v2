@@ -13,6 +13,16 @@
   }
 .input-group{
     display: flex;
+    flex-direction: row;
+    min-width: 400px;
+}
+.input-group-car{
+    display: flex;
+    flex-direction: row;
+    align-items: end;
+   
+}
+.input-group-house{
+    display: flex;
     flex-direction: column;
 }
-  
