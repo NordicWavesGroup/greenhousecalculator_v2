@@ -282,10 +282,9 @@ const LandingPage = () => {
             )}
           </Tile>
         </section>
-       <LandingOffset />
-       <LandingProjectCards />
+
       </section>
-      <LandingFooter />
+
 
       <Waves />
     </>
