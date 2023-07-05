@@ -73,7 +73,7 @@ const HouseNaturalGas = () => {
 
         <br />
       </div>
-      <p>Natural Gas Results in CO2: {naturalGas_CO2Result} Kg</p>
+      {/*<p>Natural Gas Results in CO2: {naturalGas_CO2Result} Kg</p> */}
     </>
   );
 };

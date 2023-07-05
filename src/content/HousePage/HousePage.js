@@ -81,12 +81,15 @@ const HousePage = () => {
                             amount of heating fuel you used in xx.
                           </p>
                         
+                          <br />
 
                           <div className="separator_cls"></div>
                           <div className="household-form">
                             <br />
                             <HouseNaturalGas />
+                            <br />
                             <HouseCoal />
+                            <br />
                             <HouseLPG />
                             <HousePropane />
                           </div>
