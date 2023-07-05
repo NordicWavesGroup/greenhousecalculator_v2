@@ -6,9 +6,9 @@ const initialState = {
   kWh_factor: 0.50,
 
   naturalGas_CO2Result: 0,
-  naturalGas_average: 100,
+  naturalGas_average: 0,
   naturalGas_factor_kWh: 0.50,
-  naturalGas_factor_therms: 1,
+  naturalGas_factor_therms: 0.80,
 };
 
 export const houseSlice = createSlice({

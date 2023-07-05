@@ -4,7 +4,7 @@ import { Button } from '@carbon/react';
 import './_results-page.scss';
 
 const DataTable = () => {
-  const {  kWh_CO2Result} = useSelector((state) => state.house);
+  const {  kWh_CO2Result,  naturalGas_CO2Result} = useSelector((state) => state.house);
 
   return (
     <div className="results-container">
@@ -29,7 +29,7 @@ const DataTable = () => {
 
           <tr><td className='table-left'><span style={{color: 'var(--verde)',fontWeight: 'bold' }}>○</span> Electricity</td> <td className='table-right'>{kWh_CO2Result}</td></tr>
 
-          <tr><td className='table-left'>○ Natural Gas</td><td className='table-right'>0</td></tr>
+          <tr><td className='table-left'>○ Natural Gas</td><td className='table-right'>{naturalGas_CO2Result}</td></tr>
           <tr><td className='table-left'>○ Coal</td><td className='table-right'>0</td></tr>
           <tr><td className='table-left'>○ LPG</td><td className='table-right'>0</td></tr>
           <tr><td className='table-left'>◯ Private Vehicles</td><td className='table-right'>0</td></tr>
