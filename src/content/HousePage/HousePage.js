@@ -18,8 +18,6 @@ import HouseLPG from "./House_LPG";
 import HousePropane from "./House_Propane";
 import ResultTotalResults from "../../content/ResultsPage/Results_TotalResults"
 
-
-
 import Waves from "../Waves";
 import { useState } from "react";
 
@@ -31,8 +29,7 @@ const HousePage = () => {
     HouseElectricFactor: "",
 
     HouseHeatingUsage: "",
-    //HouseElectricCustom: "",
-    // HouseElectricFactor: "",
+
   });
   const setUsage = (value, name) => {
     let updatedObject = { ...houseMenu, [name]: value };
@@ -73,10 +70,7 @@ const HousePage = () => {
                             Choose how much electricity you used in xx Or write
                             a custom usage.
                           </p>
-                      
-
                           <div className="separator_cls"></div>
-
                           <HouseElectricity />
                         </div>
                       </TabPanel>
@@ -90,6 +84,7 @@ const HousePage = () => {
 
                           <div className="separator_cls"></div>
                           <div className="household-form">
+                            <br />
                             <HouseNaturalGas />
                             <HouseCoal />
                             <HouseLPG />

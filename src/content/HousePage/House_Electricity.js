@@ -1,17 +1,17 @@
 import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setkWh, setkWh_CO2Result } from '../../redux/house';
+import { setkWh_average, setkWh_CO2Result } from '../../redux/house';
 import { NumberInput } from 'carbon-components-react';
 import { Slider } from '@carbon/react';
 
 const HouseElectricity = () => {
-  const { kWh, kWh_factor, kWh_CO2Result } = useSelector((state) => state.house);
+  const { kWh_average, kWh_factor, kWh_CO2Result } = useSelector((state) => state.house);
   const dispatch = useDispatch();
 
   const handleValueChange = (newValue) => {
     const newCO2Result = newValue * kWh_factor;
   
-    dispatch(setkWh(newValue));
+    dispatch(setkWh_average(newValue));
     dispatch(setkWh_CO2Result(newCO2Result));
   };
 
@@ -24,7 +24,7 @@ const HouseElectricity = () => {
         min={0}
         max={9999}
         step={1}
-        value={kWh}
+        value={kWh_average}
         onChange={({value}) => handleValueChange(value)}
       />
       <NumberInput
@@ -35,9 +35,9 @@ const HouseElectricity = () => {
         max={9999}
         min={0}
         step={10}
-        value={kWh}
+        value={kWh_average}
         size={'md'}
-        className="no-buttons"
+        className="numberInput"
         onChange={({target: {value}}) => handleValueChange(Number(value))}
       />
       <p>kWh Results in CO2: {kWh_CO2Result} Kg</p>

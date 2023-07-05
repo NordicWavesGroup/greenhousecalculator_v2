@@ -1,14 +1,19 @@
 .household_form_cont{
-   
     margin: 0;
     padding: 1rem;
-   padding-left:80px ;
-   
+    padding-left:80px ;
     height: 600px;
     width: fit-content;
     //background-color: rgba(0, 0, 0, 0.455);
 }
-.no-buttons .cds--number__controls {
+.numberInput{
+    max-width: 200px;
+    margin-right: 1rem;
+}
+.SelectUnit{
+    max-width: 120px;
+}
+.numberInput .cds--number__controls {
     display: none;
   }
 .input-group{
@@ -25,4 +30,8 @@
 .input-group-house{
     display: flex;
     flex-direction: column;
+}
+.input-group-house-2{
+    display: flex;
+    flex-direction: row;
 }
