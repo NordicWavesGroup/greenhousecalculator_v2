@@ -1,21 +1,56 @@
 //@import "node_modules/carbon-components/scss/globals/scss/styles";
+.container-nav{
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: right ;
+    height: 3rem;
+    //background-color: aqua;
+    border-bottom: 1px solid rgb(79, 79, 79);
+}
+.logo_inner{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;  
+    //background-color: antiquewhite;
+    min-width: 30%;
+    height: 3rem;
+    padding-left: 6rem;
+  
+}
+.logo-name-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    align-content: center;
+    justify-content: space-around;
+    height: 3rem;
+    color: white;
+ 
+}
 
 .progress-bar-container{
-    max-width: 100vw;
-    height: 47px;
+   
+    min-width: 35%;
+    min-height: 3rem;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background-color: rgba(22, 22, 22);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.448);
-    margin-bottom: 3rem;
+    //background-color: rgb(228, 119, 119);
+}
+.results-visualizations-container{
+    max-width: 50vw;
+    min-width: 35%;
+    //background-color: rgb(106, 138, 139);
+   
 }
 .progress-bar-container a{
     color: #fff;
 }
 .fixed-navigation{
-    position: fixed;
+ 
     top: 10;
     left: 0;
     right: 0;
@@ -30,10 +65,63 @@
 .icons-logo{
     width: 2rem;
     height: auto;
+    margin-right: 1rem;
 }
 
-@media (max-width:800px) {
-    .icons-logo{
+@media (max-width:1240px) {
+  
+    .logo-name-container h5{
         display: none;
     }
   }
+
+  .tabs-slider-tabs {
+
+   width: 65vw;
+}
+.tabs-slider{
+    height: 3rem;
+    margin-left: 6rem;
+    display: flex;
+    flex-direction: row-reverse;
+    //background-color: aqua;
+}
+.tabs-slider-arrows {
+    display: flex;
+    flex-direction: row;
+    justify-content: right;
+    
+    height: 3rem;
+    width: 6rem;
+
+    background-color: #161616;
+    border-bottom: 0.2px solid grey;
+}
+.prev_btn {
+    width: 3rem;
+    background-color: #161616;
+    border: 0.1px solid #6f6f6f;
+    cursor: pointer;
+    color: white;
+    font-size: 8px;
+}
+.prev_btn:hover{
+    background-color:greenyellow;
+}
+.next_btn{
+    width: 3rem;
+    background-color: #161616;
+    border: 0.1px solid #6f6f6f;
+    border-right: none;
+    cursor: pointer;
+    color: white;
+    font-size: 8px;
+
+
+}
+.next_btn:hover{
+    background-color:rgb(47, 255, 241);
+}
+.ant-tabs-nav-list{
+    margin-left: 11rem;
+}

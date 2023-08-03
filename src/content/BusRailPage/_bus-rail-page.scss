@@ -1,67 +1,9 @@
-.ant-tabs.ant-tabs-top.ant-tabs-mobile.css-dev-only-do-not-override-15rg2km {
-    width: 100%;
-}
-.tabs-slider-arrows button {
-    height: 40px;
-    width: 40px !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-left: solid 1px #393939 !important;
-}
-.prev_btn span{
-    border-top: 5px solid transparent !important;
-    border-right: 5px solid white !important;
-    border-bottom: 5px solid transparent !important;
-    font-size: 0 !important;
-    height: 0;
-    width: 0 !important;
-}
-.next_btn span{
-    border-top: 5px solid transparent !important;
-    border-left: 5px solid white !important;
-    border-bottom: 5px solid transparent !important;
-    font-size: 0 !important;
-    height: 0;
-    width: 0 !important;
-}
+
 .ant-tabs.ant-tabs-top.css-dev-only-do-not-override-15rg2km {
     width: 100%;
+    max-height: 3rem;
+  
 }
-
-.tabs-slider {
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .tabs-slider-arrows {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 0;
-    align-items: center;
-    display: flex;
-    background: #161616;
-    z-index: 1111;
-    margin-top: 1px;
-  }
-  
-  .tabs-slider-arrows button {
-    height: 40px;
-    width: 40px !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 111111;
-  }
-  
-  .tabs-slider-tabs {
-    display: flex; /* Display tabs in a row */
-  }
-  .ant-tabs-nav {
-    overflow-x: auto; /* Enable horizontal scrolling */
-    white-space: nowrap;
-  }
   .ant-tabs-nav .ant-tabs-tab-btn {
     border: 0 !important;
     padding: 10px 22px !important;
@@ -71,30 +13,30 @@
     color: #fff !important;
     opacity: 0.3;
     font-weight: 700 !important;
+  
+  }
+  .ant-tabs-nav-wrap {
   }
   
-  .tabs-slider-arrows button {
-    padding: 0 !important;
-    background: transparent;
-    opacity: 1;
-  }
-  .ant-tabs .ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
-    opacity: 1 !important;
-    font-size: 16px !important;
-    padding: 0 22px !important;
-    line-height: 1;
-  }
-  .ant-tabs .ant-tabs-tab + .ant-tabs-tab {
-    padding: 0 !important;
-    line-height: 1;
-    margin: 0 !important;
-    height: unset !important;
-    min-height: inherit;
-  }
-  .ant-tabs .ant-tabs-tab {
-    padding: 0 !important;
-  }
-  html body, html {
-    overflow-x: hidden !important;
-  }
-  
+.ant-tabs-nav{
+  max-height: 3rem;
+  margin-left: 6rem;
+}
+.ant-tabs-tabpane{
+  margin-left:6rem;
+  width: 100%;
+  height: 100%;
+  //background-color: aqua;
+  color: white;
+}
+.formGroup-container{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+
+}
+
+.bus-rail-block-middle-form{
+  margin-left:1rem;
+  width: 6rem;
+}

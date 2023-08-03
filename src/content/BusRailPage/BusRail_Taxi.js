@@ -4,7 +4,6 @@ import { setTaxi, setUnitTaxiFactor } from "../../redux/busrail";
 import countryFactors from "../../countryFactors";
 import {
   FormGroup,
-  FormLabel,
   TextInput,
   Select,
   SelectItem,
@@ -32,14 +31,12 @@ const BusRailTaxi = () => {
       <div className="household_form_cont car_form">
         <p> How many kilometers have you passed with a taxi ? </p>
         <div className="household-form">
-          <FormGroup>
-            <FormLabel>Taxi Mileage </FormLabel>
-            <div className="input-group">
+          <FormGroup className='formGroup-container'>
               <TextInput
                 id="taxi-amount"
                 value={taxi || ""}
                 onChange={handleTaxiChange}
-                labelText=""
+                labelText="Taxi Mileage "
                 className="house-block-middle-form"
                 size="lg"
                 autoComplete="off"
@@ -56,7 +53,6 @@ const BusRailTaxi = () => {
                   <SelectItem key={unit} value={unit} text={unit} />
                 ))}
               </Select>
-            </div>
           </FormGroup>
         </div>
       </div>

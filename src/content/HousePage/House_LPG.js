@@ -1,57 +1,79 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setLPG, setUnitLPGFactor } from "../../redux/house";
-import countryFactors from "../../countryFactors";
-
-import {
-  TextInput,
-  FormGroup,
-  FormLabel,
-  Select,
-  SelectItem,
-} from "@carbon/react";
+import { setLpg_average, setLpg_CO2Result } from '../../redux/house';
+import { NumberInput, Select, SelectItem } from 'carbon-components-react';
 
 const HouseLPG = () => {
-  const { LPG, unitLPG, selectedCountry } = useSelector((state) => state.house);
+  const [selectedUnit, setSelectedUnit] = useState('kWh');
+
+  const {
+    lpg_average,
+    lpg_factor_kWh,
+    lpg_factor_therms,
+    lpg_CO2Result
+  } = useSelector((state) => state.house);
+
   const dispatch = useDispatch();
 
-  const unitOptions = Object.keys(countryFactors[selectedCountry].LPGUnits);
+  const handleValueChange = (newValue) => {
+    let newCO2Result;
 
-  const handleLPGChange = (e) => {
-    dispatch(setLPG(parseFloat(e.target.value)));
+    if (selectedUnit === 'kWh') {
+      newCO2Result = newValue * lpg_factor_kWh;
+    } else if (selectedUnit === 'Therms') {
+      newCO2Result = newValue * lpg_factor_therms;
+    }
+
+    dispatch(setLpg_average(newValue));
+    dispatch(setLpg_CO2Result(newCO2Result));
   };
 
-  const handleUnitChange = (e) => {
-    dispatch(setUnitLPGFactor(e.target.value));
-  };
+  useEffect(() => {
+    // Recalculate CO2 result when the unit selection changes
+    let newCO2Result;
+
+    if (selectedUnit === 'kWh') {
+      newCO2Result = lpg_average * lpg_factor_kWh;
+    } else if (selectedUnit === 'Therms') {
+      newCO2Result = lpg_average * lpg_factor_therms;
+    }
+
+    dispatch(setLpg_CO2Result(newCO2Result));
+  }, [selectedUnit, lpg_average, lpg_factor_kWh, lpg_factor_therms, dispatch]);
 
   return (
     <>
-      <FormGroup>
-        <FormLabel>LPG</FormLabel>
-        <div className="input-group">
-          <TextInput
-            id="electricity-input"
-            className="house-block-middle-form"
-            size="lg"
-            value={LPG || ""}
-            onChange={handleLPGChange}
-            autoComplete="off"
-          />
-          <Select
-            id="unit-LPG-select"
-            defaultValue={unitLPG}
-            onChange={handleUnitChange}
-            labelText=""
-            className="house-block-middle-form"
-            size="lg"
-          >
-            {unitOptions.map((unit) => (
-              <SelectItem key={unit} value={unit} text={unit} />
-            ))}
-          </Select>
-        </div>
-      </FormGroup>
+      <div className="input-group-house-2">
+        <NumberInput
+          helperText=""
+          id="tj-input"
+          invalidText=""
+          label="LPG"
+          max={9999}
+          min={0}
+          step={10}
+          value={lpg_average}
+          size={'md'}
+          className="numberInput"
+          onChange={({ target: { value } }) => handleValueChange(Number(value))}
+        />
+
+        <Select
+          defaultValue="placeholder-item"
+          helperText=""
+          id="select-1"
+          invalidText="A valid value is required"
+          labelText="Unit"
+          className="SelectUnit"
+          onChange={(e) => setSelectedUnit(e.target.value)}
+        >
+          <SelectItem text="kWh" value="kWh" />
+          <SelectItem text="Therms" value="Therms" />
+        </Select>
+
+        <br />
+      </div>
+      {/*<p>LPG Results in CO2: {lpg_CO2Result} Kg</p>*/}
     </>
   );
 };

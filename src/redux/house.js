@@ -1,231 +1,101 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  selectedCountry: "Denmark",
-  numPeople: 1,
-
-  electricity: 0,
-  userElectricityFactor: null,
-  electricityFootprint: 0,
-  resetElectricityFootprint:0,
-  showElectricityResult:false,
-
-  naturalGas: 0,
-  unitNaturalGas: "kWh",
-  naturalGasFootprint: 0,
-  resetNaturalGasFootprint:0,
-  showNaturalGasResult:false,
-
-  heatingOil: 0,
-  unitHeatingOil: "kWh",
-  heatingOilFootprint: 0,
-  resetHeatingOilFootprint:0,
-  showHeatingOilResult:false,
-  
-  coal: 0,
-  unitCoal: "kWh",
-  coalFootprint: 0,
-  resetCoalFootprint:0,
-  showCoalResult:false,
-
-  LPG: 0,
-  unitLPG: "kWh",
-  LPGFootprint: 0,
-  resetLPGFootprint:0,
-  showLPGResult:false,
-
-  propane: 0,
-  unitPropane: "kWh",
-  propaneFootprint: 0,
-  resetPropaneFootprint:0,
-  showPropaneResult:false,
-
-  woodenPellets: 0,
-  unitWoodenPellets: "kWh",
-  woodenPelletsFootprint: 0,
-  resetWoodenPelletsFootprint:0,
-  showWoodenPelletsResult:false,
-
-  houseFootprint:0,
+  kWh_CO2Result: 0,
+  kWh_average: 0,
+  kWh_factor: 0.50,
+  ////////////////////////////////
+  naturalGas_CO2Result: 0,
+  naturalGas_average: 0,
+  naturalGas_factor_kWh: 0.50,
+  naturalGas_factor_therms: 0.80,
+  ////////////////////////////////
+  coal_CO2Result: 0,
+  coal_average: 0,
+  coal_factor_kWh: 0.30,
+  coal_factor_therms: 0.75,
+  ////////////////////////////////
+  lpg_CO2Result: 0,
+  lpg_average: 0,
+  lpg_factor_kWh: 0.95,
+  lpg_factor_therms: 0.13,
 };
 
 export const houseSlice = createSlice({
   name: "house",
   initialState,
   reducers: {
-    selectCountry: (state, action) => {
-      state.selectedCountry = action.payload;
+    setkWh_CO2Result: (state, action) => {
+      state.kWh_CO2Result = action.payload;
     },
-    setNumPeople: (state, action) => {
-      state.numPeople = action.payload;
+    setkWh_average: (state, action) => {
+      state.kWh_average = action.payload;
     },
-    //Electricity Global State
-    setElectricity: (state, action) => {
-      state.electricity = action.payload;
+    setkWh_factor: (state, action) => {
+      state.kWh_factor = action.payload;
     },
-    setUserElectricityFactor: (state, action) => {
-      state.userElectricityFactor = action.payload;
+    ///////////////////////////////////////////////
+    setNaturalGas_CO2Result: (state, action) => {
+      state.naturalGas_CO2Result = action.payload;
     },
-    setElectricityFootprint: (state, action) => {
-      state.electricityFootprint = action.payload;
+    setNaturalGas_average: (state, action) => {
+      state.naturalGas_average = action.payload;
     },
-    resetElectricityFootprint: state => {
-      state.electricityFootprint = initialState.electricityFootprint;
+    setNaturalGas_factor_kWh: (state, action) => {
+      state.naturalGas_factor_kWh = action.payload;
     },
-    setShowElectricityResult: (state, action) => {
-      state.showElectricityResult = action.payload;
+    setNaturalGas_factor_therms: (state, action) => {
+      state.naturalGas_factor_therms = action.payload;
     },
-   //Natural Gas Global State
-    setNaturalGas: (state, action) => {
-      state.naturalGas = action.payload;
+    ///////////////////////////////////////////////
+    setCoal_CO2Result: (state, action) => {
+      state.coal_CO2Result = action.payload;
     },
-    setUnitNaturalGasFactor: (state, action) => {
-      state.unitNaturalGas = action.payload;
+    setCoal_average: (state, action) => {
+      state.coal_average = action.payload;
     },
-    setNaturalGasFootprint: (state, action) => {
-      state.naturalGasFootprint = action.payload;
+    setCoal_factor_kWh: (state, action) => {
+      state.coal_factor_kWh = action.payload;
     },
-    resetNaturalGasFootprint: state => {
-      state.naturalGasFootprint = initialState.naturalGasFootprint;
+    setCoal_factor_therms: (state, action) => {
+      state.coal_factor_therms = action.payload;
     },
-    setShowNaturalGasResult: (state, action) => {
-      state.showNaturalGasResult = action.payload;
+    ///////////////////////////////////////////////
+    setLpg_CO2Result: (state, action) => {
+      state.lpg_CO2Result = action.payload;
     },
-    //Heating Oil Global State
-    setHeatingOil: (state, action) => {
-      state.heatingOil = action.payload;
+    setLpg_average: (state, action) => {
+      state.lpg_average = action.payload;
     },
-    setUnitHeatingOilFactor: (state, action) => {
-      state.unitHeatingOil = action.payload;
+    setLpg_factor_kWh: (state, action) => {
+      state.lpg_factor_kWh = action.payload;
     },
-    setHeatingOilFootprint: (state, action) => {
-      state.heatingOilFootprint = action.payload;
-    },
-    resetHeatingOilFootprint: state => {
-      state.heatingOilFootprint = initialState.heatingOilFootprint;
-    },
-    setShowHeatingOilResult: (state, action) => {
-      state.showHeatingOilResult = action.payload;
-    },
-    //Coal Global State
-    setCoal: (state, action) => {
-      state.coal = action.payload;
-    },
-    setUnitCoalFactor: (state, action) => {
-      state.unitCoal = action.payload;
-    },
-    setCoalFootprint: (state, action) => {
-      state.coalFootprint = action.payload;
-    },
-    resetCoalFootprint: state => {
-      state.coalFootprint = initialState.coalFootprint;
-    },
-    setShowCoalResult: (state, action) => {
-      state.showCoalResult = action.payload;
-    },
-    //LPG Global State
-    setLPG: (state, action) => {
-      state.LPG = action.payload;
-    },
-    setUnitLPGFactor: (state, action) => {
-      state.unitLPG = action.payload;
-    },
-    setLPGFootprint: (state, action) => {
-      state.LPGFootprint = action.payload;
-    },
-    resetLPGFootprint: state => {
-      state.LPGFootprint = initialState.LPGFootprint;
-    },
-    setShowLPGResult: (state, action) => {
-      state.showLPGResult = action.payload;
-    },
-    //Propane Global State
-    setPropane: (state, action) => {
-      state.propane= action.payload;
-    },
-    setUnitPropaneFactor: (state, action) => {
-      state.unitPropane = action.payload;
-    },
-    setPropaneFootprint: (state, action) => {
-      state.propaneFootprint = action.payload;
-    },
-    resetPropaneFootprint: state => {
-      state.propaneFootprint = initialState.propaneFootprint;
-    },
-    setShowPropaneResult: (state, action) => {
-      state.showPropaneResult = action.payload;
-    },
-    //Wooden Pellets Global State
-    setWoodenPellets: (state, action) => {
-      state.woodenPellets= action.payload;
-    },
-    setUnitWoodenPelletsFactor: (state, action) => {
-      state.unitWoodenPellets = action.payload;
-    },
-    setWoodenPelletsFootprint: (state, action) => {
-      state.woodenPelletsFootprint = action.payload;
-    },
-    resetWoodenPelletsFootprint: state => {
-      state.woodenPelletsFootprint = initialState.woodenPelletsFootprint;
-    },
-    setShowWoodenPelletsResult: (state, action) => {
-      state.showWoodenPelletsResult = action.payload;
-    },
-    //House Total Footprint
-    setHouseFootprint: (state, action) => {
-      state.houseFootprint = action.payload;
+    setLpg_factor_therms: (state, action) => {
+      state.lpg_factor_therms = action.payload;
     },
   }
 });
 
 export const { 
-               selectCountry, 
-               setNumPeople ,
+  setkWh_CO2Result,
+  setkWh_average,
+  setkWh_factor,
+  ///////////////
+  setNaturalGas_CO2Result,
+  setNaturalGas_average,
+  setNaturalGas_factor_kWh,
+  setNaturalGas_factor_therms,
+  ///////////////
+  setCoal_CO2Result,
+  setCoal_average,
+  setCoal_factor_kWh,
+  setCoal_factor_therms,
+  ///////////////
+  setLpg_CO2Result,
+  setLpg_average,
+  setLpg_factor_kWh,
+  setLpg_factor_therms,
 
-               setElectricity, 
-               setUserElectricityFactor, 
-               setElectricityFootprint,
-               resetElectricityFootprint, 
-               setShowElectricityResult,
-
-               setNaturalGas,
-               setUnitNaturalGasFactor,
-               setNaturalGasFootprint,
-               resetNaturalGasFootprint,
-               setShowNaturalGasResult,
-
-               setHeatingOil,
-               setUnitHeatingOilFactor,
-               setHeatingOilFootprint,
-               resetHeatingOilFootprint,
-               setShowHeatingOilResult,
-
-               setCoal,
-               setUnitCoalFactor,
-               setCoalFootprint,
-               resetCoalFootprint,
-               setShowCoalResult,
-
-               setLPG,
-               setUnitLPGFactor,
-               setLPGFootprint,
-               resetLPGFootprint,
-               setShowLPGResult,
-
-               setPropane,
-               setUnitPropaneFactor,
-               setPropaneFootprint,
-               resetPropaneFootprint,
-               setShowPropaneResult,
-
-               setWoodenPellets,
-               setUnitWoodenPelletsFactor,
-               setWoodenPelletsFootprint,
-               resetWoodenPelletsFootprint,
-               setShowWoodenPelletsResult,
-
-               setHouseFootprint,
-
-              } = houseSlice.actions;
+} = houseSlice.actions;
 
 export default houseSlice.reducer;

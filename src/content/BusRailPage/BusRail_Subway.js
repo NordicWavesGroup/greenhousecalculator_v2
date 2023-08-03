@@ -32,14 +32,12 @@ const BusRailSubway = () => {
       <div className="household_form_cont car_form">
         <p> How many kilometers have you passed with a subway ? </p>
         <div className="household-form">
-          <FormGroup>
-            <FormLabel>Subway Mileage </FormLabel>
-            <div className="input-group">
+          <FormGroup  className='formGroup-container'>
               <TextInput
                 id="subway-amount"
                 value={subway || ""}
                 onChange={handleSubwayChange}
-                labelText=""
+                labelText="Subway Mileage "
                 className="house-block-middle-form"
                 size="lg"
                 autoComplete="off"
@@ -56,7 +54,6 @@ const BusRailSubway = () => {
                   <SelectItem key={unit} value={unit} text={unit} />
                 ))}
               </Select>
-            </div>
           </FormGroup>
         </div>
       </div>

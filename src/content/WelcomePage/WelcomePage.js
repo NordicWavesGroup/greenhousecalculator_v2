@@ -111,7 +111,7 @@ const WelcomePage = () => {
       )}
       <main>
         <section className="login_page_sec">
-          <div className="container">
+          <div className="container-welcome">
             <div className="right_svg_ic">
               <img src="/right_ic.svg" />
             </div>
@@ -119,16 +119,16 @@ const WelcomePage = () => {
               <img src="/left_ic.svg" />
             </div>
             <div className="logo_wrap">
-              <GHCLOGO className="welcome-logo" />
+            <Link to="/">
+              <GHCLOGO  className="welcome-logo" />
+              </Link>
             </div>
             <div className="login_cont">
               <h2>GREENHOUSE CALCULATOR</h2>
               <p>
-                Discover your carbon footprint and take action towards a more
-                sustainable future. 
                 Select your country or region and a date range to start your calculations.
               </p>
-              <br />
+      
             </div>
             <div className="login_page_form">
               <Form
@@ -149,10 +149,22 @@ const WelcomePage = () => {
                     }}
                   >
                     <option value="">Select Country</option>
-                    <option value="India">India</option>
-                    <option value="USA">USA</option>
-                    <option value="Qatar">Qatar</option>
+                    <option value="United States">United States</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="Germany">Germany</option>
+                    <option value="France">France</option>
+                    <option value="Canada">Canada</option>
+                    <option value="Australia">Australia</option>
+                    <option value="Japan">Japan</option>
+                    <option value="China">China</option>
+                    <option value="Netherlands">Netherlands</option>
+                    <option value="Sweden">Sweden</option>
                     <option value="Denmark">Denmark</option>
+                    <option value="Norway">Norway</option>
+                    <option value="Finland">Finland</option>
+                    <option value="Switzerland">Switzerland</option>
+                    <option value="South Korea">South Korea</option>
+
                   </Select>
                 </FormGroup>
                 <FormGroup>
@@ -192,12 +204,12 @@ const WelcomePage = () => {
                 </FormGroup>
                 <div className="custom_link">
                 <Link to="/house" className="welcome-button">
-                  <Button type="submit" className="primary_btn">
-                    Continue to Calculator
+                  <Button  kind="primary" type="submit" className="welcome-button2">
+                    CONTINUE TO CALCULATOR
                   </Button>
                 </Link>
              
-                  <p>*All fields are required </p>
+          
                 </div>
               </Form>
             </div>

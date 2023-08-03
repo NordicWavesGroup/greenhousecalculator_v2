@@ -4,22 +4,20 @@ import { useDispatch, useSelector } from "react-redux";
 import { setBus, setUnitBusFactor } from "../../redux/busrail";
 import {
   FormGroup,
-  FormLabel,
+
   TextInput,
   Select,
-  SelectItem,
+
 } from "@carbon/react";
-import countryFactors from "../../countryFactors";
+
 
 const BusFootprint = () => {
-  const { bus, unitBus, selectedCountryBusRail } = useSelector(
+  const { bus, unitBus } = useSelector(
     (state) => state.busrail
   );
   const dispatch = useDispatch();
 
-  const unitOptions = Object.keys(
-    countryFactors[selectedCountryBusRail].busUnits
-  );
+
 
   const handleBusChange = (e) => {
     dispatch(setBus(parseFloat(e.target.value)));
@@ -34,13 +32,11 @@ const BusFootprint = () => {
       <div className="household_form_cont car_form">
         <p> How many kilometers have you passed with a bus ? </p>
         <div className="household-form">
-          <FormGroup>
-            <FormLabel>Bus Mileage </FormLabel>
-            <div className="input-group">
+          <FormGroup className='formGroup-container'>
               <TextInput
                 value={bus || ""}
                 onChange={handleBusChange}
-                labelText=""
+                labelText="Bus Mileage"
                 id="electricity-input"
                 className="house-block-middle-form"
                 size="lg"
@@ -54,11 +50,8 @@ const BusFootprint = () => {
                 className="bus-rail-block-middle-form"
                 size="lg"
               >
-                {unitOptions.map((unit) => (
-                  <SelectItem key={unit} value={unit} text={unit} />
-                ))}
+          
               </Select>
-            </div>
           </FormGroup>
         </div>
       </div>

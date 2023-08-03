@@ -16,7 +16,6 @@ import Waves from "../Waves";
 import { setFoodDiet, setFoodDietFootprint } from "../../redux/secondary";
 
 import countryFactors from "../../countryFactors";
-import ResultsPage from "./../ResultsPage/ResultsPage";
 import ResultTotalResults from "../../content/ResultsPage/Results_TotalResults"
 
 
@@ -102,7 +101,6 @@ const SecondaryFoodDrinks = () => {
                 </div>
               </div>
             </div>
-            <ResultsPage />
           </div>
         </div>
       </div>

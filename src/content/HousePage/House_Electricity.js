@@ -1,65 +1,47 @@
-import React from "react";
-import "./_house-page.scss";
+import React from 'react';
 import { useDispatch, useSelector } from "react-redux";
-import { setElectricity, setUserElectricityFactor } from "../../redux/house";
-
-import { FormGroup, TextInput } from "@carbon/react";
-import countryFactors from "../../countryFactors";
+import { setkWh_average, setkWh_CO2Result } from '../../redux/house';
+import { NumberInput } from 'carbon-components-react';
+import { Slider } from '@carbon/react';
 
 const HouseElectricity = () => {
-  const { selectedCountry, electricity, userElectricityFactor } = useSelector(
-    (state) => state.house
-  );
+  const { kWh_average, kWh_factor, kWh_CO2Result } = useSelector((state) => state.house);
   const dispatch = useDispatch();
 
-  const handleUserElectricityChange = (e) => {
-    const factor = parseFloat(e.target.value);
-    dispatch(setUserElectricityFactor(factor));
-  };
-
-  // function to handle input changes
-
-  const handleElectricityChange = (e) => {
-    dispatch(setElectricity(parseFloat(e.target.value)));
+  const handleValueChange = (newValue) => {
+    const newCO2Result = newValue * kWh_factor;
+  
+    dispatch(setkWh_average(newValue));
+    dispatch(setkWh_CO2Result(newCO2Result));
   };
 
   return (
-    <>
-      {" "}
-      <div className="household-form">
-        <FormGroup>
-          <div className="input-group">
-            <TextInput
-              id="electricity-input"
-              labelText="Custom"
-              className="house-block-middle-form"
-              size="lg"
-              name="HouseElectricCustom"
-              value={electricity || "average"}
-              onChange={handleElectricityChange}
-              autoComplete="off"
-            />
-            <TextInput
-              id="electricity-factor"
-              labelText="at a factor of:"
-              type="number"
-              className="house-block-middle-form"
-              size="lg"
-              name="HouseElectricFactor"
-              value={
-                userElectricityFactor !== null
-                  ? userElectricityFactor
-                  : countryFactors[selectedCountry].electricity_factor || ""
-              }
-              onChange={handleUserElectricityChange}
-              min={0}
-              autoComplete="off"
-            />
-          </div>
-        </FormGroup>
-      </div>
-  
-    </>
+    <div className="input-group-house">
+      <Slider
+        id="electricity-slider"
+        labelText="Electricity Consumption"
+        className="house-block-middle-form"
+        min={0}
+        max={9999}
+        step={1}
+        value={kWh_average}
+        onChange={({value}) => handleValueChange(value)}
+      />
+      <NumberInput
+        helperText=""
+        id="tj-input"
+        invalidText=""
+        label="Custom"
+        max={9999}
+        min={0}
+        step={10}
+        value={kWh_average}
+        size={'md'}
+        className="numberInput"
+        onChange={({target: {value}}) => handleValueChange(Number(value))}
+      />
+      <p>kWh Results in CO2: {kWh_CO2Result} Kg</p>
+    </div>
   );
 };
 

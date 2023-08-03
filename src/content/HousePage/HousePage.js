@@ -8,7 +8,6 @@ import {
   TabPanels,
   Tabs,
 } from "@carbon/react";
-import { Link } from "react-router-dom";
 
 import IconsNavigation from "../IconsNavigation/IconsNavigation";
 
@@ -18,10 +17,6 @@ import HouseCoal from "./House_Coal";
 import HouseLPG from "./House_LPG";
 import HousePropane from "./House_Propane";
 import ResultTotalResults from "../../content/ResultsPage/Results_TotalResults"
-
-
-import ResultsPage from "./../ResultsPage/ResultsPage";
-import { Information } from "@carbon/icons-react";
 
 import Waves from "../Waves";
 import { useState } from "react";
@@ -34,8 +29,7 @@ const HousePage = () => {
     HouseElectricFactor: "",
 
     HouseHeatingUsage: "",
-    //HouseElectricCustom: "",
-    // HouseElectricFactor: "",
+
   });
   const setUsage = (value, name) => {
     let updatedObject = { ...houseMenu, [name]: value };
@@ -51,7 +45,6 @@ const HousePage = () => {
       <ResultTotalResults />
 </div>
       <IconsNavigation />
-      <div className="household_sec">
         <div className="container">
           <div className="household_row">
             <div className="housHold_col">
@@ -62,7 +55,7 @@ const HousePage = () => {
                     tabContentClassName="custom-tab-content"
                     tabContentStyle={{ padding: "20px" }}
                   >
-                    <TabList>
+                    <TabList aria-label="Your label here">
                       <Tab id="tab1" label="ELECTRICITY">
                         ELECTRICITY
                       </Tab>
@@ -77,47 +70,7 @@ const HousePage = () => {
                             Choose how much electricity you used in xx Or write
                             a custom usage.
                           </p>
-                          <div className="status_cls">
-                            <Link
-                              onClick={() =>
-                                setUsage("Below", "HouseElectricUsage")
-                              }
-                              className={
-                                houseMenu.HouseElectricUsage == "Below"
-                                  ? "active"
-                                  : ""
-                              }
-                            >
-                              Below <Information />
-                            </Link>
-                            <Link
-                              onClick={() =>
-                                setUsage("Average", "HouseElectricUsage")
-                              }
-                              className={
-                                houseMenu.HouseElectricUsage == "Average"
-                                  ? "active"
-                                  : ""
-                              }
-                            >
-                              Average <Information />
-                            </Link>
-                            <Link
-                              onClick={() =>
-                                setUsage("Above", "HouseElectricUsage")
-                              }
-                              className={
-                                houseMenu.HouseElectricUsage == "Above"
-                                  ? "active"
-                                  : ""
-                              }
-                            >
-                              Above <Information />
-                            </Link>
-                          </div>
-
                           <div className="separator_cls"></div>
-
                           <HouseElectricity />
                         </div>
                       </TabPanel>
@@ -127,49 +80,16 @@ const HousePage = () => {
                             Please fill in type of heating you use and fill the
                             amount of heating fuel you used in xx.
                           </p>
-                          <div className="status_cls">
-                            <Link
-                              onClick={() =>
-                                setUsage("Below", "HouseHeatingUsage")
-                              }
-                              className={
-                                houseMenu.HouseHeatingUsage == "Below"
-                                  ? "active"
-                                  : ""
-                              }
-                            >
-                              Below <Information />
-                            </Link>
-                            <Link
-                              onClick={() =>
-                                setUsage("Average", "HouseHeatingUsage")
-                              }
-                              className={
-                                houseMenu.HouseHeatingUsage == "Average"
-                                  ? "active"
-                                  : ""
-                              }
-                            >
-                              Average <Information />
-                            </Link>
-                            <Link
-                              onClick={() =>
-                                setUsage("Above", "HouseHeatingUsage")
-                              }
-                              className={
-                                houseMenu.HouseHeatingUsage == "Above"
-                                  ? "active"
-                                  : ""
-                              }
-                            >
-                              Above <Information />
-                            </Link>
-                          </div>
+                        
+                          <br />
 
                           <div className="separator_cls"></div>
                           <div className="household-form">
+                            <br />
                             <HouseNaturalGas />
+                            <br />
                             <HouseCoal />
+                            <br />
                             <HouseLPG />
                             <HousePropane />
                           </div>
@@ -181,10 +101,8 @@ const HousePage = () => {
               </div>
             </div>
 
-            <ResultsPage />
           </div>
         </div>
-      </div>
 
       <Waves />
     </>

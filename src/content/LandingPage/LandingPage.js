@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import "./_landing-page.scss";
+import './_landing-footer.scss';
 import { Link } from "react-router-dom";
 import Button from "@carbon/react/lib/components/Button/Button";
 import { NextOutline } from "@carbon/react/icons";
@@ -13,11 +14,12 @@ import {
   SkeletonText,
   SkeletonPlaceholder,
 } from "@carbon/react";
-import CustomTabsSkeleton from "../../components/CustomTabsSkelton";
+import CustomTabsSkeleton from "../../components/CustomTabsSkelton"
 import { ReactComponent as GHCLOGO } from '../../content/WelcomePage/GHC-logo.svg';
-
-
+import  LandingOffset  from './LandingOffset'
 import Waves from "../Waves";
+import LandingFooter from "./LandingFooter";
+import LandingProjectCards from "./LandingProjectCards";
 
 // Define an array of 12 different languages
 const languages = [
@@ -96,9 +98,7 @@ const LandingPage = () => {
           ) : (
             <>
               <TabList className={"landing-tablist"} aria-label="List of tabs">
-                <Tab className={"landing-tab"}>About</Tab>
-                <Tab className={"landing-tab"}>Design</Tab>
-                <Tab className={"landing-tab"}>Tools</Tab>
+                <Tab className={"landing-tab"}>Calculate your emissions today</Tab>
               </TabList>
             </>
           )}
@@ -122,16 +122,18 @@ const LandingPage = () => {
                   ) : (
                     <>
                       <h5 className="landing-title-question">
-                        What is Greenhouse ?
+                        What is Greenhouse Calculator ?
                       </h5>
                       <p className="landing-paragraph-question">
                         Greenhouse the ultimate B2C solution for measuring
                         carbon footprints. Our passionate team of researchers,
                         developers, and designers from around the world have
-                        come together to develop a user-friendly carbon
-                        footprint measurement tool. Join us in our mission to
-                        create a more sustainable future for all.
+                        come together to develop this tool. 
+
                       </p>
+                      <br />
+                      <p>   Join us in our mission to
+                        create a more sustainable future for all.</p>
                     </>
                   )}
                   {delay ? (
@@ -144,10 +146,9 @@ const LandingPage = () => {
                       >
                         <Button
                           className="landing-button"
-                          renderIcon={NextOutline}
-                          kind="tertiary"
+                          kind="primary"
                         >
-                          Get Started
+                          GET STARTED
                         </Button>
                       </Link>{" "}
                     </>
@@ -164,8 +165,8 @@ const LandingPage = () => {
                 </div>
               </section>
             </TabPanel>
-            <TabPanel></TabPanel>
-            <TabPanel></TabPanel>
+         
+         
           </TabPanels>
         </Tabs>
 
@@ -187,17 +188,32 @@ const LandingPage = () => {
             ) : (
               <>
                 <div className="tileOuter">
-                  <h4 className="landing-tiles-questions">
-                    Greenhouse is Awareness:{" "}
-                  </h4>
+                  <h3 className="landing-tiles-questions">
+                     AWARENESS{" "}
+                  </h3>
                   <br />
                   <p>
                     {" "}
-                    Calculating your carbon footprint can increase your
-                    awareness of the impact your lifestyle choices have on the
-                    environment. This awareness can motivate you to make more
-                    sustainable choices in your day-to-day life.
+                   Become aware of how your lifestyle choices affect the environment. This awareness can inspire you to adopt more sustainable habits in your daily life. 
                   </p>
+         
+            
+                    <div class="spinner-box">
+                      <div class="blue-orbit leo">
+                      </div>
+
+                      <div class="green-orbit leo">
+                      </div>
+                      
+                      <div class="red-orbit leo">
+                      </div>
+                      
+                      <div class="white-orbit w1 leo">
+                      </div><div class="white-orbit w2 leo">
+                      </div><div class="white-orbit w3 leo">
+                      </div>
+                    </div>
+                 
                 </div>
               </>
             )}
@@ -208,17 +224,23 @@ const LandingPage = () => {
             ) : (
               <>
                 <div className="tileOuter">
-                  <h4 className="landing-tiles-questions">
-                    Greenhouse is Personal Responsibility:{" "}
-                  </h4>
+                  <h3 className="landing-tiles-questions">
+                   RESPONSABILITY{" "}
+                  </h3>
                   <br />
                   <p>
                     {" "}
-                    Calculating your carbon footprint can help you take personal
-                    responsibility for your carbon emissions. It can be easy to
-                    overlook the impact of our daily actions, but by quantifying
-                    our carbon footprint, we can take action to reduce it.
+                    Quantify your carbon footprint to heighten awareness of your lifestyle. lifestyle impact on the environment. Let this knowledge drive sustainable choices for a greener everyday life.
                   </p>
+          
+                    <div class="spinner-box">
+                        <div class="leo-border-1">
+                          <div class="leo-core-1"></div>
+                        </div> 
+                        <div class="leo-border-2">
+                          <div class="leo-core-2"></div>
+                        </div> 
+                      </div>
                 </div>
               </>
             )}
@@ -230,22 +252,39 @@ const LandingPage = () => {
             ) : (
               <>
                 <div className="tileOuter">
-                  <h4 className="landing-tiles-questions">
-                    Greenhouse is Environmental Impact:{" "}
-                  </h4>
+                  <h3 className="landing-tiles-questions">
+                   IMPACT{" "}
+                  </h3>
                   <br />
                   <p>
-                    Knowing your carbon footprint can help you understand how
-                    your actions contribute to climate change. By reducing your
-                    carbon footprint, you can make a positive impact on the
-                    environment and help mitigate the effects of climate change.
+                  Understanding your carbon footprint reveals your impact on climate change. Reduce it to make a positive environmental difference and combat the effects of global warming.
+                  
                   </p>
+
+                  <div class="spinner-box">
+                    <div class="solar-system">
+                      <div class="earth-orbit orbit">
+                        <div class="planet earth"></div>
+                        <div class="venus-orbit orbit">
+                          <div class="planet venus"></div>
+                          <div class="mercury-orbit orbit">
+                            <div class="planet mercury"></div>
+                            <div class="sun"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+               
                 </div>
               </>
             )}
           </Tile>
         </section>
+
       </section>
+
 
       <Waves />
     </>

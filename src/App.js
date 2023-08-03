@@ -7,7 +7,6 @@ import "./app.scss";
 import { Theme } from "@carbon/react";
 import { Content } from "@carbon/react";
 
-import TheHeader from "./components/TheHeader/TheHeader";
 import LandingPage from "./content/LandingPage";
 import WelcomePage from "./content/WelcomePage";
 import HousePage from "./content/HousePage";
@@ -29,7 +28,6 @@ class App extends Component {
       <>
         <BrowserRouter>
           <Theme theme="g100">
-            <TheHeader />
             <Content>
               <Switch>
                 <Route exact path="/" component={LandingPage} />

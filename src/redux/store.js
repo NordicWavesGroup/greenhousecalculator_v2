@@ -15,6 +15,7 @@ export default configureStore({
     motorbike: motorbikeReducer,
     totalfootprint: totalfootprintReducer,
     flights: flightsReducer,
-    car: carReducer
+    car: carReducer,
+
   }
 });

@@ -1,22 +1,18 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCoach, setUnitCoachFactor } from "../../redux/busrail";
-import countryFactors from "../../countryFactors";
 import {
   FormGroup,
-  FormLabel,
   TextInput,
   Select,
-  SelectItem,
+
 } from "@carbon/react";
 const BusCoach = () => {
-  const { coach, unitCoach, selectedCountryBusRail } = useSelector(
+  const { coach, unitCoach} = useSelector(
     (state) => state.busrail
   );
   const dispatch = useDispatch();
-  const unitOptions = Object.keys(
-    countryFactors[selectedCountryBusRail].coachUnits
-  );
+
   const handleCoachChange = (e) => {
     dispatch(setCoach(parseFloat(e.target.value)));
   };
@@ -28,15 +24,13 @@ const BusCoach = () => {
       <div className="household_form_cont car_form">
         <p> How many kilometers have you passed with a coach ? </p>
         <div className="household-form">
-          <FormGroup>
-            <FormLabel>Coach Mileage </FormLabel>
-            <div className="input-group">
+          <FormGroup className='formGroup-container'>
               <TextInput
                 id="coach-amount"
                 value={coach || ""}
                 onChange={handleCoachChange}
-                labelText=""
-                className="house-block-middle-form"
+                labelText="Coach Mileage"
+                className=""
                 size="lg"
                 autoComplete="off"
               />
@@ -48,11 +42,7 @@ const BusCoach = () => {
                 className="bus-rail-block-middle-form"
                 size="lg"
               >
-                {unitOptions.map((unit) => (
-                  <SelectItem key={unit} value={unit} text={unit} />
-                ))}
               </Select>
-            </div>
           </FormGroup>
         </div>
       </div>

@@ -4,7 +4,6 @@
     margin: 0;
     padding: 0;
 
-
 }
 #root{
     margin: 0;
@@ -13,7 +12,12 @@
 
     //overflow: hidden;  
     --verde: #7FE0A4;
+    --verde10: #7fe0a435;
+
     --verde50: #7fe0a480;
+
+    --purple: #4141ff;
+    --purple10: #4141ff44;
 
 }
 $base-color: #c6538c;
@@ -26,15 +30,13 @@ $base-color: #c6538c;
     font-size: 16px;
     border-radius: 0px;
 }
-
-.global-total-result-fixed{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 2rem;
-    width: 100%;
+.cds--tab-content{
+    
+ 
+    
 }
+
+
 /////////////////////// Re-styling the Button Component
 .global-re-styled-button-back-and-forth{
     width: 10rem;
@@ -114,3 +116,8 @@ $base-color: #c6538c;
    
 }
 
+@media (max-width:1000px) {
+body{
+    display: none;
+}
+}
