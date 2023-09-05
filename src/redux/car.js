@@ -5,11 +5,11 @@ const initialState = {
 
   carMileage: 0,
   carUnit: "km",
-  carType:"-select type-",
-  carSize:"-select size-",
+  carType: "-select type-",
+  carSize: "-select size-",
   carFootprint: 0,
-  resetCarFootprint:0,
-  showCarResult:false,
+  resetCarFootprint: 0,
+  showCarResult: false,
 };
 
 export const carSlice = createSlice({
@@ -32,31 +32,30 @@ export const carSlice = createSlice({
     setCarSizeFactor: (state, action) => {
       state.carSize = action.payload;
     },
-  
+
     setCarFootprint: (state, action) => {
       state.carFootprint = action.payload;
     },
-    resetCarFootprint: state => {
+    resetCarFootprint: (state) => {
       state.carFootprint = initialState.carFootprint;
     },
     setShowCarResult: (state, action) => {
       state.showCarResult = action.payload;
     },
-  }
+  },
 });
 
-export const { 
-               selectedCountryCar, 
+export const {
+  selectedCountryCar,
 
-               setCarMileage, 
-               setCarUnitFactor,
-               setCarTypeFactor,
-               setCarSizeFactor,
+  setCarMileage,
+  setCarUnitFactor,
+  setCarTypeFactor,
+  setCarSizeFactor,
 
-               setCarFootprint,
-               resetCarFootprint, 
-               setShowCarResult,
-
-              } = carSlice.actions;
+  setCarFootprint,
+  resetCarFootprint,
+  setShowCarResult,
+} = carSlice.actions;
 
 export default carSlice.reducer;

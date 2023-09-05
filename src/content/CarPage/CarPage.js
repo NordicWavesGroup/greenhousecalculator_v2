@@ -41,7 +41,6 @@ const settings = {
   ],
 };
 const CarPage = () => {
-
   return (
     <>
       <IconsNavigation />
@@ -50,7 +49,7 @@ const CarPage = () => {
           selected={1}
           tabContentClassName="custom-tab-content"
           tabContentStyle={{ padding: "20px" }}
-          >
+        >
           <TabList>
             <Tab id="tab1" label="Tab 1">
               Car
@@ -63,10 +62,9 @@ const CarPage = () => {
             <TabPanel>
               <div className="car_page_sec household_form_cont car_form">
                 <p>
-                  Please fill in Number of cars you have and details
-                  for them.
+                  Please fill in Number of cars you have and details for them.
                 </p>
-              <div className="household-form">
+                <div className="household-form">
                   <FormGroup>
                     <div className="input-group car_inner_cls">
                       <label>You are using</label>
@@ -80,62 +78,57 @@ const CarPage = () => {
                     </div>
                   </FormGroup>
 
-                    <Slider {...settings}>
-                      <div className="car_inner_form">
-                        <div className="car_label">
-                          <span>Car 1</span>
-                        </div>
-                        <FormGroup>
-                          
-                          <div className="input-group-car">
-                            <TextInput
-                              id="electricity-input"
-                              className="house-block-middle-form"
-                              size="lg"
-                              labelText="Car Mileage"
-                            />
-                            <TextInput
-                              id="electricity-factor"
-                              placeholder="Km"
-                              type="number"
-                              className="house-block-middle-form"
-                              size="lg"
-                            />
-                          </div>
-                        </FormGroup>
-                        <FormGroup>
-                          <Select
-                            labelText="Car Type"
-                            defaultValue="ichooseOption"
+                  <Slider {...settings}>
+                    <div className="car_inner_form">
+                      <div className="car_label">
+                        <span>Car 1</span>
+                      </div>
+                      <FormGroup>
+                        <div className="input-group-car">
+                          <TextInput
+                            id="electricity-input"
+                            className="house-block-middle-form"
                             size="lg"
-                          >
-                            <option value="chooseOption">
-                              Choose an option
-                            </option>
-                            <option value="usa">
-                              Electric average battery
-                            </option>
-                            <option value="qatar">
-                              Hybrid_ ( full ) average battery
-                            </option>
-                          </Select>
-                        </FormGroup>
-                        <div className="status_main_cls">
-                          <h5>Car Size</h5>
-                          <div className="status_cls">
-                            <Link to="">Below</Link>
-                            <Link to="" className="active">
-                              Average
-                            </Link>
-                            <Link to="">Above</Link>
-                          </div>
+                            labelText="Car Mileage"
+                          />
+                          <TextInput
+                            id="electricity-factor"
+                            placeholder="Km"
+                            type="number"
+                            className="house-block-middle-form"
+                            size="lg"
+                          />
                         </div>
+                      </FormGroup>
+                      <FormGroup>
+                        <Select
+                          labelText="Car Type"
+                          defaultValue="ichooseOption"
+                          size="lg"
+                        >
+                          <option value="chooseOption">Choose an option</option>
+                          <option value="usa">Electric average battery</option>
+                          <option value="qatar">
+                            Hybrid_ ( full ) average battery
+                          </option>
+                        </Select>
+                      </FormGroup>
+                      <div className="status_main_cls">
+                        <h5>Car Size</h5>
+                        <div className="status_cls">
+                          <Link to="">Below</Link>
+                          <Link to="" className="active">
+                            Average
+                          </Link>
+                          <Link to="">Above</Link>
                         </div>
-                    </Slider>
-                  </div>
+                      </div>
+                    </div>
+                  </Slider>
                 </div>
-              </TabPanel>
-            </TabPanels>
+              </div>
+            </TabPanel>
+          </TabPanels>
         </Tabs>
       </div>
       <Waves />

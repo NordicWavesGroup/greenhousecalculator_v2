@@ -16,8 +16,7 @@ import Waves from "../Waves";
 import { setFoodDiet, setFoodDietFootprint } from "../../redux/secondary";
 
 import countryFactors from "../../countryFactors";
-import ResultTotalResults from "../../content/ResultsPage/Results_TotalResults"
-
+import ResultTotalResults from "../../content/ResultsPage/Results_TotalResults";
 
 const SecondaryFoodDrinks = () => {
   const { foodDiet, foodDietFootprint, selectedCountrySecondary } = useSelector(
@@ -43,9 +42,9 @@ const SecondaryFoodDrinks = () => {
   };
   return (
     <>
-            <div className="global-total-result-fixed">
-      <ResultTotalResults />
-</div>
+      <div className="global-total-result-fixed">
+        <ResultTotalResults />
+      </div>
       <IconsNavigation />
       <div className="household_sec">
         <div className="container">
